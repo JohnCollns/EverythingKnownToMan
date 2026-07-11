@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://daosbn20t805o"]
+
+[ext_resource type="Script" uid="uid://c7i776fys5sse" path="res://src/backend/ArticleNode.cs" id="1_s4y5c"]
+[ext_resource type="Texture2D" uid="uid://dugyoapmxfspv" path="res://icon.svg" id="2_qgbm8"]
+
+[node name="ArticleDemo" type="Node2D" unique_id=187493832 node_paths=PackedStringArray("ArticleTexture", "TitleLabel", "DescLabel", "ParagraphLabel", "TagsLabel")]
+script = ExtResource("1_s4y5c")
+ArticleTexture = NodePath("HBoxContainer/TextureRect")
+TitleLabel = NodePath("HBoxContainer/VBoxContainer/TitleLabel")
+DescLabel = NodePath("HBoxContainer/VBoxContainer/DescLabel")
+ParagraphLabel = NodePath("HBoxContainer/VBoxContainer/ParagraphLabel")
+TagsLabel = NodePath("HBoxContainer/VBoxContainer/TagsLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1282715380]
+offset_top = 186.0
+offset_right = 314.0
+offset_bottom = 1122.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=2052792300]
+layout_mode = 2
+texture = ExtResource("2_qgbm8")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1595782905]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1111423083]
+layout_mode = 2
+text = "Title"
+
+[node name="DescLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=737697517]
+layout_mode = 2
+text = "Description"
+
+[node name="ParagraphLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1847593066]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Paragraph text very long many words word words words."
+autowrap_mode = 2
+
+[node name="TagsLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=889449275]
+layout_mode = 2
+text = "Tags: {a, b, c}"
