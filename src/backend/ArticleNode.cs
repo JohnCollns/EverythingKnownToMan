@@ -74,4 +74,10 @@ public partial class ArticleNode : Node
         
         return outputImage;
     }
+
+    // Returns saved file path
+    public string SaveToDisk()
+    {
+        return WikiArticle.SaveToDisk();
+    }
 }

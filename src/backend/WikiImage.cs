@@ -1,4 +1,6 @@
-﻿using Godot;
+﻿using System;
+using System.IO;
+using Godot;
 using Godot.Collections;
 
 namespace EverythingKnownToMan.backend;
@@ -79,7 +81,6 @@ public class WikiImage
 
     public WikiImage(string fileFormat, byte[] imageBytes)
     {
-        GD.Print("WikiImage: Loading file format: " + fileFormat);
         FileFormat = WikiImageFormats.StringToTag(fileFormat);
         ImageBytes = imageBytes;
     }
@@ -87,5 +88,21 @@ public class WikiImage
     public bool IsValid()
     {
         return !FileFormat.IsEmpty && ImageBytes != null && ImageBytes.Length > 0;
+    }
+
+    public string SaveToDisk(string fileName)
+    {
+        string exeDir = AppContext.BaseDirectory;
+        // Returns:
+        // E:\Godot\GameAWeek26\EverythingKnownToMan\Godot\everything-known-to-man\.godot\mono\temp\bin\Debug\
+        // Target:
+        // E:\Godot\GameAWeek26\EverythingKnownToMan\Godot\everything-known-to-man\generated\images\
+        
+        string projectRoot = Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
+        //GD.Print(" projectRoot: " + projectRoot);
+        string path = Path.Combine(projectRoot, "generated", "images", (fileName + "." + FileFormat));
+        //GD.Print(" path: " + path);
+        File.WriteAllBytes(path, ImageBytes);
+        return path;
     }
 }

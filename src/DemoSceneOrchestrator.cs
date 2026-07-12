@@ -16,16 +16,16 @@ public partial class DemoSceneOrchestrator : Node
         SearchLineEdit = GetNode<LineEdit>("SearchLineEdit");
         SearchLineEdit.TextSubmitted += SearchTitleEditOnTextSubmitted;
 
-        LoadArticle(SearchTitle);
+        LoadArticle(SearchTitle, false);
     }
 
     private void SearchTitleEditOnTextSubmitted(string newText)
     {
         SearchTitle = newText;
-        LoadArticle(SearchTitle);
+        LoadArticle(SearchTitle, true);
     }
 
-    protected async void LoadArticle(string title)
+    protected async void LoadArticle(string title, bool saveToDisk)
     {
         GD.Print("Orch Load Article Start");
         WikiArticle wikiArticle = await WikipediaScraper.FetchArticleAsync(title);
@@ -34,5 +34,10 @@ public partial class DemoSceneOrchestrator : Node
         GD.Print("Orch Load Article Loaded, about to load article");
         ArticleNode.LoadArticle(wikiArticle);
         GD.Print("Orch Load Article Finish");
+        if (saveToDisk)
+        {
+            string path = ArticleNode.SaveToDisk();
+            GD.Print($"Saved article to {path}");
+        }
     }
 }
