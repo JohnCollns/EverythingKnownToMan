@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dliwaqrnmpj58"]
+
+[ext_resource type="Script" uid="uid://buy1pf07o7fe4" path="res://character_controller.gd" id="1_2nifc"]
+[ext_resource type="Shape2D" uid="uid://bqgn1v6ul8uge" path="res://PlayerShape.tres" id="1_bexhn"]
+[ext_resource type="Texture2D" uid="uid://b8xig4qi3fv6l" path="res://Placeholder Sprites/researcher_placeholder.png" id="1_t7iv1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bexhn"]
+
+[node name="Level" type="Node2D" unique_id=267726624]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1565461489]
+polygon = PackedVector2Array(-5080, -12, -4068, -3907, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 30809, -2554, 31135, -9661, 37359, 2370, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=786506712]
+position = Vector2(8961, -12853)
+polygon = PackedVector2Array(9150, 5071, 8245, 2673, 14808, 2130, 15441, 274, 22140, -1084, 31191, -3709, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22140, 3442, 19831, 3442, 18202, 8375, 16844, 8059, 16935, 3940, 9693, 7968)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=282874400]
+material = SubResource("CanvasItemMaterial_bexhn")
+script = ExtResource("1_2nifc")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1533271668]
+position = Vector2(513, -1628)
+zoom = Vector2(0.15, 0.15)
+
+[node name="ResearcherPlaceholder" type="Sprite2D" parent="CharacterBody2D" unique_id=650296275]
+position = Vector2(-3, -546)
+texture = ExtResource("1_t7iv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=572440089]
+position = Vector2(50, -514.75)
+shape = ExtResource("1_bexhn")
