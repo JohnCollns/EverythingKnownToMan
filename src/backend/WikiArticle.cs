@@ -4,6 +4,7 @@ using System.IO;
 using Godot;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace EverythingKnownToMan.backend;
@@ -65,7 +66,14 @@ public class WikiArticle
 
     public string ToJSON()
     {
-        return JsonSerializer.Serialize(this, SerializerOptions);
+        //return JsonSerializer.Serialize(this, SerializerOptions);
+        JsonNode node = JsonSerializer.SerializeToNode(this, SerializerOptions);
+        if (Image != null && Image.IsValid())
+        {
+            //node["image"] = Image.GetSavePath(Title);
+            node["image"] = Path.Combine("images", (Title + "." + Image.FileFormat));
+        }
+        return JsonSerializer.Serialize(node, SerializerOptions);
     }
 
     public string SaveToDisk()

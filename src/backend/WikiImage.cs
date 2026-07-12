@@ -90,7 +90,7 @@ public class WikiImage
         return !FileFormat.IsEmpty && ImageBytes != null && ImageBytes.Length > 0;
     }
 
-    public string SaveToDisk(string fileName)
+    public string GetSavePath(string fileName)
     {
         string exeDir = AppContext.BaseDirectory;
         // Returns:
@@ -101,6 +101,12 @@ public class WikiImage
         string projectRoot = Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
         //GD.Print(" projectRoot: " + projectRoot);
         string path = Path.Combine(projectRoot, "generated", "images", (fileName + "." + FileFormat));
+        return path;
+    }
+
+    public string SaveToDisk(string fileName)
+    {
+        string path = GetSavePath(fileName);
         //GD.Print(" path: " + path);
         File.WriteAllBytes(path, ImageBytes);
         return path;
