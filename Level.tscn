@@ -2,22 +2,479 @@
 
 [ext_resource type="Script" uid="uid://buy1pf07o7fe4" path="res://character_controller.gd" id="1_2nifc"]
 [ext_resource type="Shape2D" uid="uid://bqgn1v6ul8uge" path="res://PlayerShape.tres" id="1_bexhn"]
-[ext_resource type="Texture2D" uid="uid://b8xig4qi3fv6l" path="res://Placeholder Sprites/researcher_placeholder.png" id="1_t7iv1"]
+[ext_resource type="Texture2D" uid="uid://dl1i4xnp1anvo" path="res://Assets/Backgrounds/Night sky.JPG" id="1_m3clv"]
+[ext_resource type="Texture2D" uid="uid://bilhav312hqco" path="res://Assets/Backgrounds/Bg mountains.png" id="2_4eo0i"]
+[ext_resource type="Texture2D" uid="uid://dub3lhfk7je72" path="res://Assets/Pointy mountain/Pointy_m_phase1.png" id="2_mxnmf"]
+[ext_resource type="Texture2D" uid="uid://ds6s1jba2qtod" path="res://Assets/Colour mountain/Colour rock L.png" id="3_5qkpu"]
+[ext_resource type="Texture2D" uid="uid://ccmlcvq326sdd" path="res://Assets/Colour mountain/Colour rock S.png" id="3_dcckh"]
+[ext_resource type="Texture2D" uid="uid://b31xhk8q645al" path="res://Assets/Round mountain/Round_m_phase1.png" id="3_viiqw"]
+[ext_resource type="Texture2D" uid="uid://bvpvk7b2cc01g" path="res://Assets/Colour mountain/Colour_m_phase1.png" id="4_86ljf"]
+[ext_resource type="Texture2D" uid="uid://bb8j8oe5xfxky" path="res://Assets/Characters/Researcher.png" id="4_mxnmf"]
+[ext_resource type="Texture2D" uid="uid://crm6sqnxjvbod" path="res://Assets/Round mountain/Round_m_phase2.png" id="4_pd0bf"]
 [ext_resource type="PackedScene" uid="uid://daosbn20t805o" path="res://content/UI/ArticleDemo.tscn" id="4_wkftn"]
+[ext_resource type="Texture2D" uid="uid://pvceh2ccpq01" path="res://Assets/Colour mountain/Colour_m_phase3.png" id="4_yye10"]
+[ext_resource type="Texture2D" uid="uid://b7wph4mcw76kt" path="res://Assets/Pointy mountain/Pointy_m_phase2.png" id="5_3ywx5"]
 [ext_resource type="Texture2D" uid="uid://bwbupgaovq8bw" path="res://Assets/Round mountain/Round rock L.png" id="5_q4iis"]
+[ext_resource type="Texture2D" uid="uid://dn3apf74v28t4" path="res://Assets/Pointy mountain/Pointy_m_phase3.png" id="10_105nu"]
+[ext_resource type="Texture2D" uid="uid://hweignnkcfes" path="res://Assets/Round mountain/Round rock S.png" id="10_d6u53"]
+[ext_resource type="Texture2D" uid="uid://crdmkevdt1e2" path="res://Assets/Round mountain/Round rock M.png" id="12_sypgb"]
+[ext_resource type="Texture2D" uid="uid://dqcyjvym4p4n3" path="res://Assets/Pointy mountain/Pointy rock L.png" id="13_sypgb"]
+[ext_resource type="Texture2D" uid="uid://4g2m0sdnde4d" path="res://Assets/Round mountain/Round_m_phase3.png" id="14_dn5x0"]
+[ext_resource type="Texture2D" uid="uid://bae4gajou75s3" path="res://Assets/Pointy mountain/Pointy rock S.png" id="15_esphl"]
+[ext_resource type="Texture2D" uid="uid://cojwixtgu1edv" path="res://Assets/Pointy mountain/Pointy rock M.png" id="19_pd0bf"]
+[ext_resource type="Texture2D" uid="uid://ckvn35c7uew77" path="res://Assets/Colour mountain/Colour_m_phase2.png" id="23_s0cgv"]
+[ext_resource type="Texture2D" uid="uid://rgtgyldak2gm" path="res://Assets/Colour mountain/Colour rock M.png" id="24_3ppgv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bexhn"]
 
 [node name="Level" type="Node2D" unique_id=267726624]
 position = Vector2(7680, 24192)
 
+[node name="Background" type="Parallax2D" parent="." unique_id=1097480115]
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(1277, 55605)
+
+[node name="NightSky" type="Sprite2D" parent="Background" unique_id=646260766]
+position = Vector2(-4096.0005, -4568)
+scale = Vector2(1.3428702, 1.2254202)
+texture = ExtResource("1_m3clv")
+centered = false
+
+[node name="BgMountains" type="Sprite2D" parent="Background" unique_id=589915088]
+position = Vector2(-4091.0002, -4567)
+scale = Vector2(1.3431745, 1.3189442)
+texture = ExtResource("2_4eo0i")
+centered = false
+
+[node name="Midground" type="Parallax2D" parent="." unique_id=1429088615]
+scroll_scale = Vector2(0.4, 1)
+
+[node name="RoundRockM" type="Sprite2D" parent="Midground" unique_id=25875377]
+position = Vector2(30641, 52422)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM2" type="Sprite2D" parent="Midground" unique_id=1003650089]
+position = Vector2(27626, 52458)
+texture = ExtResource("12_sypgb")
+
+[node name="PointyRockM" type="Sprite2D" parent="Midground" unique_id=1765003672]
+position = Vector2(29656, 52537)
+texture = ExtResource("19_pd0bf")
+
+[node name="PointyRockS" type="Sprite2D" parent="Midground" unique_id=1495989053]
+position = Vector2(28176, 52479)
+texture = ExtResource("15_esphl")
+
+[node name="PointyRockS2" type="Sprite2D" parent="Midground" unique_id=865644892]
+position = Vector2(30238, 52515)
+texture = ExtResource("15_esphl")
+
+[node name="PointyMPhase5" type="Sprite2D" parent="Midground" unique_id=1432845405]
+position = Vector2(30439, 40273)
+texture = ExtResource("10_105nu")
+
+[node name="PointyMPhase6" type="Sprite2D" parent="Midground" unique_id=476799111]
+position = Vector2(42072, 37257)
+texture = ExtResource("5_3ywx5")
+
+[node name="PointyMPhase7" type="Sprite2D" parent="Midground" unique_id=382251196]
+position = Vector2(99317, 33289)
+texture = ExtResource("10_105nu")
+
+[node name="RoundMPhase5" type="Sprite2D" parent="Midground" unique_id=563817661]
+position = Vector2(63509, 33200)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase6" type="Sprite2D" parent="Midground" unique_id=1184862987]
+position = Vector2(138686, 25782)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase7" type="Sprite2D" parent="Midground" unique_id=493872925]
+position = Vector2(201817, 1290)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase8" type="Sprite2D" parent="Midground" unique_id=1385948691]
+position = Vector2(179225, 10709)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase9" type="Sprite2D" parent="Midground" unique_id=191147449]
+position = Vector2(115810, 29408)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase10" type="Sprite2D" parent="Midground" unique_id=715147797]
+position = Vector2(171746, 14304)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase11" type="Sprite2D" parent="Midground" unique_id=533163649]
+position = Vector2(93672, 34171)
+texture = ExtResource("14_dn5x0")
+
+[node name="RoundMPhase12" type="Sprite2D" parent="Midground" unique_id=1890248925]
+position = Vector2(122258, 29352)
+texture = ExtResource("14_dn5x0")
+
+[node name="ColourMPhase4" type="Sprite2D" parent="Midground" unique_id=749812595]
+position = Vector2(187871, 10281)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase5" type="Sprite2D" parent="Midground" unique_id=154159835]
+position = Vector2(72159, 35369)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase6" type="Sprite2D" parent="Midground" unique_id=1154450380]
+position = Vector2(149343, 21289)
+texture = ExtResource("4_yye10")
+
+[node name="PointyMPhase12" type="Sprite2D" parent="Midground" unique_id=329219569]
+position = Vector2(55581.5, 33371)
+texture = ExtResource("10_105nu")
+
+[node name="PointyMPhase13" type="Sprite2D" parent="Midground" unique_id=513057203]
+position = Vector2(139994.5, 25841)
+texture = ExtResource("10_105nu")
+
+[node name="PointyMPhase14" type="Sprite2D" parent="Midground" unique_id=1704946138]
+position = Vector2(129693.5, 29089)
+texture = ExtResource("5_3ywx5")
+
+[node name="ColourMPhase8" type="Sprite2D" parent="Midground" unique_id=1303876861]
+position = Vector2(176210, 11080.5)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase11" type="Sprite2D" parent="Midground" unique_id=1959756629]
+position = Vector2(183827.5, 9935)
+texture = ExtResource("4_86ljf")
+
+[node name="PointyMPhase15" type="Sprite2D" parent="Midground" unique_id=744754402]
+position = Vector2(192249, 7044.5)
+texture = ExtResource("10_105nu")
+
+[node name="RoundMPhase19" type="Sprite2D" parent="Midground" unique_id=872818387]
+position = Vector2(149824.5, 21594)
+texture = ExtResource("4_pd0bf")
+
+[node name="ColourMPhase12" type="Sprite2D" parent="Midground" unique_id=1388186177]
+position = Vector2(96782.5, 34158)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase13" type="Sprite2D" parent="Midground" unique_id=1986013322]
+position = Vector2(132117.5, 28993)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase15" type="Sprite2D" parent="Midground" unique_id=171932683]
+position = Vector2(198678.5, 2345)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase14" type="Sprite2D" parent="Midground" unique_id=620616559]
+position = Vector2(112161.5, 29580)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase16" type="Sprite2D" parent="Midground" unique_id=1950865347]
+position = Vector2(161933.5, 17958)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase2" type="Sprite2D" parent="Midground" unique_id=1936261719]
+position = Vector2(61532, 33252)
+texture = ExtResource("23_s0cgv")
+
+[node name="ColourMPhase10" type="Sprite2D" parent="Midground" unique_id=1880079606]
+position = Vector2(104860, 31971)
+texture = ExtResource("23_s0cgv")
+
+[node name="ColourMPhase9" type="Sprite2D" parent="Midground" unique_id=1292290598]
+position = Vector2(204124, -1436)
+texture = ExtResource("23_s0cgv")
+
+[node name="ColourMPhase1" type="Sprite2D" parent="Midground" unique_id=1467523154]
+position = Vector2(120415, 29097)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase7" type="Sprite2D" parent="Midground" unique_id=246457181]
+position = Vector2(34783, 39209)
+texture = ExtResource("4_86ljf")
+
+[node name="PointyMPhase8" type="Sprite2D" parent="Midground" unique_id=932639357]
+position = Vector2(164614, 17765)
+texture = ExtResource("10_105nu")
+
+[node name="PointyMPhase9" type="Sprite2D" parent="Midground" unique_id=1316385836]
+position = Vector2(86406, 35557)
+texture = ExtResource("10_105nu")
+
+[node name="PointyMPhase10" type="Sprite2D" parent="Midground" unique_id=144583527]
+position = Vector2(50822, 35173)
+texture = ExtResource("10_105nu")
+
+[node name="PointyMPhase11" type="Sprite2D" parent="Midground" unique_id=1816930025]
+position = Vector2(73526, 35771)
+texture = ExtResource("10_105nu")
+
+[node name="RoundMPhase1" type="Sprite2D" parent="Midground" unique_id=532274210]
+position = Vector2(14499, 51844)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase3" type="Sprite2D" parent="Midground" unique_id=1275067146]
+position = Vector2(44868, 37506)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase4" type="Sprite2D" parent="Midground" unique_id=2071633839]
+position = Vector2(187332.5, 9346.5)
+texture = ExtResource("3_viiqw")
+
+[node name="ColourMPhase3" type="Sprite2D" parent="Midground" unique_id=1434957319]
+position = Vector2(8157, 54134)
+texture = ExtResource("4_yye10")
+
+[node name="RoundMPhase2" type="Sprite2D" parent="Midground" unique_id=1685750672]
+position = Vector2(10481, 53129)
+texture = ExtResource("4_pd0bf")
+
+[node name="RockStructure" type="Sprite2D" parent="Midground" unique_id=1047694723]
+position = Vector2(-3735, 51895)
+texture = ExtResource("2_mxnmf")
+centered = false
+
+[node name="ColourMountain" type="Sprite2D" parent="Midground" unique_id=1582162730]
+position = Vector2(503, 52700)
+texture = ExtResource("4_86ljf")
+centered = false
+
+[node name="PointyMPhase2" type="Sprite2D" parent="Midground" unique_id=1684708461]
+position = Vector2(4758, 53660)
+texture = ExtResource("5_3ywx5")
+
+[node name="PointyMPhase4" type="Sprite2D" parent="Midground" unique_id=1252238305]
+position = Vector2(107208, 30716)
+texture = ExtResource("5_3ywx5")
+
+[node name="ColourRockS" type="Sprite2D" parent="Midground" unique_id=1267236902]
+position = Vector2(6119, 54454)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockL" type="Sprite2D" parent="Midground" unique_id=1197532189]
+position = Vector2(5546, 54496)
+texture = ExtResource("3_5qkpu")
+
+[node name="RoundMPhase13" type="Sprite2D" parent="Midground" unique_id=1603604798]
+position = Vector2(110054, 29482)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase14" type="Sprite2D" parent="Midground" unique_id=1448003124]
+position = Vector2(157670, 17962)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase15" type="Sprite2D" parent="Midground" unique_id=600927284]
+position = Vector2(143846, 23978)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase16" type="Sprite2D" parent="Midground" unique_id=1213806494]
+position = Vector2(190950, 8490)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase17" type="Sprite2D" parent="Midground" unique_id=797641550]
+position = Vector2(88806, 35242)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase18" type="Sprite2D" parent="Midground" unique_id=716187994]
+position = Vector2(37990, 38314)
+texture = ExtResource("3_viiqw")
+
+[node name="RoundMPhase20" type="Sprite2D" parent="Midground" unique_id=407998198]
+position = Vector2(28727, 40671)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase21" type="Sprite2D" parent="Midground" unique_id=2122397671]
+position = Vector2(58847, 33497)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase22" type="Sprite2D" parent="Midground" unique_id=2076931430]
+position = Vector2(70190, 35603)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase23" type="Sprite2D" parent="Midground" unique_id=2123516477]
+position = Vector2(126870, 29398)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase24" type="Sprite2D" parent="Midground" unique_id=2005460072]
+position = Vector2(205870, -2375)
+texture = ExtResource("4_pd0bf")
+
+[node name="RoundMPhase25" type="Sprite2D" parent="Midground" unique_id=1706155746]
+position = Vector2(113319, 29467)
+texture = ExtResource("14_dn5x0")
+
+[node name="RoundMPhase26" type="Sprite2D" parent="Midground" unique_id=1936620987]
+position = Vector2(135391, 26314)
+texture = ExtResource("14_dn5x0")
+
+[node name="RoundMPhase27" type="Sprite2D" parent="Midground" unique_id=2026032661]
+position = Vector2(166174, 17820)
+texture = ExtResource("14_dn5x0")
+
+[node name="RoundMPhase28" type="Sprite2D" parent="Midground" unique_id=1442761544]
+position = Vector2(199788, 2459)
+texture = ExtResource("14_dn5x0")
+
+[node name="RoundMPhase29" type="Sprite2D" parent="Midground" unique_id=267485281]
+position = Vector2(66423, 34506)
+texture = ExtResource("14_dn5x0")
+
+[node name="RoundMPhase30" type="Sprite2D" parent="Midground" unique_id=78121514]
+position = Vector2(52459, 34986)
+texture = ExtResource("14_dn5x0")
+
+[node name="ColourRockL2" type="Sprite2D" parent="Midground" unique_id=1620149068]
+position = Vector2(12234, 52799)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL3" type="Sprite2D" parent="Midground" unique_id=850857964]
+position = Vector2(22639, 44264)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL4" type="Sprite2D" parent="Midground" unique_id=317405629]
+position = Vector2(28318, 41408)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL5" type="Sprite2D" parent="Midground" unique_id=1549012877]
+position = Vector2(33521, 40048)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL6" type="Sprite2D" parent="Midground" unique_id=612217297]
+position = Vector2(53651, 34709)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL7" type="Sprite2D" parent="Midground" unique_id=1170688875]
+position = Vector2(62220, 34029)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL8" type="Sprite2D" parent="Midground" unique_id=792986370]
+position = Vector2(87711, 36155)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL9" type="Sprite2D" parent="Midground" unique_id=730816055]
+position = Vector2(98093, 34343)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL10" type="Sprite2D" parent="Midground" unique_id=1542289042]
+position = Vector2(109148, 30511)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL11" type="Sprite2D" parent="Midground" unique_id=1431649701]
+position = Vector2(124825, 29861)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL12" type="Sprite2D" parent="Midground" unique_id=275077802]
+position = Vector2(135995, 28290)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL13" type="Sprite2D" parent="Midground" unique_id=1027876485]
+position = Vector2(151076, 21666)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL14" type="Sprite2D" parent="Midground" unique_id=1962300092]
+position = Vector2(159419, 18860)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL15" type="Sprite2D" parent="Midground" unique_id=754872635]
+position = Vector2(181136, 11499)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL16" type="Sprite2D" parent="Midground" unique_id=1150307928]
+position = Vector2(198648, 2964)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourRockL17" type="Sprite2D" parent="Midground" unique_id=793902778]
+position = Vector2(206809, -3021)
+texture = ExtResource("3_5qkpu")
+
+[node name="ColourMPhase17" type="Sprite2D" parent="Midground" unique_id=1385759258]
+position = Vector2(208277, -4399)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase18" type="Sprite2D" parent="Midground" unique_id=1426511702]
+position = Vector2(57406, 33175)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase19" type="Sprite2D" parent="Midground" unique_id=79906960]
+position = Vector2(91317, 34226)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase20" type="Sprite2D" parent="Midground" unique_id=1024430383]
+position = Vector2(137037, 26746)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase21" type="Sprite2D" parent="Midground" unique_id=1906469883]
+position = Vector2(146280, 23686)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase22" type="Sprite2D" parent="Midground" unique_id=286930660]
+position = Vector2(173762, 13577)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase23" type="Sprite2D" parent="Midground" unique_id=695023235]
+position = Vector2(196211, 4344)
+texture = ExtResource("4_86ljf")
+
+[node name="ColourMPhase24" type="Sprite2D" parent="Midground" unique_id=454951804]
+position = Vector2(124614, 29283)
+texture = ExtResource("23_s0cgv")
+
+[node name="ColourMPhase25" type="Sprite2D" parent="Midground" unique_id=1147879083]
+position = Vector2(101340, 33242)
+texture = ExtResource("23_s0cgv")
+
+[node name="ColourMPhase26" type="Sprite2D" parent="Midground" unique_id=887207064]
+position = Vector2(85066, 35925)
+texture = ExtResource("23_s0cgv")
+
+[node name="ColourMPhase27" type="Sprite2D" parent="Midground" unique_id=1694206136]
+position = Vector2(27092, 41286)
+texture = ExtResource("4_yye10")
+
+[node name="ColourMPhase28" type="Sprite2D" parent="Midground" unique_id=1326533839]
+position = Vector2(47402, 37470)
+texture = ExtResource("4_yye10")
+
+[node name="PointyMPhase3" type="Sprite2D" parent="." unique_id=705510232]
+position = Vector2(30742.125, 48545.375)
+scale = Vector2(11.034549, 5.864566)
+texture = ExtResource("10_105nu")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1565461489]
 position = Vector2(128.40625, 54911.6)
 polygon = PackedVector2Array(-5080, -12, -4068, -3907, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 30809, -2554, 31135, -9661, 37359, 2370, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859)
 
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=540483431]
+position = Vector2(110, 54903)
+color = Color(8.04686e-08, 0.08818867, 0, 1)
+polygon = PackedVector2Array(-7551, -3958, -5759, -4505, -4365, -1966, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 23041.182, -2761.8496, 28728.59, -2609.667, 30809, -2554, 31135, -9661, 37359, 2370, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859, -7381, 1884)
+uv = PackedVector2Array(-426, 59)
+
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=786506712]
-position = Vector2(9089.406, 42058.6)
+position = Vector2(9090, 42060)
 polygon = PackedVector2Array(9150, 5071, 8245, 2673, 14808, 2130, 15441, 274, 22140, -1084, 31191, -3709, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22140, 3442, 19831, 3442, 18202, 8375, 16844, 8059, 16935, 3940, 9693, 7968)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=2008040248]
+position = Vector2(9026, 42102)
+color = Color(8.04686e-08, 0.08818867, 0, 1)
+polygon = PackedVector2Array(9150, 5071, 8245, 2673, 14808, 2130, 15441, 274, 22140, -1084, 31191, -3709, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22140, 3442, 19831, 3442, 18202, 8375, 16844, 8059, 16935, 3940, 9693, 7968)
+uv = PackedVector2Array(-426, 59)
+
+[node name="PointyRockL2" type="Sprite2D" parent="." unique_id=1062939976]
+position = Vector2(26472, 51364)
+scale = Vector2(2.1460178, 2.8738956)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL4" type="Sprite2D" parent="." unique_id=420840287]
+position = Vector2(26383, 50451)
+scale = Vector2(2.5813878, 2.337246)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL3" type="Sprite2D" parent="." unique_id=276853042]
+position = Vector2(26469, 52159)
+rotation = -0.27654868
+scale = Vector2(2.3365996, 1.7580662)
+texture = ExtResource("13_sypgb")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=282874400]
 material = SubResource("CanvasItemMaterial_bexhn")
@@ -25,32 +482,420 @@ position = Vector2(128.40625, 54911.6)
 script = ExtResource("1_2nifc")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1533271668]
-position = Vector2(513, -1628)
-zoom = Vector2(0.15, 0.15)
+position = Vector2(-2960.4063, -3892.6016)
+anchor_mode = 0
+zoom = Vector2(0.13, 0.13)
 
 [node name="ResearcherPlaceholder" type="Sprite2D" parent="CharacterBody2D" unique_id=650296275]
 position = Vector2(-3, -546)
-texture = ExtResource("1_t7iv1")
+texture = ExtResource("4_mxnmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=572440089]
 position = Vector2(50, -514.75)
 shape = ExtResource("1_bexhn")
 
 [node name="ArticleDemo" parent="." unique_id=187493832 instance=ExtResource("4_wkftn")]
-position = Vector2(1056.4063, 51965.6)
+position = Vector2(963, 54299)
 scale = Vector2(3, 3)
 bLoadFromDisk = true
 DiskFileName = "Flying Spaghetti Monster"
 
-[node name="RoundRockL" type="Sprite2D" parent="." unique_id=574209483]
-position = Vector2(2018.4063, 54690.6)
+[node name="Foreground" type="Parallax2D" parent="." unique_id=1898084124]
+scroll_offset = Vector2(128, 54784)
+
+[node name="RoundRockL3" type="Sprite2D" parent="Foreground" unique_id=1286642824]
+position = Vector2(8770, -315)
 texture = ExtResource("5_q4iis")
 
-[node name="Foreground" type="Parallax2D" parent="." unique_id=1898084124]
-scroll_offset = Vector2(0, 55040)
+[node name="RoundRockS" type="Sprite2D" parent="Foreground" unique_id=2094566046]
+position = Vector2(2022.5938, 108.39844)
+texture = ExtResource("10_d6u53")
 
-[node name="Midground" type="Parallax2D" parent="." unique_id=1429088615]
-scroll_offset = Vector2(128.40625, 54911.6)
+[node name="RoundRockL" type="Sprite2D" parent="Foreground" unique_id=574209483]
+position = Vector2(2971.5938, 107.39844)
+texture = ExtResource("5_q4iis")
 
-[node name="Background" type="Parallax2D" parent="." unique_id=1097480115]
-scroll_offset = Vector2(128.40625, 54911.6)
+[node name="RoundRockL18" type="Sprite2D" parent="Foreground" unique_id=1307671277]
+position = Vector2(36152, -15309)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL19" type="Sprite2D" parent="Foreground" unique_id=1005397731]
+position = Vector2(57609, -20682)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockM" type="Sprite2D" parent="Foreground" unique_id=1777249992]
+position = Vector2(2595.5938, 314.39844)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM3" type="Sprite2D" parent="Foreground" unique_id=1202371852]
+position = Vector2(8508, -248)
+texture = ExtResource("12_sypgb")
+
+[node name="PointyRockL" type="Sprite2D" parent="Foreground" unique_id=2077511398]
+position = Vector2(-1457.4063, 257.39844)
+texture = ExtResource("13_sypgb")
+
+[node name="RoundRockM2" type="Sprite2D" parent="Foreground" unique_id=23780899]
+position = Vector2(-3841, 270)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM6" type="Sprite2D" parent="Foreground" unique_id=1937839049]
+position = Vector2(19275, -10091)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM7" type="Sprite2D" parent="Foreground" unique_id=782666770]
+position = Vector2(34076, -14736)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM8" type="Sprite2D" parent="Foreground" unique_id=1517772228]
+position = Vector2(50545, -17967)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM9" type="Sprite2D" parent="Foreground" unique_id=890480713]
+position = Vector2(59708, -20374)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM10" type="Sprite2D" parent="Foreground" unique_id=1662567826]
+position = Vector2(84905, -17586)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM11" type="Sprite2D" parent="Foreground" unique_id=502901466]
+position = Vector2(113532, -24307)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM12" type="Sprite2D" parent="Foreground" unique_id=1370798560]
+position = Vector2(137641, -26619)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM17" type="Sprite2D" parent="Foreground" unique_id=1323920000]
+position = Vector2(143767, -28717)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM13" type="Sprite2D" parent="Foreground" unique_id=237894870]
+position = Vector2(159672, -36307)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM14" type="Sprite2D" parent="Foreground" unique_id=72013303]
+position = Vector2(186528, -43526)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockM15" type="Sprite2D" parent="Foreground" unique_id=1623706380]
+position = Vector2(196673, -49737)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockL2" type="Sprite2D" parent="Foreground" unique_id=1269759576]
+position = Vector2(4937, 244)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockS2" type="Sprite2D" parent="Foreground" unique_id=887119568]
+position = Vector2(5504, 74)
+texture = ExtResource("10_d6u53")
+
+[node name="PointyRockS" type="Sprite2D" parent="Foreground" unique_id=999663790]
+position = Vector2(6122, -116)
+texture = ExtResource("15_esphl")
+
+[node name="RoundMPhase3" type="Sprite2D" parent="Foreground" unique_id=951666452]
+position = Vector2(-2611, -11)
+texture = ExtResource("14_dn5x0")
+
+[node name="PointyRockM2" type="Sprite2D" parent="Foreground" unique_id=1607280109]
+position = Vector2(11721, -1273)
+texture = ExtResource("19_pd0bf")
+
+[node name="PointyRockM" type="Sprite2D" parent="Foreground" unique_id=686927714]
+position = Vector2(7337, 158)
+texture = ExtResource("19_pd0bf")
+
+[node name="RoundRockL4" type="Sprite2D" parent="Foreground" unique_id=1398238693]
+position = Vector2(18296, -2683)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL14" type="Sprite2D" parent="Foreground" unique_id=185521610]
+position = Vector2(68153, -19885)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL15" type="Sprite2D" parent="Foreground" unique_id=1849066533]
+position = Vector2(90530, -19666)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL16" type="Sprite2D" parent="Foreground" unique_id=1929779402]
+position = Vector2(125882, -24768)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL17" type="Sprite2D" parent="Foreground" unique_id=1262241611]
+position = Vector2(182202, -43581)
+scale = Vector2(2.9511287, 2.768415)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL6" type="Sprite2D" parent="Foreground" unique_id=1826262706]
+position = Vector2(18024, -10096)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL7" type="Sprite2D" parent="Foreground" unique_id=296097643]
+position = Vector2(41793, -16829)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL8" type="Sprite2D" parent="Foreground" unique_id=969672431]
+position = Vector2(74555, -17135)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL9" type="Sprite2D" parent="Foreground" unique_id=2021986945]
+position = Vector2(92311, -20073)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL10" type="Sprite2D" parent="Foreground" unique_id=166018320]
+position = Vector2(123314, -25052)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL11" type="Sprite2D" parent="Foreground" unique_id=417198192]
+position = Vector2(146230, -30034)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL12" type="Sprite2D" parent="Foreground" unique_id=1793684794]
+position = Vector2(181607, -43342)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL13" type="Sprite2D" parent="Foreground" unique_id=1358163128]
+position = Vector2(206689, -56869)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL5" type="Sprite2D" parent="Foreground" unique_id=79614735]
+position = Vector2(20442, -10322)
+texture = ExtResource("5_q4iis")
+
+[node name="PointyRockS2" type="Sprite2D" parent="Foreground" unique_id=2069891822]
+position = Vector2(17254, -2382)
+texture = ExtResource("15_esphl")
+
+[node name="RoundRockM4" type="Sprite2D" parent="Foreground" unique_id=2140203087]
+position = Vector2(20024, -2545)
+texture = ExtResource("12_sypgb")
+
+[node name="PointyRockL2" type="Sprite2D" parent="Foreground" unique_id=236867963]
+position = Vector2(23000, -2446)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL3" type="Sprite2D" parent="Foreground" unique_id=1419174140]
+position = Vector2(26111, -12646)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL4" type="Sprite2D" parent="Foreground" unique_id=1829844605]
+position = Vector2(40673, -16478)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL5" type="Sprite2D" parent="Foreground" unique_id=1512586522]
+position = Vector2(73028, -17787)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL6" type="Sprite2D" parent="Foreground" unique_id=372731333]
+position = Vector2(64201, -20106)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL7" type="Sprite2D" parent="Foreground" unique_id=289452596]
+position = Vector2(103712, -22143)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL8" type="Sprite2D" parent="Foreground" unique_id=275117594]
+position = Vector2(98236, -20106)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL9" type="Sprite2D" parent="Foreground" unique_id=1647880735]
+position = Vector2(118910, -24867)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL10" type="Sprite2D" parent="Foreground" unique_id=43561106]
+position = Vector2(138496, -26907)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL15" type="Sprite2D" parent="Foreground" unique_id=239804209]
+position = Vector2(132344, -24959)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL18" type="Sprite2D" parent="Foreground" unique_id=559244456]
+position = Vector2(117599, -24310)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL11" type="Sprite2D" parent="Foreground" unique_id=1579783849]
+position = Vector2(152437, -33776)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL17" type="Sprite2D" parent="Foreground" unique_id=1912888191]
+position = Vector2(165384, -36123)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL16" type="Sprite2D" parent="Foreground" unique_id=1872083163]
+position = Vector2(149264, -31454)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL12" type="Sprite2D" parent="Foreground" unique_id=1818416831]
+position = Vector2(163420, -35952)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL13" type="Sprite2D" parent="Foreground" unique_id=2056749965]
+position = Vector2(189365, -43841)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL14" type="Sprite2D" parent="Foreground" unique_id=1502934733]
+position = Vector2(203103, -54790)
+texture = ExtResource("13_sypgb")
+
+[node name="RoundRockL20" type="Sprite2D" parent="Foreground" unique_id=1192792416]
+position = Vector2(16024, -2358)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockL21" type="Sprite2D" parent="Foreground" unique_id=255327984]
+position = Vector2(31918, -14081)
+texture = ExtResource("5_q4iis")
+
+[node name="RoundRockM16" type="Sprite2D" parent="Foreground" unique_id=1143672557]
+position = Vector2(73801, -17285)
+texture = ExtResource("12_sypgb")
+
+[node name="RoundRockS3" type="Sprite2D" parent="Foreground" unique_id=1725387909]
+position = Vector2(158770, -35820)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS10" type="Sprite2D" parent="Foreground" unique_id=1338145787]
+position = Vector2(155467, -35584)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS4" type="Sprite2D" parent="Foreground" unique_id=1087550234]
+position = Vector2(160139, -35998)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS11" type="Sprite2D" parent="Foreground" unique_id=773502672]
+position = Vector2(153790, -34449)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS5" type="Sprite2D" parent="Foreground" unique_id=262681224]
+position = Vector2(171124, -39048)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS6" type="Sprite2D" parent="Foreground" unique_id=255321243]
+position = Vector2(177955, -42793)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS7" type="Sprite2D" parent="Foreground" unique_id=249703647]
+position = Vector2(196401, -49434)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS8" type="Sprite2D" parent="Foreground" unique_id=319291441]
+position = Vector2(202492, -54367)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockS9" type="Sprite2D" parent="Foreground" unique_id=99927586]
+position = Vector2(202302, -54050)
+texture = ExtResource("10_d6u53")
+
+[node name="RoundRockM5" type="Sprite2D" parent="Foreground" unique_id=1193193886]
+position = Vector2(21466, -2225)
+texture = ExtResource("12_sypgb")
+
+[node name="ColourRockM" type="Sprite2D" parent="Foreground" unique_id=507886685]
+position = Vector2(16549, -2561)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM2" type="Sprite2D" parent="Foreground" unique_id=1357927104]
+position = Vector2(3584, -188)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM3" type="Sprite2D" parent="Foreground" unique_id=299005087]
+position = Vector2(19911, -10454)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM4" type="Sprite2D" parent="Foreground" unique_id=1351578446]
+position = Vector2(32801, -14495)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM5" type="Sprite2D" parent="Foreground" unique_id=624975263]
+position = Vector2(47317, -16818)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM6" type="Sprite2D" parent="Foreground" unique_id=1462027932]
+position = Vector2(56955, -20650)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM7" type="Sprite2D" parent="Foreground" unique_id=1433015872]
+position = Vector2(65200, -20139)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM8" type="Sprite2D" parent="Foreground" unique_id=1611976017]
+position = Vector2(68846, -19396)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM9" type="Sprite2D" parent="Foreground" unique_id=1072538973]
+position = Vector2(75674, -17143)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM10" type="Sprite2D" parent="Foreground" unique_id=1870591519]
+position = Vector2(91384, -19795)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM11" type="Sprite2D" parent="Foreground" unique_id=113738435]
+position = Vector2(108448, -24018)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM12" type="Sprite2D" parent="Foreground" unique_id=1880144646]
+position = Vector2(116702, -24901)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM13" type="Sprite2D" parent="Foreground" unique_id=1795782675]
+position = Vector2(140983, -28413)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM14" type="Sprite2D" parent="Foreground" unique_id=134067431]
+position = Vector2(147317, -30947)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM15" type="Sprite2D" parent="Foreground" unique_id=973540102]
+position = Vector2(159237, -36187)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM16" type="Sprite2D" parent="Foreground" unique_id=2068385717]
+position = Vector2(173766, -40290)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM17" type="Sprite2D" parent="Foreground" unique_id=2031810444]
+position = Vector2(169804, -38154)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM18" type="Sprite2D" parent="Foreground" unique_id=1115013693]
+position = Vector2(168371, -37480)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM19" type="Sprite2D" parent="Foreground" unique_id=1384625112]
+position = Vector2(185823, -43944)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockM20" type="Sprite2D" parent="Foreground" unique_id=412990012]
+position = Vector2(194875, -48870)
+texture = ExtResource("24_3ppgv")
+
+[node name="ColourRockS" type="Sprite2D" parent="Foreground" unique_id=867342682]
+position = Vector2(9474, -975)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockS2" type="Sprite2D" parent="Foreground" unique_id=1159582408]
+position = Vector2(11346, -1518)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockS3" type="Sprite2D" parent="Foreground" unique_id=228252654]
+position = Vector2(17771, -2710)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockS4" type="Sprite2D" parent="Foreground" unique_id=1096819807]
+position = Vector2(25515, -12689)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockS5" type="Sprite2D" parent="Foreground" unique_id=1255903248]
+position = Vector2(36878, -15558)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockS6" type="Sprite2D" parent="Foreground" unique_id=1333038968]
+position = Vector2(42935, -16659)
+texture = ExtResource("3_dcckh")
+
+[node name="ColourRockS7" type="Sprite2D" parent="Foreground" unique_id=1005723384]
+position = Vector2(56070, -20339)
+texture = ExtResource("3_dcckh")
