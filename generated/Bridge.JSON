@@ -1,0 +1,11 @@
+{
+  "Title": "Bridge",
+  "Description": "Structure built to span physical obstacles",
+  "Paragraph": "A bridge is a structure designed to span an obstacle, such as a river or railway, allowing vehicles, pedestrians, and other loads to pass across. Most bridges consist of a flat deck, supported by beams, arches, or cables. These structures rest on a foundation that is carefully designed to transfer the weight of the bridge to the subsoil without settling.",
+  "Tags": [
+    "connection",
+    " swimming",
+    ""
+  ],
+  "image": "images\\Bridge.jpg"
+}

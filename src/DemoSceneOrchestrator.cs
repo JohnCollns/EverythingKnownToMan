@@ -43,7 +43,6 @@ public partial class DemoSceneOrchestrator : Node
     {
         // example: 
         // E:\Godot\GameAWeek26\EverythingKnownToMan\ArticleList.csv
-        // E:\Godot\GameAWeek26\EverythingKnownToMan\ArticleList_small.csv
         if (!Path.Exists(fullPath))
         {
             GD.PushError("Specified CSV file does not exist.");

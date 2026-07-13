@@ -1,0 +1,10 @@
+{
+  "Title": "Multi-factor authentication",
+  "Description": "Method of computer access control",
+  "Paragraph": "Multi-factor authentication (MFA), also known as two-factor authentication (2FA), is an electronic authentication method in which a user is granted access to a website or application only after successfully presenting two or more distinct types of evidence to an authentication mechanism. MFA protects personal data\u2014which may include personal identification or financial assets\u2014from being accessed by an unauthorized third party that may have been able to discover, for example, a single password.",
+  "Tags": [
+    "unlocking",
+    ""
+  ],
+  "image": "images\\Multi-factor authentication.jpg"
+}

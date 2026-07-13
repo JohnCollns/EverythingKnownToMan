@@ -1,0 +1,9 @@
+{
+  "Title": "Touch ID",
+  "Description": "Electronic fingerprint recognition feature by Apple",
+  "Paragraph": "Touch ID is an electronic fingerprint recognition feature designed and released by Apple Inc. that allows users to unlock devices, make purchases in the various Apple digital media stores, and authenticate Apple Pay online or in apps. It can also be used to lock and unlock password-protected notes on iPhone and iPad. Touch ID was first introduced in iPhones with the iPhone 5s in 2013. In 2015, Apple introduced a faster second-generation Touch ID in the iPhone 6s; a year later in 2016, it made its laptop debut in the MacBook Pro integrated on the right side of the Touch Bar. Touch ID has also been used on iPads since the iPad Air 2 was introduced in 2014, later being phased out on the iPad Pro models for Face ID. In MacBooks, each user account can have up to three fingerprints, and a total of five fingerprints across the system. Fingerprint information is stored locally in a secure enclave on the Apple A7 and later chips, not in the cloud, a design choice intended to secure fingerprint information from users or malicious attackers.",
+  "Tags": [
+    "unlocking",
+    ""
+  ]
+}
