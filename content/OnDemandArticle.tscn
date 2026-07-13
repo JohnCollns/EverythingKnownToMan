@@ -9,7 +9,7 @@ ArticleNode = NodePath("ArticleDemo")
 SearchTitle = ""
 
 [node name="ArticleDemo" parent="." unique_id=187493832 instance=ExtResource("2_xvpoj")]
-position = Vector2(104, 0)
+position = Vector2(104, 188)
 
 [node name="SearchLineEdit" type="LineEdit" parent="." unique_id=1293394917]
 custom_minimum_size = Vector2(200, 0)

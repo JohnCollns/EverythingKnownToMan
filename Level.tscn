@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://buy1pf07o7fe4" path="res://character_controller.gd" id="1_2nifc"]
 [ext_resource type="Shape2D" uid="uid://bqgn1v6ul8uge" path="res://PlayerShape.tres" id="1_bexhn"]
 [ext_resource type="Texture2D" uid="uid://b8xig4qi3fv6l" path="res://Placeholder Sprites/researcher_placeholder.png" id="1_t7iv1"]
+[ext_resource type="PackedScene" uid="uid://daosbn20t805o" path="res://content/UI/ArticleDemo.tscn" id="4_wkftn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bexhn"]
 
@@ -30,3 +31,9 @@ texture = ExtResource("1_t7iv1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=572440089]
 position = Vector2(50, -514.75)
 shape = ExtResource("1_bexhn")
+
+[node name="ArticleDemo" parent="." unique_id=187493832 instance=ExtResource("4_wkftn")]
+position = Vector2(928, -2946)
+scale = Vector2(3, 3)
+bLoadFromDisk = true
+DiskFileName = "Flying Spaghetti Monster"

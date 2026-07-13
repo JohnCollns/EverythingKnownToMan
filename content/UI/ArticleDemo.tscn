@@ -12,9 +12,8 @@ ParagraphLabel = NodePath("HBoxContainer/VBoxContainer/ParagraphLabel")
 TagsLabel = NodePath("HBoxContainer/VBoxContainer/TagsLabel")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1282715380]
-offset_top = 186.0
-offset_right = 314.0
-offset_bottom = 1122.0
+offset_right = 632.0
+offset_bottom = 936.0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=2052792300]
 layout_mode = 2
