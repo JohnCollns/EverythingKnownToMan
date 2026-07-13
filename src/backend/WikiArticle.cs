@@ -41,6 +41,8 @@ public class WikiArticle
         IncludeFields = true
     };
 
+    public static readonly string JsonImageAttribute = "\"image\": ";
+
     public WikiArticle() {}
     public WikiArticle(string title_, string paragraph_, byte[] image_) {}
     public WikiArticle(string title_, string paragraph_, WikiImage image_) {}
@@ -66,11 +68,9 @@ public class WikiArticle
 
     public string ToJSON()
     {
-        //return JsonSerializer.Serialize(this, SerializerOptions);
         JsonNode node = JsonSerializer.SerializeToNode(this, SerializerOptions);
         if (Image != null && Image.IsValid())
         {
-            //node["image"] = Image.GetSavePath(Title);
             node["image"] = Path.Combine("images", (Title + "." + Image.FileFormat));
         }
         return JsonSerializer.Serialize(node, SerializerOptions);
@@ -89,6 +89,39 @@ public class WikiArticle
         GD.Print(" WikiArticle saving to: " + path);
         File.WriteAllText(path, ToJSON());
         Image.SaveToDisk(Title);
+        return path;
+    }
+
+    public static WikiArticle FromJSON(string json)
+    {
+        WikiArticle article = JsonSerializer.Deserialize<WikiArticle>(json, SerializerOptions);
+        try
+        {
+            string imageLine = json.Split("\n")[5];
+            if (imageLine.Contains(JsonImageAttribute))
+            {
+                string format = imageLine.Split(".")[1][..^2];
+                string imagePath = WikiArticle.RelativePathToFullPath($"images\\{article.Title}", true);
+                byte[] imageBytes = File.ReadAllBytes(imagePath + "." + format);
+                WikiImage image = new WikiImage(format, imageBytes);
+                // load the image
+                article.Image = image;
+            }
+        }
+        catch (Exception e)
+        {
+            GD.Print($"WikiArticle.FromJSON failed to find image with error: {e.Message}");
+        }
+
+        return article;
+    }
+    
+    public static string RelativePathToFullPath(string relativePath, bool bIncludeGenerated)
+    {
+        string exeDir = AppContext.BaseDirectory;
+        string projectRoot = Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
+        string path = bIncludeGenerated 
+            ? Path.Combine(projectRoot, "generated", relativePath) : Path.Combine(projectRoot, relativePath);
         return path;
     }
 }

@@ -6,6 +6,7 @@
 [node name="OnDemandArticle" type="Node2D" unique_id=994096859 node_paths=PackedStringArray("ArticleNode")]
 script = ExtResource("1_sx76q")
 ArticleNode = NodePath("ArticleDemo")
+SearchTitle = ""
 
 [node name="ArticleDemo" parent="." unique_id=187493832 instance=ExtResource("2_xvpoj")]
 position = Vector2(104, 0)
@@ -17,3 +18,18 @@ offset_top = 75.0
 offset_right = 303.0
 offset_bottom = 106.0
 placeholder_text = "Search for an Article"
+
+[node name="FileLineEdit" type="LineEdit" parent="." unique_id=871483795]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 589.0
+offset_top = 75.0
+offset_right = 789.0
+offset_bottom = 106.0
+placeholder_text = "Load an article from disk"
+
+[node name="SaveButton" type="Button" parent="." unique_id=305091977]
+offset_left = 103.0
+offset_top = 108.0
+offset_right = 159.0
+offset_bottom = 134.0
+text = "Save"
