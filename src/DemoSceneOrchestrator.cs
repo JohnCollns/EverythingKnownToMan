@@ -11,6 +11,8 @@ public partial class DemoSceneOrchestrator : Node
     private LineEdit SearchLineEdit;
     private LineEdit FileLineEdit;
     private Button SaveButton;
+    private LineEdit TagLineEdit;
+    private Button ClearTagsButton;
 
     public override void _Ready()
     {
@@ -22,11 +24,26 @@ public partial class DemoSceneOrchestrator : Node
         FileLineEdit.TextSubmitted += TryLoadArticleFromDisk;
         SaveButton = GetNode<Button>("SaveButton");
         SaveButton.Pressed += OnSaveButtonOnPressed;
+        TagLineEdit = GetNode<LineEdit>("TagLineEdit");
+        TagLineEdit.TextSubmitted += newText => ArticleNode.AddTag(newText);
+        ClearTagsButton =  GetNode<Button>("ClearTagsButton");
+        ClearTagsButton.Pressed += () =>  ArticleNode.ClearTags();
+        //ClearTagsButton.Pressed += OnClearTagsButtonOnPressed;
 
         if (!string.IsNullOrEmpty(SearchTitle))
         {
             LoadArticle(SearchTitle, false);
         }
+    }
+
+    private void OnTagLineEditOnTextSubmitted(string newText)
+    {
+        ArticleNode.AddTag(newText);
+    }
+
+    private void OnClearTagsButtonOnPressed()
+    {
+        ArticleNode.ClearTags();
     }
 
     private void OnSaveButtonOnPressed()

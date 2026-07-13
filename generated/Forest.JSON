@@ -1,0 +1,10 @@
+{
+  "Title": "Forest",
+  "Description": "Dense collection of trees covering a relatively large area",
+  "Paragraph": "A forest is an ecosystem characterized by a dense community of trees. Hundreds of definitions of forest are used throughout the world, incorporating factors such as tree density, tree height, land use, legal standing, and ecological function. The United Nations\u0027 Food and Agriculture Organization (FAO) defines a forest as, \u0022Land spanning more than 0.5 hectares with trees higher than 5 meters and a canopy cover of more than 10 percent, or trees able to reach these thresholds in situ. It does not include land that is predominantly under agricultural or urban use.\u0022 Using this definition, Global Forest Resources Assessment 2025 found that forests covered 4.14\u00A0billion hectares, or approximately 31 percent of the world\u0027s land area in 2025.",
+  "Tags": [
+    "trees",
+    "pine"
+  ],
+  "image": "images\\Forest.jpg"
+}

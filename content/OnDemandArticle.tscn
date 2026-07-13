@@ -14,22 +14,37 @@ position = Vector2(104, 188)
 [node name="SearchLineEdit" type="LineEdit" parent="." unique_id=1293394917]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 103.0
-offset_top = 75.0
+offset_top = 29.0
 offset_right = 303.0
-offset_bottom = 106.0
+offset_bottom = 60.0
 placeholder_text = "Search for an Article"
 
 [node name="FileLineEdit" type="LineEdit" parent="." unique_id=871483795]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 589.0
-offset_top = 75.0
+offset_top = 29.0
 offset_right = 789.0
-offset_bottom = 106.0
+offset_bottom = 60.0
 placeholder_text = "Load an article from disk"
 
 [node name="SaveButton" type="Button" parent="." unique_id=305091977]
 offset_left = 103.0
-offset_top = 108.0
+offset_top = 62.0
 offset_right = 159.0
-offset_bottom = 134.0
+offset_bottom = 93.0
 text = "Save"
+
+[node name="TagLineEdit" type="LineEdit" parent="." unique_id=1379252932]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 103.0
+offset_top = 96.0
+offset_right = 303.0
+offset_bottom = 127.0
+placeholder_text = "Add a tag"
+
+[node name="ClearTagsButton" type="Button" parent="." unique_id=132873127]
+offset_left = 103.0
+offset_top = 131.0
+offset_right = 159.0
+offset_bottom = 162.0
+text = "Clear All Tags"

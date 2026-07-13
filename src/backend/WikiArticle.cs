@@ -38,7 +38,8 @@ public class WikiArticle
     public static readonly JsonSerializerOptions SerializerOptions = new JsonSerializerOptions
     {
         WriteIndented = true,
-        IncludeFields = true
+        IncludeFields = true,
+        Converters = { new StringNameJsonConverter() }
     };
 
     public static readonly string JsonImageAttribute = "\"image\": ";
@@ -97,15 +98,19 @@ public class WikiArticle
         WikiArticle article = JsonSerializer.Deserialize<WikiArticle>(json, SerializerOptions);
         try
         {
-            string imageLine = json.Split("\n")[5];
-            if (imageLine.Contains(JsonImageAttribute))
+            string[] lines = json.Split("\n");
+            for (int line = 5; line < lines.Length; line++)
             {
-                string format = imageLine.Split(".")[1][..^2];
-                string imagePath = WikiArticle.RelativePathToFullPath($"images\\{article.Title}", true);
-                byte[] imageBytes = File.ReadAllBytes(imagePath + "." + format);
-                WikiImage image = new WikiImage(format, imageBytes);
-                // load the image
-                article.Image = image;
+                if (lines[line].Contains(JsonImageAttribute))
+                {
+                    string format = lines[line].Split(".")[1][..^2];
+                    string imagePath = WikiArticle.RelativePathToFullPath($"images\\{article.Title}", true);
+                    byte[] imageBytes = File.ReadAllBytes(imagePath + "." + format);
+                    WikiImage image = new WikiImage(format, imageBytes);
+                    // load the image
+                    article.Image = image;
+                    break;
+                }
             }
         }
         catch (Exception e)

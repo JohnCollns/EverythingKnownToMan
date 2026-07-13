@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using EverythingKnownToMan.backend;
 using System.Net.Http.Headers;
@@ -37,7 +38,14 @@ public partial class ArticleNode : Node
         TitleLabel.Text = wikiArticle.Title;
         DescLabel.Text = wikiArticle.Description;
         ParagraphLabel.Text = wikiArticle.Paragraph;
-        // TODO TagsLabel.Text = wikiArticle.Title;
+        if (WikiArticle.Tags != null)
+        {
+            TagsLabel.Text = $"Tags: {string.Join(", ", WikiArticle.Tags)}";
+        }
+        else
+        {
+            TagsLabel.Text = "No Tags";
+        }
     }
 
     public static Image ImageFromWikiImage(WikiImage wikiImage)
@@ -101,5 +109,23 @@ public partial class ArticleNode : Node
             GD.PushError(e);
         }
         return false;
+    }
+
+    public void AddTag(StringName newTagName)
+    {
+        GD.Print($"WikiArticle is null: {WikiArticle == null}");
+        GD.Print($"WikiArticle.Tags is null: {WikiArticle.Tags == null}");
+        if (WikiArticle.Tags == null)
+        {
+            WikiArticle.Tags = new HashSet<StringName>();
+        }
+        WikiArticle.Tags.Add(newTagName);
+        LoadArticle(WikiArticle);
+    }
+
+    public void ClearTags()
+    {
+        WikiArticle.Tags.Clear();
+        LoadArticle(WikiArticle);
     }
 }
