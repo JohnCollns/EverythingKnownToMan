@@ -1,0 +1,9 @@
+{
+  "Title": "Cancer",
+  "Description": "Group of diseases involving cell growth",
+  "Paragraph": "Cancer is a group of diseases involving uncontrolled cell growth typically resulting in tumors with the potential to invade or spread to other parts of the body. These malignant tumors contrast with benign tumors, which do not spread. Over 100 types of cancers affect humans.",
+  "Tags": [
+    "destructive"
+  ],
+  "image": "images\\Cancer.jpg"
+}

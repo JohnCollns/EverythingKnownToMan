@@ -1,0 +1,9 @@
+{
+  "Title": "Drill bit",
+  "Description": "Type of cutting tool",
+  "Paragraph": "A drill bit is a cutting tool used with a drill to remove material and create holes, typically with a circular cross-section. Drill bits are available in various sizes and shapes, designed to produce different types of holes in a wide range of materials. To function, drill bits are usually mounted in a drill, which provides the rotational force needed to cut into the workpiece. The drill will grasp the upper end of a bit called the shank in the chuck.",
+  "Tags": [
+    "tool"
+  ],
+  "image": "images\\Drill bit.jpg"
+}
