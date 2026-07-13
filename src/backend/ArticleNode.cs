@@ -31,9 +31,16 @@ public partial class ArticleNode : Node
     public void LoadArticle(WikiArticle wikiArticle)
     {
         WikiArticle = wikiArticle;
-        var texture = ImageTexture.CreateFromImage(ImageFromWikiImage(wikiArticle.Image));
-        if (texture != null)
-            ArticleTexture.Texture = texture;
+        if (WikiArticle.Image != null)
+        {
+            var texture = ImageTexture.CreateFromImage(ImageFromWikiImage(wikiArticle.Image));
+            if (texture != null)
+                ArticleTexture.Texture = texture;
+        }
+        else
+        {
+            ArticleTexture.Texture = null;
+        }
         
         TitleLabel.Text = wikiArticle.Title;
         DescLabel.Text = wikiArticle.Description;

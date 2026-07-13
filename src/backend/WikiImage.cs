@@ -41,6 +41,10 @@ public static class WikiImageFormats
 
     public static StringName StringToTag(string tag)
     {
+        if (string.IsNullOrEmpty(tag))
+        {
+            return "NoImage";
+        }
         // I don't think this is computationally efficient, don't know C# well enough to improve it. 
         string formattedTag = tag.ToLower();
         formattedTag = formattedTag.Replace("image/", "");

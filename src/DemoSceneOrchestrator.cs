@@ -10,6 +10,7 @@ public partial class DemoSceneOrchestrator : Node
     [Export] public string SearchTitle = "flying fish";
     private LineEdit SearchLineEdit;
     private LineEdit FileLineEdit;
+    private LineEdit CSVLineEdit;
     private Button SaveButton;
     private LineEdit TagLineEdit;
     private Button ClearTagsButton;
@@ -22,6 +23,8 @@ public partial class DemoSceneOrchestrator : Node
         SearchLineEdit.TextSubmitted += SearchTitleEditOnTextSubmitted;
         FileLineEdit = GetNode<LineEdit>("FileLineEdit");
         FileLineEdit.TextSubmitted += TryLoadArticleFromDisk;
+        CSVLineEdit = GetNode<LineEdit>("CSVLineEdit");
+        CSVLineEdit.TextSubmitted += OnCSVLineEditOnTextSubmitted;
         SaveButton = GetNode<Button>("SaveButton");
         SaveButton.Pressed += OnSaveButtonOnPressed;
         TagLineEdit = GetNode<LineEdit>("TagLineEdit");
@@ -33,6 +36,55 @@ public partial class DemoSceneOrchestrator : Node
         if (!string.IsNullOrEmpty(SearchTitle))
         {
             LoadArticle(SearchTitle, false);
+        }
+    }
+
+    private void OnCSVLineEditOnTextSubmitted(string fullPath)
+    {
+        // example: 
+        // E:\Godot\GameAWeek26\EverythingKnownToMan\ArticleList.csv
+        // E:\Godot\GameAWeek26\EverythingKnownToMan\ArticleList_small.csv
+        if (!Path.Exists(fullPath))
+        {
+            GD.PushError("Specified CSV file does not exist.");
+            return;
+        }
+        if (Path.GetExtension(fullPath) != ".csv")
+        {
+            GD.PushError("Specified file is not a CSV. Type: " + Path.GetExtension(fullPath));
+            return;
+        }
+
+        SaveCSVArticlesToDisk(fullPath);
+    }
+
+    private async void SaveCSVArticlesToDisk(string path)
+    {
+        //string csv = File.ReadAllText(fullPath);
+        string[] csv = File.ReadAllLines(path);
+        foreach (string line in csv)
+        {
+            GD.Print("Reading line: " + line); // DEBUG DELETE
+            string[] columns = line.Split(',');
+            if (columns.IsEmpty() || !columns[0].StartsWith("https"))
+                continue;
+            
+            // 0 - URL
+            // 1,2,3,etc - tags
+            // need to clean out any double quotes left in from export. 
+            GD.Print("Requesting article: " + columns[0]); // DEBUG DELETE
+            GD.Print("Requesting article: " + (columns[0].Replace("wiki/", "api/rest_v1/page/summary/"))); // DEBUG DELETE
+            // GD.Print("Requesting article: " + Uri.EscapeDataString(columns[0].Replace("wiki/", "api/rest_v1/page/summary/"))); // DEBUG DELETE
+            WikiArticle wikiArticle = await WikipediaScraper.FetchArticleAsync_URL(columns[0]);
+            ArticleNode.LoadArticle(wikiArticle);
+            // add tags
+            for (int col = 1; col < columns.Length; col++)
+            {
+                string tag = columns[col].ToLower().Replace("\"", "");
+                GD.Print("Adding tag: " + tag); // DEBUG DELETE
+                ArticleNode.AddTag(tag);
+            }
+            ArticleNode.SaveToDisk();
         }
     }
 
@@ -60,13 +112,9 @@ public partial class DemoSceneOrchestrator : Node
 
     protected async void LoadArticle(string title, bool saveToDisk)
     {
-        GD.Print("Orch Load Article Start");
-        WikiArticle wikiArticle = await WikipediaScraper.FetchArticleAsync(title);
+        WikiArticle wikiArticle = await WikipediaScraper.FetchArticleAsync_Title(title);
         //GD.Print("Orch Load Article Loaded");
-        GD.Print($"Orch Load Article Loaded, Image format: {wikiArticle.Image.FileFormat}, array len: {wikiArticle.Image.ImageBytes.Length}");
-        GD.Print("Orch Load Article Loaded, about to load article");
         ArticleNode.LoadArticle(wikiArticle);
-        GD.Print("Orch Load Article Finish");
         if (saveToDisk)
         {
             string path = ArticleNode.SaveToDisk();

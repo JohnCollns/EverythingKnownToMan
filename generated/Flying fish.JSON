@@ -1,1 +1,11 @@
-{}
+{
+  "Title": "Flying fish",
+  "Description": "Family of marine fish that can make powerful, self-propelled leaps out of water",
+  "Paragraph": "The Exocoetidae are a family of saltwater ray-finned fish in the order Beloniformes, known colloquially as flying fish or flying cod, with about 64 species in seven genera. While they do not \u0022fly\u0022 in the same way a bird does, flying fish can make powerful leaps out of the water where their long, wing-like paired fins act as aerofoils to generate lift and enable prolonged gliding for considerable distances above the water surface. The main reason for this behavior is thought to be to escape from underwater predators, which include swordfish, mackerel, tuna, and marlin, among others, though their periods of flight expose them to attack by aerial predators such as frigatebirds.",
+  "Tags": [
+    "swimming",
+    " animal",
+    ""
+  ],
+  "image": "images\\Flying fish.jpg"
+}

@@ -27,6 +27,14 @@ offset_right = 789.0
 offset_bottom = 60.0
 placeholder_text = "Load an article from disk"
 
+[node name="CSVLineEdit" type="LineEdit" parent="." unique_id=1860576575]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 589.0
+offset_top = 74.0
+offset_right = 789.0
+offset_bottom = 105.0
+placeholder_text = "Import CSV (Full Path)"
+
 [node name="SaveButton" type="Button" parent="." unique_id=305091977]
 offset_left = 103.0
 offset_top = 62.0

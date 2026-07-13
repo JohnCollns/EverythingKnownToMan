@@ -55,6 +55,13 @@ public class WikiArticle
         Paragraph = paragraph_;
         Image = image_;
     }
+
+    public WikiArticle(string title_, string description_, string paragraph_)
+    {
+        Title = title_;
+        Description = description_;
+        Paragraph = paragraph_;
+    }
     public WikiArticle(string title_, string paragraph_, byte[] image_, HashSet<StringName> tags) {}
     public WikiArticle(string title_, string paragraph_, WikiImage image_, HashSet<StringName> tags) {}
     public WikiArticle(string title_, string description_, string paragraph_, WikiImage image_, HashSet<StringName> tags) {}
@@ -89,7 +96,8 @@ public class WikiArticle
         string path = Path.Combine(projectRoot, "generated", (Title + ".JSON"));
         GD.Print(" WikiArticle saving to: " + path);
         File.WriteAllText(path, ToJSON());
-        Image.SaveToDisk(Title);
+        if (Image != null && Image.IsValid())
+            Image.SaveToDisk(Title);
         return path;
     }
 

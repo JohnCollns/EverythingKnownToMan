@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Godot;
+using HttpClient = System.Net.Http.HttpClient;
 
 namespace EverythingKnownToMan.backend;
 
@@ -28,16 +30,32 @@ public class WikipediaScraper
             new MediaTypeWithQualityHeaderValue("application/json"));
         return client;
     }
+
+    public static async Task<WikiArticle> FetchArticleAsync_Title(string title, string language = "en")
+    {
+        string encodedTitle = Uri.EscapeDataString(title.Replace(' ', '_'));
+        string summaryUrl = $"https://{language}.wikipedia.org/api/rest_v1/page/summary/{encodedTitle}";
+        return await FetchArticleAsync_Internal(summaryUrl);
+    }
+    
+    public static async Task<WikiArticle> FetchArticleAsync_URL(string url)
+    {
+        // Given a normal article URL, eg:
+        // https://en.wikipedia.org/wiki/Flying_fish
+        // transform to form
+        // https://en.wikipedia.org/api/rest_v1/page/summary/Flying_fish
+        //string encodedUrl = Uri.EscapeDataString(url.Replace("wiki/", "api/rest_v1/page/summary/"));
+        string encodedUrl = url.Replace("wiki/", "api/rest_v1/page/summary/");
+        return await FetchArticleAsync_Internal(encodedUrl);
+    }
     
     /// <summary>
     /// Fetches title, first paragraph, and main image for a Wikipedia article.
     /// </summary>
-    public static async Task<WikiArticle> FetchArticleAsync(string title, string language = "en")
+    public static async Task<WikiArticle> FetchArticleAsync_Internal(string url)
     {
-        string encodedTitle = Uri.EscapeDataString(title.Replace(' ', '_'));
-        string summaryUrl = $"https://{language}.wikipedia.org/api/rest_v1/page/summary/{encodedTitle}";
-
-        using HttpResponseMessage response = await Http.GetAsync(summaryUrl);
+        GD.Print($"Fetching article: {url}");
+        using HttpResponseMessage response = await Http.GetAsync(url);
         response.EnsureSuccessStatusCode();
 
         string json = await response.Content.ReadAsStringAsync();
@@ -46,7 +64,7 @@ public class WikipediaScraper
         
         // TODO: Check if this article is valid, if it has an image.
 
-        string resolvedTitle = root.GetProperty("title").GetString() ?? title;
+        string resolvedTitle = root.GetProperty("title").GetString() ?? "Failed";
 
         // "extract" is the plain-text summary; its first sentence/paragraph
         // is effectively the article's lead paragraph.
@@ -85,9 +103,11 @@ public class WikipediaScraper
             }
         }
 
-        var wikiImage = new WikiImage(contentType, imageBytes);
-        return new WikiArticle(resolvedTitle, description, extract, wikiImage);
-
-        //return new WikiArticle(resolvedTitle, firstParagraph, imageUrl, imageBytes, contentType);
+        if (imageBytes != null)
+        {
+            var wikiImage = new WikiImage(contentType, imageBytes);
+            return new WikiArticle(resolvedTitle, description, extract, wikiImage);
+        }
+        return new WikiArticle(resolvedTitle, description, extract);
     }
 }
