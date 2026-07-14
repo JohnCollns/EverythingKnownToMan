@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dub3lhfk7je72" path="res://Assets/Pointy mountain/Pointy_m_phase1.png" id="2_mxnmf"]
 [ext_resource type="Texture2D" uid="uid://ds6s1jba2qtod" path="res://Assets/Colour mountain/Colour rock L.png" id="3_5qkpu"]
 [ext_resource type="Texture2D" uid="uid://ccmlcvq326sdd" path="res://Assets/Colour mountain/Colour rock S.png" id="3_dcckh"]
-[ext_resource type="Texture2D" uid="uid://cyubp8p0m8trw" path="res://Assets/forest assets/background.jpg" id="3_qqkhr"]
 [ext_resource type="Texture2D" uid="uid://b31xhk8q645al" path="res://Assets/Round mountain/Round_m_phase1.png" id="3_viiqw"]
 [ext_resource type="Texture2D" uid="uid://bvpvk7b2cc01g" path="res://Assets/Colour mountain/Colour_m_phase1.png" id="4_86ljf"]
 [ext_resource type="Texture2D" uid="uid://bb8j8oe5xfxky" path="res://Assets/Characters/Researcher.png" id="4_mxnmf"]
@@ -2507,6 +2506,7 @@ texture = ExtResource("14_fmksp")
 
 [node name="BetterMidground" type="Parallax2D" parent="." unique_id=1361516327]
 scroll_scale = Vector2(0.4, 0)
+scroll_offset = Vector2(-25642, -90)
 repeat_size = Vector2(26000, 0)
 repeat_times = 50
 
@@ -2563,11 +2563,6 @@ texture = ExtResource("4_yye10")
 [node name="RoundMPhase3" type="Sprite2D" parent="BetterMidground" unique_id=426013801]
 position = Vector2(14272, -23763)
 texture = ExtResource("14_dn5x0")
-
-[node name="Background2" type="Sprite2D" parent="." unique_id=211307274]
-position = Vector2(1662, 53445)
-scale = Vector2(1.3006845, 1.3482023)
-texture = ExtResource("3_qqkhr")
 
 [node name="Midground2" type="Sprite2D" parent="." unique_id=160162238]
 position = Vector2(1534, 53289)
@@ -2631,9 +2626,9 @@ position = Vector2(128, 55000)
 script = ExtResource("1_2nifc")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1533271668]
-position = Vector2(-2960.4063, -3892.6016)
+position = Vector2(-2920, -3827)
 anchor_mode = 0
-zoom = Vector2(0.13, 0.13)
+zoom = Vector2(0.25, 0.25)
 
 [node name="ResearcherPlaceholder" type="Sprite2D" parent="CharacterBody2D" unique_id=650296275]
 position = Vector2(-3, -546)
@@ -2805,6 +2800,7 @@ position = Vector2(196673, -49737)
 texture = ExtResource("12_sypgb")
 
 [node name="RoundRockL2" type="Sprite2D" parent="Foreground" unique_id=1269759576]
+z_index = 2
 position = Vector2(4937, 244)
 texture = ExtResource("5_q4iis")
 
