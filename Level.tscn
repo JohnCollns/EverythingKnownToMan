@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bvpvk7b2cc01g" path="res://Assets/Colour mountain/Colour_m_phase1.png" id="4_86ljf"]
 [ext_resource type="Texture2D" uid="uid://bb8j8oe5xfxky" path="res://Assets/Characters/Researcher.png" id="4_mxnmf"]
 [ext_resource type="Texture2D" uid="uid://crm6sqnxjvbod" path="res://Assets/Round mountain/Round_m_phase2.png" id="4_pd0bf"]
-[ext_resource type="PackedScene" uid="uid://daosbn20t805o" path="res://content/UI/ArticleDemo.tscn" id="4_wkftn"]
 [ext_resource type="Texture2D" uid="uid://pvceh2ccpq01" path="res://Assets/Colour mountain/Colour_m_phase3.png" id="4_yye10"]
 [ext_resource type="Texture2D" uid="uid://b7wph4mcw76kt" path="res://Assets/Pointy mountain/Pointy_m_phase2.png" id="5_3ywx5"]
 [ext_resource type="Texture2D" uid="uid://bwbupgaovq8bw" path="res://Assets/Round mountain/Round rock L.png" id="5_q4iis"]
@@ -28,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://ckvn35c7uew77" path="res://Assets/Colour mountain/Colour_m_phase2.png" id="23_s0cgv"]
 [ext_resource type="Texture2D" uid="uid://rgtgyldak2gm" path="res://Assets/Colour mountain/Colour rock M.png" id="24_3ppgv"]
 [ext_resource type="Texture2D" uid="uid://cc0mcimduidai" path="res://Assets/forest assets/foreground.png" id="25_wesx8"]
+[ext_resource type="PackedScene" uid="uid://bwtsm04konqyb" path="res://content/UI/ArticleSimple_2D.tscn" id="28_fmksp"]
+[ext_resource type="PackedScene" uid="uid://doxsq2cq3p6sk" path="res://content/Player/inventory_scene.tscn" id="29_fmksp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bexhn"]
 
@@ -2643,12 +2644,6 @@ texture = ExtResource("4_mxnmf")
 position = Vector2(50, -514.75)
 shape = ExtResource("1_bexhn")
 
-[node name="ArticleDemo" parent="." unique_id=187493832 instance=ExtResource("4_wkftn")]
-position = Vector2(963, 54299)
-scale = Vector2(3, 3)
-bLoadFromDisk = true
-DiskFileName = "Flying Spaghetti Monster"
-
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1898084124]
 scroll_offset = Vector2(671, 55010)
 
@@ -3156,13 +3151,24 @@ texture = ExtResource("3_dcckh")
 
 [node name="SuperForeground" type="Parallax2D" parent="." unique_id=1037403248]
 scroll_scale = Vector2(1.4, 1)
+scroll_offset = Vector2(3648, 0)
 
 [node name="Trees" type="Sprite2D" parent="SuperForeground" unique_id=632145738]
+z_index = 10
 position = Vector2(5804, 53612)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("25_wesx8")
 
 [node name="Trees2" type="Sprite2D" parent="SuperForeground" unique_id=1765351310]
+z_index = 10
 position = Vector2(-3793, 53554)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("25_wesx8")
+
+[node name="ArticleSimple2d" parent="." unique_id=1223787358 instance=ExtResource("28_fmksp")]
+z_index = 9
+position = Vector2(-1458, 52805)
+LoadFromDisk = true
+FileToLoad = "Flying Spaghetti Monster"
+
+[node name="InventoryScene" parent="." unique_id=653372133 instance=ExtResource("29_fmksp")]

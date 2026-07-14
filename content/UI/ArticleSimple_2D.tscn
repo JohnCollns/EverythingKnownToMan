@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bwtsm04konqyb"]
+
+[ext_resource type="PackedScene" uid="uid://bj5rmkyf31mr4" path="res://content/UI/ArticleSimple.tscn" id="1_1ixi7"]
+[ext_resource type="Script" uid="uid://bv6tb6ump6e53" path="res://src/backend/ArticleNode2D.cs" id="1_83n0k"]
+
+[node name="ArticleSimple2d" type="Node2D" unique_id=1223787358 node_paths=PackedStringArray("ArticleNode")]
+script = ExtResource("1_83n0k")
+ArticleNode = NodePath("ArticleSimple")
+
+[node name="ArticleSimple" parent="." unique_id=607494538 instance=ExtResource("1_1ixi7")]
