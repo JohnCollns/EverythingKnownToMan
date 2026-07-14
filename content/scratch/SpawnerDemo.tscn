@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccfbd4244u4ve"]
+
+[ext_resource type="Script" uid="uid://ek6lulsq3kcy" path="res://src/Spawner.cs" id="1_dwha1"]
+
+[node name="SpawnerDemo" type="Node2D" unique_id=939182472]
+position = Vector2(601, 290)
+script = ExtResource("1_dwha1")
+tags = PackedStringArray("Animal", "Spiritual")
+numArticles = 5
+articleScenePath = "res://content/UI/ArticleSimple_2D.tscn"
+maxRadius = 1000.0
+minRadius = 150.0

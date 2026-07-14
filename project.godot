@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerSingleton="*uid://dne27wahrmwaf"
+InventoryScene="*uid://doxsq2cq3p6sk"
+WikiDatabase="*uid://cpjdk1td6bquf"
 
 [display]
 

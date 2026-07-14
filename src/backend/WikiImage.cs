@@ -52,11 +52,11 @@ public static class WikiImageFormats
         // {
         //     tag = tag.Replace("image/", "");
         // }
-        if (formattedTag == "jpg" || formattedTag == "jpeg")
+        if (formattedTag == "jpg" || formattedTag == "jpeg" || formattedTag == "jp")
         {
             return jpg;
         }
-        if (formattedTag == "png")
+        if (formattedTag == "png" || formattedTag == "pn")
         {
             return png;
         }

@@ -46,6 +46,8 @@ public partial class ArticleNode : Control
         if (wikiArticle == null)
         {
             Hide();
+            GD.PushWarning("LoadArticle failed: Given null article");
+            return;
         }
         
         if (WikiArticle.Image != null)
@@ -126,11 +128,8 @@ public partial class ArticleNode : Control
         try
         {
             GD.Print("TryLoadArticleFromDisk: " + title);
-            // GD.Print($" About to read: {WikiArticle.RelativePathToFullPath($"generated\\{newText}.JSON")}");
-            // string json = File.ReadAllText(WikiArticle.RelativePathToFullPath($"generated\\{newText}.JSON"));
             GD.Print($" About to read: {WikiArticle.RelativePathToFullPath($"{title}.JSON", true)}");
             string json = File.ReadAllText(WikiArticle.RelativePathToFullPath($"{title}.JSON", true));
-            GD.Print($" read json: {json}");
             LoadArticle(WikiArticle.FromJSON(json));
             return true;
         }
