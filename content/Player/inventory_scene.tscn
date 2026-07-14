@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://doxsq2cq3p6sk"]
+
+[ext_resource type="Script" uid="uid://bnk1q7pghjejw" path="res://src/PlayerInventory.cs" id="1_n1unn"]
+[ext_resource type="PackedScene" uid="uid://cdil6ynfmjq5b" path="res://content/UI/InventoryArticle.tscn" id="2_ojeux"]
+
+[node name="InventoryScene" type="Control" unique_id=653372133 node_paths=PackedStringArray("articleNode")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n1unn")
+articleNode = NodePath("InventoryArticle")
+
+[node name="InventoryArticle" parent="." unique_id=2134462742 instance=ExtResource("2_ojeux")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_bottom = -150.0
+grow_horizontal = 1
+grow_vertical = 0

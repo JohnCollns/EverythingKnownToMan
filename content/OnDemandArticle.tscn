@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://hubkovih1gy1"]
 
 [ext_resource type="Script" uid="uid://dmdxgrp2h4o4m" path="res://src/DemoSceneOrchestrator.cs" id="1_sx76q"]
-[ext_resource type="PackedScene" uid="uid://daosbn20t805o" path="res://content/UI/ArticleDemo.tscn" id="2_xvpoj"]
+[ext_resource type="PackedScene" uid="uid://bj5rmkyf31mr4" path="res://content/UI/ArticleSimple.tscn" id="2_xvpoj"]
 
 [node name="OnDemandArticle" type="Node2D" unique_id=994096859 node_paths=PackedStringArray("ArticleNode")]
 script = ExtResource("1_sx76q")
-ArticleNode = NodePath("ArticleDemo")
+ArticleNode = NodePath("ArticleSimple")
 SearchTitle = ""
 
-[node name="ArticleDemo" parent="." unique_id=187493832 instance=ExtResource("2_xvpoj")]
-position = Vector2(104, 188)
+[node name="ArticleSimple" parent="." unique_id=607494538 instance=ExtResource("2_xvpoj")]
+offset_left = 106.0
+offset_top = 184.0
+offset_right = 106.0
+offset_bottom = 184.0
 
 [node name="SearchLineEdit" type="LineEdit" parent="." unique_id=1293394917]
 custom_minimum_size = Vector2(200, 0)
