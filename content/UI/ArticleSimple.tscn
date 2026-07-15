@@ -7,18 +7,17 @@
 
 [node name="ArticleSimple" type="Control" unique_id=607494538 node_paths=PackedStringArray("ArticleTexture", "TitleLabel", "DescLabel", "ParagraphLabel", "TagsLabel", "ClickableBackground")]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 script = ExtResource("1_a5is1")
-ArticleTexture = NodePath("PanelContainer/MarginContainer/HBoxContainer/TextureRect")
-TitleLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TitleLabel")
-DescLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DescLabel")
-ParagraphLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/ParagraphLabel")
-TagsLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TagsLabel")
+ArticleTexture = NodePath("PanelContainer/MarginContainer/VBoxContainer/TextureRect")
+TitleLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/TitleLabel")
+DescLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/DescLabel")
+ParagraphLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/ParagraphLabel")
+TagsLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/TagsLabel")
 ClickableBackground = NodePath("PanelContainer/MarginContainer/ClickableBackground")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1351517730]
@@ -41,38 +40,33 @@ theme_override_styles/pressed = ExtResource("2_nsyis")
 theme_override_styles/hover = ExtResource("2_nsyis")
 action_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1410424970]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=635702345]
 layout_mode = 2
-mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=812169007]
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1836852652]
+layout_mode = 2
+text = "Title"
+label_settings = ExtResource("4_8kjyk")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=812169007]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_i642m")
 stretch_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=667417317]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1836852652]
-layout_mode = 2
-text = "Title"
-label_settings = ExtResource("4_8kjyk")
-
-[node name="DescLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1298394481]
+[node name="DescLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1298394481]
 layout_mode = 2
 text = "Description"
 label_settings = ExtResource("4_8kjyk")
 
-[node name="ParagraphLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=320086370]
+[node name="ParagraphLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=320086370]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 text = "Paragraph text very long many words word words words."
 label_settings = ExtResource("4_8kjyk")
 autowrap_mode = 2
 
-[node name="TagsLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=472665125]
+[node name="TagsLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=472665125]
 layout_mode = 2
 text = "Tags: {a, b, c}"
 label_settings = ExtResource("4_8kjyk")

@@ -8,3 +8,4 @@ script = ExtResource("1_83n0k")
 ArticleNode = NodePath("ArticleSimple")
 
 [node name="ArticleSimple" parent="." unique_id=607494538 instance=ExtResource("1_1ixi7")]
+anchors_preset = 15
