@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://dliwaqrnmpj58"]
 
-[ext_resource type="Script" uid="uid://buy1pf07o7fe4" path="res://character_controller.gd" id="1_2nifc"]
-[ext_resource type="Shape2D" uid="uid://bqgn1v6ul8uge" path="res://PlayerShape.tres" id="1_bexhn"]
 [ext_resource type="Texture2D" uid="uid://dl1i4xnp1anvo" path="res://Assets/Backgrounds/Night sky.JPG" id="1_m3clv"]
 [ext_resource type="Texture2D" uid="uid://bilhav312hqco" path="res://Assets/Backgrounds/Bg mountains.png" id="2_4eo0i"]
 [ext_resource type="Texture2D" uid="uid://dub3lhfk7je72" path="res://Assets/Pointy mountain/Pointy_m_phase1.png" id="2_mxnmf"]
@@ -26,30 +24,41 @@
 [ext_resource type="Texture2D" uid="uid://ckvn35c7uew77" path="res://Assets/Colour mountain/Colour_m_phase2.png" id="23_s0cgv"]
 [ext_resource type="Texture2D" uid="uid://rgtgyldak2gm" path="res://Assets/Colour mountain/Colour rock M.png" id="24_3ppgv"]
 [ext_resource type="Texture2D" uid="uid://cc0mcimduidai" path="res://Assets/forest assets/foreground.png" id="25_wesx8"]
+[ext_resource type="Script" uid="uid://ctbit0mmqtwhc" path="res://Oscar's Scripts (bad)/background_follow_camera.gd" id="27_b4adj"]
 [ext_resource type="PackedScene" uid="uid://bwtsm04konqyb" path="res://content/UI/ArticleSimple_2D.tscn" id="28_fmksp"]
 [ext_resource type="PackedScene" uid="uid://doxsq2cq3p6sk" path="res://content/Player/inventory_scene.tscn" id="29_fmksp"]
+[ext_resource type="Script" uid="uid://b42qv0cvrjs8f" path="res://Oscar's Scripts (bad)/character_turning.gd" id="29_lwa2w"]
+[ext_resource type="Script" uid="uid://4g8xd7w0h8q7" path="res://Oscar's Scripts (bad)/character_follow_path.gd" id="29_q2vmi"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bexhn"]
+[sub_resource type="Curve2D" id="Curve2D_b4adj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11725, 15708, 0, 0, 0, 0, -364, 15360, 0, 0, 0, 0, 4301, 13614, 0, 0, 0, 0, 11313, 12686, 0, 0, 0, 0, 14821, 10696, 0, 0, 0, 0, 18084, 9597, 0, 0, 0, 0, 20450, 7876, 0, 0, 0, 0, 25102, 5425, 0, 0, 0, 0, 29507, 3625, 0, 0, 0, 0, 35618, 2761, 0, 0, 0, 0, 40175, -1368, 0, 0, 0, 0, 47029, -5060, 0, 0, 0, 0, 57134, -5107, 0, 0, 0, 0, 67736, -1529, 0, 0, 0, 0, 75621, -1330, 0, 0, 0, 0, 85612, -4743, 0, 0, 0, 0, 91953, -4670)
+}
+point_count = 17
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
+size = Vector2(1482, 2913)
 
 [node name="Level" type="Node2D" unique_id=267726624]
 position = Vector2(7680, 24192)
 
 [node name="Background" type="Node2D" parent="." unique_id=2891500]
-position = Vector2(128, 55000)
+position = Vector2(-2009, 51144)
 
 [node name="NightSky" type="Sprite2D" parent="Background" unique_id=646260766]
-position = Vector2(-2925, -3890.004)
+position = Vector2(-196.00023, -4.99634)
 scale = Vector2(1.3428702, 1.2254202)
 texture = ExtResource("1_m3clv")
 centered = false
 
 [node name="BgMountains" type="Sprite2D" parent="Background" unique_id=589915088]
-position = Vector2(-2935, -3762)
+position = Vector2(-158, 99)
 scale = Vector2(1.3431745, 1.3189442)
 texture = ExtResource("2_4eo0i")
 centered = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Background" unique_id=1756987315]
+position = Vector2(1986, 4094)
 color = Color(0.04, 0.04, 0.04, 1)
 polygon = PackedVector2Array(1343, -1206, 5880, -1206, 5951, 1272, -3239, 1263, -3225, -1190)
 
@@ -2616,24 +2625,6 @@ rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("13_sypgb")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=282874400]
-material = SubResource("CanvasItemMaterial_bexhn")
-position = Vector2(128, 55000)
-script = ExtResource("1_2nifc")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1533271668]
-position = Vector2(-2920, -3827)
-anchor_mode = 0
-zoom = Vector2(0.25, 0.25)
-
-[node name="ResearcherPlaceholder" type="Sprite2D" parent="CharacterBody2D" unique_id=650296275]
-position = Vector2(-3, -546)
-texture = ExtResource("4_mxnmf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=572440089]
-position = Vector2(50, -514.75)
-shape = ExtResource("1_bexhn")
-
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1898084124]
 scroll_offset = Vector2(671, 55010)
 
@@ -3159,4 +3150,36 @@ texture = ExtResource("25_wesx8")
 [node name="InventoryScene" parent="." unique_id=653372133 instance=ExtResource("29_fmksp")]
 
 [node name="ArticleSimple2d" parent="." unique_id=1223787358 instance=ExtResource("28_fmksp")]
-position = Vector2(-461, 53348)
+position = Vector2(422, 55229)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=833178250]
+position = Vector2(7755, 39323)
+curve = SubResource("Curve2D_b4adj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=582454881]
+position = Vector2(-8095.6836, 15596.831)
+rotation = -0.03062153
+progress = 3631.0198
+script = ExtResource("29_q2vmi")
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D" unique_id=994560285]
+position = Vector2(-1502.8619, -3826.635)
+anchor_mode = 0
+zoom = Vector2(0.25, 0.25)
+script = ExtResource("27_b4adj")
+
+[node name="ResearcherPlaceholder" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=818100998]
+position = Vector2(-3, -546)
+texture = ExtResource("4_mxnmf")
+script = ExtResource("29_lwa2w")
+
+[node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/ResearcherPlaceholder" unique_id=1202748833]
+position = Vector2(196.5375, -34.17837)
+target_position = Vector2(625.6758, 20.164063)
+collide_with_areas = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=787821023]
+position = Vector2(18724, 51054)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=662820731]
+shape = SubResource("RectangleShape2D_qnpof")
