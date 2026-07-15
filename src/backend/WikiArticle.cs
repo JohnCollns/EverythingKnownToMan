@@ -111,11 +111,10 @@ public class WikiArticle
             {
                 if (lines[line].Contains(JsonImageAttribute))
                 {
-                    string format = lines[line].Split(".")[1][..^2];
+                    string format = lines[line].StripEdges().Split(".")[1][..^1];
                     string imagePath = WikiArticle.RelativePathToFullPath($"images\\{article.Title}", true);
                     byte[] imageBytes = File.ReadAllBytes(imagePath + "." + format);
                     WikiImage image = new WikiImage(format, imageBytes);
-                    // load the image
                     article.Image = image;
                     break;
                 }
