@@ -18,6 +18,7 @@ public partial class PlayerInventory : Node
     // returns the article from the inventory
     public WikiArticle SwapArticle(WikiArticle givenArticle)
     {
+        //GD.Print($"Inventory taking: {givenArticle.Title}, losing: {heldArticle.Title}");
         WikiArticle temp = heldArticle;
         heldArticle = givenArticle;
         articleNode.LoadArticle(givenArticle);
@@ -29,11 +30,18 @@ public partial class PlayerInventory : Node
     // returns the article from the inventory
     public void SwapArticle(ArticleNode givenArticle)
     {
+        //GD.Print($"Inventory taking: {givenArticle.WikiArticle.Title}, losing: {heldArticle.Title}");
         WikiArticle temp = heldArticle;
         heldArticle = givenArticle.WikiArticle;
         articleNode.LoadArticle(heldArticle);
         articleNode.Show();
         
         givenArticle.LoadArticle(temp);
+    }
+
+    public void ConsumeArticle()
+    {
+        heldArticle = null;
+        articleNode.Hide();
     }
 }

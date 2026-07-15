@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://ek6lulsq3kcy" path="res://src/Spawner.cs" id="1_dwha1"]
 
 [node name="SpawnerDemo" type="Node2D" unique_id=939182472]
-position = Vector2(601, 290)
 script = ExtResource("1_dwha1")
 tags = PackedStringArray("Animal", "Spiritual")
 numArticles = 5

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://pmlho6imkkx5"]
+
+[ext_resource type="Script" uid="uid://cmj7rxyc21rvr" path="res://src/WikiNPC.cs" id="1_r6ctw"]
+[ext_resource type="Texture2D" uid="uid://cb4vntvt8cvue" path="res://Assets/NPCs/oliver_open.png" id="2_13duy"]
+[ext_resource type="Texture2D" uid="uid://ddebarkuixt7w" path="res://Assets/NPCs/oliver_closed.png" id="2_hhgii"]
+
+[node name="NpcDemo" type="Node2D" unique_id=808611719 node_paths=PackedStringArray("Sprite", "ClickableArea")]
+script = ExtResource("1_r6ctw")
+Sprite = NodePath("Sprite2D")
+ClickableArea = NodePath("ClickableArea")
+SatisfiedTexture = ExtResource("2_13duy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=852338744]
+position = Vector2(1, 0)
+texture = ExtResource("2_hhgii")
+offset = Vector2(0, -500)
+
+[node name="ClickableArea" type="Button" parent="." unique_id=1767153274]
+modulate = Color(1, 1, 1, 0)
+offset_left = -252.0
+offset_top = -1039.0
+offset_right = 208.0
+offset_bottom = 8.0

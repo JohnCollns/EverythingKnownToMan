@@ -15,7 +15,7 @@ public partial class Spawner : Node
     {
         base._Ready();
         articleSceneTemplate = GD.Load<PackedScene>(articleScenePath);
-        SpawnArticles(numArticles);
+        //SpawnArticles(numArticles);
     }
 
     public void SpawnArticles(int numArticles_)
@@ -23,6 +23,8 @@ public partial class Spawner : Node
         for (int i=0; i<numArticles_; i++)
             SpawnArticle();
     }
+    
+    public void SpawnArticles() { SpawnArticles(numArticles); }
 
     public void SpawnArticle()
     {
