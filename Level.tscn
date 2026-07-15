@@ -26,18 +26,20 @@
 [ext_resource type="Texture2D" uid="uid://cc0mcimduidai" path="res://Assets/forest assets/foreground.png" id="25_wesx8"]
 [ext_resource type="Script" uid="uid://ctbit0mmqtwhc" path="res://Oscar's Scripts (bad)/background_follow_camera.gd" id="27_b4adj"]
 [ext_resource type="PackedScene" uid="uid://bwtsm04konqyb" path="res://content/UI/ArticleSimple_2D.tscn" id="28_fmksp"]
+[ext_resource type="Texture2D" uid="uid://cdfyqw01vnqj1" path="res://Assets/Obstacles/Water.PNG" id="29_2nh8c"]
 [ext_resource type="PackedScene" uid="uid://doxsq2cq3p6sk" path="res://content/Player/inventory_scene.tscn" id="29_fmksp"]
 [ext_resource type="Script" uid="uid://b42qv0cvrjs8f" path="res://Oscar's Scripts (bad)/character_turning.gd" id="29_lwa2w"]
 [ext_resource type="Script" uid="uid://4g8xd7w0h8q7" path="res://Oscar's Scripts (bad)/character_follow_path.gd" id="29_q2vmi"]
+[ext_resource type="Texture2D" uid="uid://vn5ufwikrcd3" path="res://Assets/Obstacles/Village.PNG" id="30_33gbk"]
+[ext_resource type="Texture2D" uid="uid://q2q366fda7bp" path="res://Assets/Obstacles/Closed gate.PNG" id="30_q2vmi"]
+[ext_resource type="Texture2D" uid="uid://41u7ohspuunn" path="res://Assets/Characters/Boy npc idol.PNG" id="31_lwa2w"]
+[ext_resource type="Texture2D" uid="uid://bvv7l5w6h6ueg" path="res://Assets/Characters/Stressed dropbear npc.PNG" id="32_hkpnj"]
 
 [sub_resource type="Curve2D" id="Curve2D_b4adj"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -11725, 15708, 0, 0, 0, 0, -364, 15360, 0, 0, 0, 0, 4301, 13614, 0, 0, 0, 0, 11313, 12686, 0, 0, 0, 0, 14821, 10696, 0, 0, 0, 0, 18084, 9597, 0, 0, 0, 0, 20450, 7876, 0, 0, 0, 0, 25102, 5425, 0, 0, 0, 0, 29507, 3625, 0, 0, 0, 0, 35618, 2761, 0, 0, 0, 0, 40175, -1368, 0, 0, 0, 0, 47029, -5060, 0, 0, 0, 0, 57134, -5107, 0, 0, 0, 0, 67736, -1529, 0, 0, 0, 0, 75621, -1330, 0, 0, 0, 0, 85612, -4743, 0, 0, 0, 0, 91953, -4670)
+"points": PackedVector2Array(0, 0, 0, 0, -11725, 15708, 0, 0, 0, 0, -364, 15360, 0, 0, 0, 0, 4301, 13614, 0, 0, 0, 0, 11313, 12686, 0, 0, 0, 0, 14821, 10696, 0, 0, 0, 0, 18084, 9597, 0, 0, 0, 0, 20450, 7876, 0, 0, 0, 0, 25102, 5425, 0, 0, 0, 0, 29507, 3625, 0, 0, 0, 0, 35618, 2761, 0, 0, 0, 0, 40175, -1368, 0, 0, 0, 0, 47029, -5060, 0, 0, 0, 0, 57134, -5107, 0, 0, 0, 0, 71225, -1300, 0, 0, 0, 0, 75516, -1356, 0, 0, 0, 0, 81294, -3506, 0, 0, 0, 0, 91294, -3717, 0, 0, 0, 0, 95843, -5886, 0, 0, 0, 0, 102926, -9206, 0, 0, 0, 0, 122832, -9341, 0, 0, 0, 0, 137850, -13973, 0, 0, 0, 0, 148622, -20445, 0, 0, 0, 0, 157266, -20400, 0, 0, 0, 0, 170256, -27279, 0, 0, 0, 0, 180892, -28230, 0, 0, 0, 0, 202435, -44795, 0, 0, 0, 0, 215017, -44749)
 }
-point_count = 17
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnpof"]
-size = Vector2(1482, 2913)
+point_count = 27
 
 [node name="Level" type="Node2D" unique_id=267726624]
 position = Vector2(7680, 24192)
@@ -2589,41 +2591,17 @@ position = Vector2(-3813, 53407)
 scale = Vector2(1.4384112, 1.3664109)
 texture = ExtResource("14_fmksp")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1565461489]
-position = Vector2(128.40625, 54911.6)
-polygon = PackedVector2Array(-7551, -3958, -5759, -4505, -4365, -1966, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 22533, -4836, 25675, -5995, 27844, -7678, 30986, -7940, 37318.594, 2047.3984, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859, -7381, 1884)
-
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=540483431]
 position = Vector2(110, 54903)
 color = Color(8.04686e-08, 0.08818867, 0, 1)
 polygon = PackedVector2Array(-7551, -3958, -5759, -4505, -4365, -1966, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 22533, -4836, 25675, -5995, 27844, -7678, 30986, -7940, 37414, 2036, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859, -7381, 1884)
 uv = PackedVector2Array(-426, 59)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=786506712]
-position = Vector2(9090, 42060)
-polygon = PackedVector2Array(23641, 2729, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123)
-
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=2008040248]
 position = Vector2(9026, 42102)
 color = Color(8.04686e-08, 0.08818867, 0, 1)
-polygon = PackedVector2Array(23641, 2729, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123)
+polygon = PackedVector2Array(23641, 2729, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 70005, -4105, 73913, -4202, 79995, -6419, 90185, -6663, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123)
 uv = PackedVector2Array(-426, 59)
-
-[node name="PointyRockL2" type="Sprite2D" parent="." unique_id=1062939976]
-position = Vector2(18709.002, 51162)
-scale = Vector2(2.1460178, 2.8738956)
-texture = ExtResource("13_sypgb")
-
-[node name="PointyRockL4" type="Sprite2D" parent="." unique_id=420840287]
-position = Vector2(18692, 50303)
-scale = Vector2(2.5813878, 2.337246)
-texture = ExtResource("13_sypgb")
-
-[node name="PointyRockL3" type="Sprite2D" parent="." unique_id=276853042]
-position = Vector2(18710, 51912)
-rotation = -0.27654868
-scale = Vector2(2.3365996, 1.7580662)
-texture = ExtResource("13_sypgb")
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1898084124]
 scroll_offset = Vector2(671, 55010)
@@ -2657,7 +2635,7 @@ position = Vector2(87929, -17902)
 texture = ExtResource("3_5qkpu")
 
 [node name="ColourRockL9" type="Sprite2D" parent="Foreground" unique_id=730816055]
-position = Vector2(97335, -20116)
+position = Vector2(96969, -19121)
 texture = ExtResource("3_5qkpu")
 
 [node name="ColourRockL10" type="Sprite2D" parent="Foreground" unique_id=1542289042]
@@ -2810,11 +2788,11 @@ position = Vector2(18296, -2683)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL14" type="Sprite2D" parent="Foreground" unique_id=185521610]
-position = Vector2(67424, -19511)
+position = Vector2(67043, -19099)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL15" type="Sprite2D" parent="Foreground" unique_id=1849066533]
-position = Vector2(90552, -19437)
+position = Vector2(93573, -19076)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL16" type="Sprite2D" parent="Foreground" unique_id=1929779402]
@@ -2900,7 +2878,7 @@ position = Vector2(103732, -21857)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL8" type="Sprite2D" parent="Foreground" unique_id=275117594]
-position = Vector2(98236, -20106)
+position = Vector2(98829, -19443)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL9" type="Sprite2D" parent="Foreground" unique_id=1647880735]
@@ -3032,7 +3010,7 @@ position = Vector2(65200, -20139)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM8" type="Sprite2D" parent="Foreground" unique_id=1611976017]
-position = Vector2(68888, -18734)
+position = Vector2(68840, -17973)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM9" type="Sprite2D" parent="Foreground" unique_id=1072538973]
@@ -3040,7 +3018,7 @@ position = Vector2(75876, -16650)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM10" type="Sprite2D" parent="Foreground" unique_id=1870591519]
-position = Vector2(91360, -18615)
+position = Vector2(93715, -19508)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM11" type="Sprite2D" parent="Foreground" unique_id=113738435]
@@ -3150,7 +3128,435 @@ texture = ExtResource("25_wesx8")
 [node name="InventoryScene" parent="." unique_id=653372133 instance=ExtResource("29_fmksp")]
 
 [node name="ArticleSimple2d" parent="." unique_id=1223787358 instance=ExtResource("28_fmksp")]
-position = Vector2(422, 55229)
+position = Vector2(885, 54483)
+
+[node name="Obstacle1" type="Node2D" parent="." unique_id=806105458]
+position = Vector2(18729, 52142)
+
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacle1" unique_id=1062939976]
+position = Vector2(-19.998047, -980)
+scale = Vector2(2.1460178, 2.8738956)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacle1" unique_id=420840287]
+position = Vector2(-37, -1839)
+scale = Vector2(2.5813878, 2.337246)
+texture = ExtResource("13_sypgb")
+
+[node name="Control" type="Control" parent="Obstacle1" unique_id=1649799611]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = -7.0
+offset_right = -485.0
+offset_bottom = 33.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle1/Control" unique_id=172067186]
+layout_mode = 0
+offset_left = -570.0
+offset_top = -3099.0
+offset_right = 1505.0
+offset_bottom = -2484.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle1/Control/PanelContainer" unique_id=1310044018]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle1/Control/PanelContainer" unique_id=1833904483]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle1/Control/PanelContainer/HBoxContainer" unique_id=2099511641]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=953148472]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 37
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black]A [b]wall[/b] is a structure[color=blue][b][i][1][/i][/b][/color] and a surface that  prevents video-game protagonists from progressing[color=blue][b][i][2][/i][/b][/color]. This wall[color=blue][b][i][3][/i][/b][/color] can be cleared with something[/color] [color=blue][u]destructive[/u][/color][color=black]."
+
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacle1" unique_id=276853042]
+position = Vector2(-19, -230)
+rotation = -0.27654868
+scale = Vector2(2.3365996, 1.7580662)
+texture = ExtResource("13_sypgb")
+
+[node name="Obstacle2" type="Node2D" parent="." unique_id=1807867331]
+position = Vector2(9603, 53716)
+
+[node name="ClosedGate" type="Sprite2D" parent="Obstacle2" unique_id=1092317188]
+position = Vector2(627, -1106)
+scale = Vector2(2.4140487, 2.5)
+texture = ExtResource("30_q2vmi")
+
+[node name="Control" type="Control" parent="Obstacle2" unique_id=1460695895]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle2/Control" unique_id=1751789174]
+layout_mode = 0
+offset_left = -570.0
+offset_top = -3099.0
+offset_right = 1505.0
+offset_bottom = -2484.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle2/Control/PanelContainer" unique_id=163639017]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle2/Control/PanelContainer" unique_id=1745771641]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle2/Control/PanelContainer/HBoxContainer" unique_id=1698793172]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1382114119]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black] A [b]gate[/b] or [b]gateway[/b]  is a point of entry to or from a space[color=blue][b][i][1][/i][/b][/color].
+To increase security, some gates may require something to[/color] [color=blue][u]unlock[/u][/color][color=black][color=blue][b][i][2][/i][/b][/color] them."
+
+[node name="Obstacle3" type="Node2D" parent="." unique_id=1332748862]
+position = Vector2(33092, 44592)
+
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacle3" unique_id=1692838300]
+position = Vector2(-19.998047, -980)
+scale = Vector2(2.1460178, 2.8738956)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacle3" unique_id=1728756400]
+position = Vector2(-37, -1839)
+scale = Vector2(2.5813878, 2.337246)
+texture = ExtResource("13_sypgb")
+
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacle3" unique_id=1575275787]
+position = Vector2(-19, -230)
+rotation = -0.27654868
+scale = Vector2(2.3365996, 1.7580662)
+texture = ExtResource("13_sypgb")
+
+[node name="Control" type="Control" parent="Obstacle3" unique_id=1298388079]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle3/Control" unique_id=917508525]
+layout_mode = 0
+offset_left = -570.0
+offset_top = -3099.0
+offset_right = 1505.0
+offset_bottom = -2484.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle3/Control/PanelContainer" unique_id=2067627936]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle3/Control/PanelContainer" unique_id=1786624968]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle3/Control/PanelContainer/HBoxContainer" unique_id=1760981005]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle3/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=18949656]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black]A [b]climbing rope[/b] is a rope that is used in climbing[color=blue][b][i][citation needed][/i][/b][/color]. If a climbing rope has snapped, it will need to be [color=blue][u]connected[/u][/color][color=blue][b][i][1][/i][/b][/color]  before using it again.[/color] 
+[color=black]
+"
+
+[node name="Obstacle4" type="Node2D" parent="." unique_id=1682855279]
+position = Vector2(42939, 42014)
+
+[node name="BoyNpcIdol" type="Sprite2D" parent="Obstacle4" unique_id=1400464085]
+position = Vector2(251.375, -1240.5)
+scale = Vector2(3.248069, 2.810232)
+texture = ExtResource("31_lwa2w")
+
+[node name="Control" type="Control" parent="Obstacle4" unique_id=532991920]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle4/Control" unique_id=982588784]
+layout_mode = 0
+offset_left = -570.0
+offset_top = -3099.0
+offset_right = 1472.0
+offset_bottom = -2070.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle4/Control/PanelContainer" unique_id=605157427]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle4/Control/PanelContainer" unique_id=381760989]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle4/Control/PanelContainer/HBoxContainer" unique_id=1653302735]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle4/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1248815444]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black]A [b]carpenter[/b] is a type of construction worker who builds things. It is commonly known[color=blue][b][i][1][/i][/b][/color] that to that they often misplace their tools. One carpeneter was quoted as saying [i]\"I can finish this path up the mountain if you get me a [color=blue][u]tool[/u][/color] to secure these rocks!\"[/i][color=blue][b][i][2][/i][/b][/color]"
+
+[node name="Obstacle5" type="Node2D" parent="." unique_id=311073482]
+position = Vector2(64399, 34008)
+
+[node name="StressedDropbearNpc" type="Sprite2D" parent="Obstacle5" unique_id=906435572]
+position = Vector2(-81, -873)
+texture = ExtResource("32_hkpnj")
+
+[node name="Control" type="Control" parent="Obstacle5" unique_id=1433187207]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle5/Control" unique_id=751377259]
+layout_mode = 0
+offset_left = -548.0
+offset_top = -6252.0
+offset_right = 1519.0
+offset_bottom = -5097.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle5/Control/PanelContainer" unique_id=1457435736]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle5/Control/PanelContainer" unique_id=729221154]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle5/Control/PanelContainer/HBoxContainer" unique_id=1781913428]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle5/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=719451667]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black]The [b]drop bear[/b] (sometimes [b]dropbear[/b]) is a very real[color=blue][b][i][1][/i][/b][/color] [color=black]predatory, carnivorous version of the koala. They are alleged by some[color=blue][b][i][citation needed][/i][/b][/color] to especially feed on Australian tourists.
+Studies indicate[color=blue][b][i][2][/i][/b][/color] that drop bears are mostly just stressed, and will become peaceful if [color=blue][u]relaxed[/u][/color]."
+
+[node name="Obstacle6" type="Node2D" parent="." unique_id=1237211074]
+position = Vector2(82141, 37817)
+
+[node name="Water" type="Sprite2D" parent="Obstacle6" unique_id=1633744166]
+position = Vector2(692, 208)
+texture = ExtResource("29_2nh8c")
+
+[node name="Control" type="Control" parent="Obstacle6" unique_id=1492933499]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle6/Control" unique_id=1543272813]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4523.0
+offset_right = 2138.0
+offset_bottom = -3644.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle6/Control/PanelContainer" unique_id=943616839]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle6/Control/PanelContainer" unique_id=2067068278]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle6/Control/PanelContainer/HBoxContainer" unique_id=506943154]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle6/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=2015595134]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black]A [b]body of water[/b] or [b]waterbody[/b][color=blue][b][i][1][/i][/b][/color] is any significant accumulation of water on the surface of the earth.
+There are many ways to cross a [b]body of water[/b], the most commonly cited[color=blue][b][i][2][/i][/b][/color] way is by [color=blue][u]swimming[/u][/color]."
+
+[node name="Obstacle7" type="Node2D" parent="." unique_id=2014272633]
+position = Vector2(89461, 35255)
+
+[node name="Village" type="Sprite2D" parent="Obstacle7" unique_id=470407893]
+position = Vector2(886, -463)
+scale = Vector2(2.7456918, 2.9314442)
+texture = ExtResource("30_33gbk")
+
+[node name="Control" type="Control" parent="Obstacle7" unique_id=1633908762]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Obstacle7/Control" unique_id=486122931]
+layout_mode = 0
+offset_left = 252.0
+offset_top = -2270.0
+offset_right = 2328.0
+offset_bottom = -1391.0
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle7/Control/PanelContainer" unique_id=2004801283]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle7/Control/PanelContainer" unique_id=872803798]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Obstacle7/Control/PanelContainer/HBoxContainer" unique_id=892839807]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle7/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1308608615]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black]A [b]village[/b] is a human settlement or a residential community, larger than a hamlet but smaller than a town[color=blue][b][i][1][2][3][4][/i][/b][/color].
+But a village is nothing without a community.
+[color=black]A [b]body of water[/b] or [b]waterbody[/b][color=blue][b][i][1][/i][/b][/color] is any significant accumulation of water on the surface of the earth.
+There are many ways to cross a [b]body of water[/b], the most commonly cited[color=blue][b][i][2][/i][/b][/color] way is by [color=blue][u]swimming[/u][/color]."
+
+[node name="Shop1" type="Node2D" parent="." unique_id=655730883]
+position = Vector2(56485, 34047)
+
+[node name="BoyNpcIdol" type="Sprite2D" parent="Shop1" unique_id=365232232]
+position = Vector2(251.375, -1240.5)
+scale = Vector2(3.248069, 2.810232)
+texture = ExtResource("31_lwa2w")
+
+[node name="Control" type="Control" parent="Shop1" unique_id=1677861905]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Shop1/Control" unique_id=1220467133]
+layout_mode = 0
+offset_left = -269.0
+offset_top = -6572.0
+offset_right = 1773.0
+offset_bottom = -5950.0
+
+[node name="ColorRect" type="ColorRect" parent="Shop1/Control/PanelContainer" unique_id=964276468]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop1/Control/PanelContainer" unique_id=1021677325]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop1/Control/PanelContainer/HBoxContainer" unique_id=804021422]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1330951762]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black][b][u]SHOP[/u][/b] 
+[i]\"I will trade with you!
+I want riches - bring me some [color=blue][u]property[/u][/color], and I will spawn [color=blue][u]relaxing[/u][/color] things!\""
+
+[node name="Shop2" type="Node2D" parent="." unique_id=433252466]
+position = Vector2(59626, 34047)
+
+[node name="BoyNpcIdol" type="Sprite2D" parent="Shop2" unique_id=100073582]
+position = Vector2(251.375, -1240.5)
+scale = Vector2(3.248069, 2.810232)
+texture = ExtResource("31_lwa2w")
+
+[node name="Control" type="Control" parent="Shop2" unique_id=1196993358]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Shop2/Control" unique_id=152545244]
+layout_mode = 0
+offset_left = -125.0
+offset_top = -6569.0
+offset_right = 1917.0
+offset_bottom = -5947.0
+
+[node name="ColorRect" type="ColorRect" parent="Shop2/Control/PanelContainer" unique_id=621794469]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop2/Control/PanelContainer" unique_id=743372071]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop2/Control/PanelContainer/HBoxContainer" unique_id=739122395]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1121599518]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black][b][u]SHOP[/u][/b] 
+[i]\"I will trade with you!
+I want a pet - bring me an [color=blue][u]animal[/u][/color], and I will spawn some[color=blue] [u]property[/u][/color]!\""
 
 [node name="Path2D" type="Path2D" parent="." unique_id=833178250]
 position = Vector2(7755, 39323)
@@ -3177,9 +3583,3 @@ script = ExtResource("29_lwa2w")
 position = Vector2(196.5375, -34.17837)
 target_position = Vector2(625.6758, 20.164063)
 collide_with_areas = true
-
-[node name="Area2D" type="Area2D" parent="." unique_id=787821023]
-position = Vector2(18724, 51054)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=662820731]
-shape = SubResource("RectangleShape2D_qnpof")
