@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bqfhgrpghu88f"]
+
+[node name="EndingScene" type="Node2D" unique_id=1405502439]
+
+[node name="Control" type="Control" parent="." unique_id=262502731]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1936.0
+offset_bottom = 1107.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1142296319]
+layout_mode = 0
+offset_right = 1977.0
+offset_bottom = 1127.0
+color = Color(0, 0, 0, 1)
+
+[node name="Container" type="Container" parent="Control" unique_id=1158800199]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 51.0
+offset_right = 1925.0
+offset_bottom = 1075.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Container" unique_id=1151325509]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Container/VBoxContainer" unique_id=925049928]
+layout_mode = 2
+theme_override_font_sizes/font_size = 366
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Container/VBoxContainer" unique_id=1442520896]
+layout_mode = 2
+theme_override_font_sizes/font_size = 129
+text = "EVERYTHING KNOWN TO MAN"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Container/VBoxContainer" unique_id=185219699]
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "By John, Kathren, and Oscar"
+horizontal_alignment = 1
