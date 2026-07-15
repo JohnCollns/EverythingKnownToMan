@@ -10,6 +10,7 @@ public partial class WikiNPC : Node
     [Export] private Texture2D SatisfiedTexture;
     [Export] private Node[] OwnedBlockers;
     [Export] private Spawner OwnedSpawner;
+    [Signal] public delegate void SatisfiedEventHandler();
     public bool bIsSatisfied { get; private set; } = false;
 
     public override void _Ready()
@@ -32,6 +33,7 @@ public partial class WikiNPC : Node
     private void OnSatisfied()
     {
         bIsSatisfied = true;
+        //EmitSignal(SatisfiedEventHandler);
         foreach (Node blocker in OwnedBlockers)
         {
             ClearBlocker_Recursive(blocker);

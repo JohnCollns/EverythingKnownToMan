@@ -29,6 +29,10 @@ public partial class Spawner : Node
     public void SpawnArticle()
     {
         WikiArticle article = WikiDatabase.Instance.RequestRandomArticleOfTag(tags);
+        if (article == null)
+        {
+            return;
+        }
         ArticleNode2D articleNode2D = articleSceneTemplate.Instantiate<ArticleNode2D>();
         AddChild(articleNode2D);
         articleNode2D.ArticleNode.LoadArticle(article);

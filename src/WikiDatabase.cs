@@ -19,14 +19,15 @@ public partial class WikiDatabase : Node
 	public WikiArticle RequestRandomArticleOfTag(string tag)
 	{
 		string lowertag = tag.ToLower();
-		if (!WikiArticles.ContainsKey(lowertag))
+		if (!WikiArticles.ContainsKey(lowertag) || WikiArticles[lowertag].Count == 0)
 		{
-			GD.PushError($"WikiDatabase contains no articles for tag: {lowertag}");
+			GD.PushWarning($"WikiDatabase contains no articles for tag: {lowertag}");
 			return null;
 		}
 		GD.Print($"Attempting to return article for tag: {lowertag}");// DEBUG DELETE
-
-		return WikiArticles[lowertag][new Random().Next(0, WikiArticles[lowertag].Count)];
+		var consumedArticle = WikiArticles[lowertag][new Random().Next(0, WikiArticles[lowertag].Count)];
+		WikiArticles[lowertag].Remove(consumedArticle);
+		return consumedArticle;
 	}
 
 	public WikiArticle RequestRandomArticleOfTag(string[] tags)
