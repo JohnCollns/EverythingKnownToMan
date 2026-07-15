@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://ckvn35c7uew77" path="res://Assets/Colour mountain/Colour_m_phase2.png" id="23_s0cgv"]
 [ext_resource type="Texture2D" uid="uid://rgtgyldak2gm" path="res://Assets/Colour mountain/Colour rock M.png" id="24_3ppgv"]
 [ext_resource type="Texture2D" uid="uid://cc0mcimduidai" path="res://Assets/forest assets/foreground.png" id="25_wesx8"]
+[ext_resource type="Texture2D" uid="uid://ck6vs6c7fs2cp" path="res://Assets/Obstacles/Open gate back.PNG" id="26_yr3df"]
 [ext_resource type="Script" uid="uid://ctbit0mmqtwhc" path="res://Oscar's Scripts (bad)/background_follow_camera.gd" id="27_b4adj"]
+[ext_resource type="Texture2D" uid="uid://kr2dh43dhgiu" path="res://Assets/Obstacles/Open gate front.PNG" id="27_dss6r"]
 [ext_resource type="PackedScene" uid="uid://bwtsm04konqyb" path="res://content/UI/ArticleSimple_2D.tscn" id="28_fmksp"]
 [ext_resource type="Texture2D" uid="uid://cdfyqw01vnqj1" path="res://Assets/Obstacles/Water.PNG" id="29_2nh8c"]
 [ext_resource type="PackedScene" uid="uid://doxsq2cq3p6sk" path="res://content/Player/inventory_scene.tscn" id="29_fmksp"]
@@ -34,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://q2q366fda7bp" path="res://Assets/Obstacles/Closed gate.PNG" id="30_q2vmi"]
 [ext_resource type="Texture2D" uid="uid://41u7ohspuunn" path="res://Assets/Characters/Boy npc idol.PNG" id="31_lwa2w"]
 [ext_resource type="Texture2D" uid="uid://bvv7l5w6h6ueg" path="res://Assets/Characters/Stressed dropbear npc.PNG" id="32_hkpnj"]
+[ext_resource type="PackedScene" uid="uid://pmlho6imkkx5" path="res://content/scratch/NPCDemo.tscn" id="35_jpwbr"]
+[ext_resource type="PackedScene" uid="uid://ccfbd4244u4ve" path="res://content/scratch/SpawnerDemo.tscn" id="38_dss6r"]
 
 [sub_resource type="Curve2D" id="Curve2D_b4adj"]
 _data = {
@@ -3130,20 +3134,22 @@ texture = ExtResource("25_wesx8")
 [node name="ArticleSimple2d" parent="." unique_id=1223787358 instance=ExtResource("28_fmksp")]
 position = Vector2(885, 54483)
 
-[node name="Obstacle1" type="Node2D" parent="." unique_id=806105458]
+[node name="Obstacles2D" type="Node2D" parent="." unique_id=8109734]
+
+[node name="Obstacle1" type="Node2D" parent="Obstacles2D" unique_id=806105458]
 position = Vector2(18729, 52142)
 
-[node name="PointyRockL2" type="Sprite2D" parent="Obstacle1" unique_id=1062939976]
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacles2D/Obstacle1" unique_id=1062939976]
 position = Vector2(-19.998047, -980)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("13_sypgb")
 
-[node name="PointyRockL4" type="Sprite2D" parent="Obstacle1" unique_id=420840287]
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacles2D/Obstacle1" unique_id=420840287]
 position = Vector2(-37, -1839)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("13_sypgb")
 
-[node name="Control" type="Control" parent="Obstacle1" unique_id=1649799611]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle1" unique_id=1649799611]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3151,24 +3157,24 @@ offset_top = -7.0
 offset_right = -485.0
 offset_bottom = 33.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle1/Control" unique_id=172067186]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle1/Control" unique_id=172067186]
 layout_mode = 0
 offset_left = -570.0
 offset_top = -3099.0
 offset_right = 1505.0
 offset_bottom = -2484.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle1/Control/PanelContainer" unique_id=1310044018]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle1/Control/PanelContainer" unique_id=1310044018]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle1/Control/PanelContainer" unique_id=1833904483]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle1/Control/PanelContainer" unique_id=1833904483]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle1/Control/PanelContainer/HBoxContainer" unique_id=2099511641]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle1/Control/PanelContainer/HBoxContainer" unique_id=2099511641]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=953148472]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=953148472]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3179,21 +3185,35 @@ theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "[color=black]A [b]wall[/b] is a structure[color=blue][b][i][1][/i][/b][/color] and a surface that  prevents video-game protagonists from progressing[color=blue][b][i][2][/i][/b][/color]. This wall[color=blue][b][i][3][/i][/b][/color] can be cleared with something[/color] [color=blue][u]destructive[/u][/color][color=black]."
 
-[node name="PointyRockL3" type="Sprite2D" parent="Obstacle1" unique_id=276853042]
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacles2D/Obstacle1" unique_id=276853042]
 position = Vector2(-19, -230)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("13_sypgb")
 
-[node name="Obstacle2" type="Node2D" parent="." unique_id=1807867331]
+[node name="Obstacle2" type="Node2D" parent="Obstacles2D" unique_id=1807867331]
 position = Vector2(9603, 53716)
 
-[node name="ClosedGate" type="Sprite2D" parent="Obstacle2" unique_id=1092317188]
+[node name="NpcDemo" parent="Obstacles2D/Obstacle2" unique_id=808611719 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("35_jpwbr")]
+OwnedBlockers = []
+
+[node name="OpenGateBack" type="Sprite2D" parent="Obstacles2D/Obstacle2" unique_id=485945634]
+visible = false
+position = Vector2(570, -1169)
+scale = Vector2(2.286358, 2.3569832)
+texture = ExtResource("26_yr3df")
+
+[node name="OpenGateFront" type="Sprite2D" parent="Obstacles2D/Obstacle2" unique_id=1235512792]
+position = Vector2(585, -1121)
+scale = Vector2(2.4186044, 2.4056818)
+texture = ExtResource("27_dss6r")
+
+[node name="ClosedGate" type="Sprite2D" parent="Obstacles2D/Obstacle2" unique_id=1092317188]
 position = Vector2(627, -1106)
 scale = Vector2(2.4140487, 2.5)
 texture = ExtResource("30_q2vmi")
 
-[node name="Control" type="Control" parent="Obstacle2" unique_id=1460695895]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle2" unique_id=1460695895]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3201,24 +3221,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle2/Control" unique_id=1751789174]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle2/Control" unique_id=1751789174]
 layout_mode = 0
 offset_left = -570.0
 offset_top = -3099.0
 offset_right = 1505.0
 offset_bottom = -2484.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle2/Control/PanelContainer" unique_id=163639017]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle2/Control/PanelContainer" unique_id=163639017]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle2/Control/PanelContainer" unique_id=1745771641]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle2/Control/PanelContainer" unique_id=1745771641]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle2/Control/PanelContainer/HBoxContainer" unique_id=1698793172]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle2/Control/PanelContainer/HBoxContainer" unique_id=1698793172]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1382114119]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1382114119]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3230,26 +3250,26 @@ bbcode_enabled = true
 text = "[color=black] A [b]gate[/b] or [b]gateway[/b]  is a point of entry to or from a space[color=blue][b][i][1][/i][/b][/color].
 To increase security, some gates may require something to[/color] [color=blue][u]unlock[/u][/color][color=black][color=blue][b][i][2][/i][/b][/color] them."
 
-[node name="Obstacle3" type="Node2D" parent="." unique_id=1332748862]
+[node name="Obstacle3" type="Node2D" parent="Obstacles2D" unique_id=1332748862]
 position = Vector2(33092, 44592)
 
-[node name="PointyRockL2" type="Sprite2D" parent="Obstacle3" unique_id=1692838300]
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacles2D/Obstacle3" unique_id=1692838300]
 position = Vector2(-19.998047, -980)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("13_sypgb")
 
-[node name="PointyRockL4" type="Sprite2D" parent="Obstacle3" unique_id=1728756400]
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacles2D/Obstacle3" unique_id=1728756400]
 position = Vector2(-37, -1839)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("13_sypgb")
 
-[node name="PointyRockL3" type="Sprite2D" parent="Obstacle3" unique_id=1575275787]
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacles2D/Obstacle3" unique_id=1575275787]
 position = Vector2(-19, -230)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("13_sypgb")
 
-[node name="Control" type="Control" parent="Obstacle3" unique_id=1298388079]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle3" unique_id=1298388079]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3257,24 +3277,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle3/Control" unique_id=917508525]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle3/Control" unique_id=917508525]
 layout_mode = 0
 offset_left = -570.0
 offset_top = -3099.0
 offset_right = 1505.0
 offset_bottom = -2484.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle3/Control/PanelContainer" unique_id=2067627936]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle3/Control/PanelContainer" unique_id=2067627936]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle3/Control/PanelContainer" unique_id=1786624968]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle3/Control/PanelContainer" unique_id=1786624968]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle3/Control/PanelContainer/HBoxContainer" unique_id=1760981005]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle3/Control/PanelContainer/HBoxContainer" unique_id=1760981005]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle3/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=18949656]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle3/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=18949656]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3287,15 +3307,15 @@ text = "[color=black]A [b]climbing rope[/b] is a rope that is used in climbing[c
 [color=black]
 "
 
-[node name="Obstacle4" type="Node2D" parent="." unique_id=1682855279]
+[node name="Obstacle4" type="Node2D" parent="Obstacles2D" unique_id=1682855279]
 position = Vector2(42939, 42014)
 
-[node name="BoyNpcIdol" type="Sprite2D" parent="Obstacle4" unique_id=1400464085]
+[node name="BoyNpcIdol" type="Sprite2D" parent="Obstacles2D/Obstacle4" unique_id=1400464085]
 position = Vector2(251.375, -1240.5)
 scale = Vector2(3.248069, 2.810232)
 texture = ExtResource("31_lwa2w")
 
-[node name="Control" type="Control" parent="Obstacle4" unique_id=532991920]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle4" unique_id=532991920]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3303,24 +3323,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle4/Control" unique_id=982588784]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle4/Control" unique_id=982588784]
 layout_mode = 0
 offset_left = -570.0
 offset_top = -3099.0
 offset_right = 1472.0
 offset_bottom = -2070.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle4/Control/PanelContainer" unique_id=605157427]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle4/Control/PanelContainer" unique_id=605157427]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle4/Control/PanelContainer" unique_id=381760989]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle4/Control/PanelContainer" unique_id=381760989]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle4/Control/PanelContainer/HBoxContainer" unique_id=1653302735]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle4/Control/PanelContainer/HBoxContainer" unique_id=1653302735]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle4/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1248815444]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle4/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1248815444]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3331,14 +3351,14 @@ theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "[color=black]A [b]carpenter[/b] is a type of construction worker who builds things. It is commonly known[color=blue][b][i][1][/i][/b][/color] that to that they often misplace their tools. One carpeneter was quoted as saying [i]\"I can finish this path up the mountain if you get me a [color=blue][u]tool[/u][/color] to secure these rocks!\"[/i][color=blue][b][i][2][/i][/b][/color]"
 
-[node name="Obstacle5" type="Node2D" parent="." unique_id=311073482]
+[node name="Obstacle5" type="Node2D" parent="Obstacles2D" unique_id=311073482]
 position = Vector2(64399, 34008)
 
-[node name="StressedDropbearNpc" type="Sprite2D" parent="Obstacle5" unique_id=906435572]
+[node name="StressedDropbearNpc" type="Sprite2D" parent="Obstacles2D/Obstacle5" unique_id=906435572]
 position = Vector2(-81, -873)
 texture = ExtResource("32_hkpnj")
 
-[node name="Control" type="Control" parent="Obstacle5" unique_id=1433187207]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle5" unique_id=1433187207]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3346,24 +3366,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle5/Control" unique_id=751377259]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle5/Control" unique_id=751377259]
 layout_mode = 0
 offset_left = -548.0
 offset_top = -6252.0
 offset_right = 1519.0
 offset_bottom = -5097.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle5/Control/PanelContainer" unique_id=1457435736]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle5/Control/PanelContainer" unique_id=1457435736]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle5/Control/PanelContainer" unique_id=729221154]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle5/Control/PanelContainer" unique_id=729221154]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle5/Control/PanelContainer/HBoxContainer" unique_id=1781913428]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle5/Control/PanelContainer/HBoxContainer" unique_id=1781913428]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle5/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=719451667]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle5/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=719451667]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3375,14 +3395,14 @@ bbcode_enabled = true
 text = "[color=black]The [b]drop bear[/b] (sometimes [b]dropbear[/b]) is a very real[color=blue][b][i][1][/i][/b][/color] [color=black]predatory, carnivorous version of the koala. They are alleged by some[color=blue][b][i][citation needed][/i][/b][/color] to especially feed on Australian tourists.
 Studies indicate[color=blue][b][i][2][/i][/b][/color] that drop bears are mostly just stressed, and will become peaceful if [color=blue][u]relaxed[/u][/color]."
 
-[node name="Obstacle6" type="Node2D" parent="." unique_id=1237211074]
+[node name="Obstacle6" type="Node2D" parent="Obstacles2D" unique_id=1237211074]
 position = Vector2(82141, 37817)
 
-[node name="Water" type="Sprite2D" parent="Obstacle6" unique_id=1633744166]
+[node name="Water" type="Sprite2D" parent="Obstacles2D/Obstacle6" unique_id=1633744166]
 position = Vector2(692, 208)
 texture = ExtResource("29_2nh8c")
 
-[node name="Control" type="Control" parent="Obstacle6" unique_id=1492933499]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle6" unique_id=1492933499]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3390,24 +3410,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle6/Control" unique_id=1543272813]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle6/Control" unique_id=1543272813]
 layout_mode = 0
 offset_left = 62.0
 offset_top = -4523.0
 offset_right = 2138.0
 offset_bottom = -3644.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle6/Control/PanelContainer" unique_id=943616839]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle6/Control/PanelContainer" unique_id=943616839]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle6/Control/PanelContainer" unique_id=2067068278]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle6/Control/PanelContainer" unique_id=2067068278]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle6/Control/PanelContainer/HBoxContainer" unique_id=506943154]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle6/Control/PanelContainer/HBoxContainer" unique_id=506943154]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle6/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=2015595134]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle6/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=2015595134]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3419,15 +3439,15 @@ bbcode_enabled = true
 text = "[color=black]A [b]body of water[/b] or [b]waterbody[/b][color=blue][b][i][1][/i][/b][/color] is any significant accumulation of water on the surface of the earth.
 There are many ways to cross a [b]body of water[/b], the most commonly cited[color=blue][b][i][2][/i][/b][/color] way is by [color=blue][u]swimming[/u][/color]."
 
-[node name="Obstacle7" type="Node2D" parent="." unique_id=2014272633]
+[node name="Obstacle7" type="Node2D" parent="Obstacles2D" unique_id=2014272633]
 position = Vector2(89461, 35255)
 
-[node name="Village" type="Sprite2D" parent="Obstacle7" unique_id=470407893]
+[node name="Village" type="Sprite2D" parent="Obstacles2D/Obstacle7" unique_id=470407893]
 position = Vector2(886, -463)
 scale = Vector2(2.7456918, 2.9314442)
 texture = ExtResource("30_33gbk")
 
-[node name="Control" type="Control" parent="Obstacle7" unique_id=1633908762]
+[node name="Control" type="Control" parent="Obstacles2D/Obstacle7" unique_id=1633908762]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3435,24 +3455,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacle7/Control" unique_id=486122931]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Obstacle7/Control" unique_id=486122931]
 layout_mode = 0
 offset_left = 252.0
 offset_top = -2270.0
 offset_right = 2328.0
 offset_bottom = -1391.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacle7/Control/PanelContainer" unique_id=2004801283]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Obstacle7/Control/PanelContainer" unique_id=2004801283]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacle7/Control/PanelContainer" unique_id=872803798]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Obstacle7/Control/PanelContainer" unique_id=872803798]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacle7/Control/PanelContainer/HBoxContainer" unique_id=892839807]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Obstacle7/Control/PanelContainer/HBoxContainer" unique_id=892839807]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacle7/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1308608615]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Obstacle7/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1308608615]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3466,15 +3486,10 @@ But a village is nothing without a community.
 [color=black]A [b]body of water[/b] or [b]waterbody[/b][color=blue][b][i][1][/i][/b][/color] is any significant accumulation of water on the surface of the earth.
 There are many ways to cross a [b]body of water[/b], the most commonly cited[color=blue][b][i][2][/i][/b][/color] way is by [color=blue][u]swimming[/u][/color]."
 
-[node name="Shop1" type="Node2D" parent="." unique_id=655730883]
+[node name="Shop1" type="Node2D" parent="Obstacles2D" unique_id=655730883]
 position = Vector2(56485, 34047)
 
-[node name="BoyNpcIdol" type="Sprite2D" parent="Shop1" unique_id=365232232]
-position = Vector2(251.375, -1240.5)
-scale = Vector2(3.248069, 2.810232)
-texture = ExtResource("31_lwa2w")
-
-[node name="Control" type="Control" parent="Shop1" unique_id=1677861905]
+[node name="Control" type="Control" parent="Obstacles2D/Shop1" unique_id=1677861905]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3482,24 +3497,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Shop1/Control" unique_id=1220467133]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Shop1/Control" unique_id=1220467133]
 layout_mode = 0
 offset_left = -269.0
 offset_top = -6572.0
 offset_right = 1773.0
 offset_bottom = -5950.0
 
-[node name="ColorRect" type="ColorRect" parent="Shop1/Control/PanelContainer" unique_id=964276468]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Shop1/Control/PanelContainer" unique_id=964276468]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Shop1/Control/PanelContainer" unique_id=1021677325]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Shop1/Control/PanelContainer" unique_id=1021677325]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Shop1/Control/PanelContainer/HBoxContainer" unique_id=804021422]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Shop1/Control/PanelContainer/HBoxContainer" unique_id=804021422]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shop1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1330951762]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Shop1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1330951762]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3512,15 +3527,15 @@ text = "[color=black][b][u]SHOP[/u][/b]
 [i]\"I will trade with you!
 I want riches - bring me some [color=blue][u]property[/u][/color], and I will spawn [color=blue][u]relaxing[/u][/color] things!\""
 
-[node name="Shop2" type="Node2D" parent="." unique_id=433252466]
+[node name="Shop2" type="Node2D" parent="Obstacles2D" unique_id=433252466]
 position = Vector2(59626, 34047)
 
-[node name="BoyNpcIdol" type="Sprite2D" parent="Shop2" unique_id=100073582]
+[node name="BoyNpcIdol" type="Sprite2D" parent="Obstacles2D/Shop2" unique_id=100073582]
 position = Vector2(251.375, -1240.5)
 scale = Vector2(3.248069, 2.810232)
 texture = ExtResource("31_lwa2w")
 
-[node name="Control" type="Control" parent="Shop2" unique_id=1196993358]
+[node name="Control" type="Control" parent="Obstacles2D/Shop2" unique_id=1196993358]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3528,24 +3543,24 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Shop2/Control" unique_id=152545244]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles2D/Shop2/Control" unique_id=152545244]
 layout_mode = 0
 offset_left = -125.0
 offset_top = -6569.0
 offset_right = 1917.0
 offset_bottom = -5947.0
 
-[node name="ColorRect" type="ColorRect" parent="Shop2/Control/PanelContainer" unique_id=621794469]
+[node name="ColorRect" type="ColorRect" parent="Obstacles2D/Shop2/Control/PanelContainer" unique_id=621794469]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Shop2/Control/PanelContainer" unique_id=743372071]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles2D/Shop2/Control/PanelContainer" unique_id=743372071]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Shop2/Control/PanelContainer/HBoxContainer" unique_id=739122395]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles2D/Shop2/Control/PanelContainer/HBoxContainer" unique_id=739122395]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1121599518]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles2D/Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1121599518]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3583,3 +3598,19 @@ script = ExtResource("29_lwa2w")
 position = Vector2(196.5375, -34.17837)
 target_position = Vector2(625.6758, 20.164063)
 collide_with_areas = true
+
+[node name="PropertyNpc" parent="." unique_id=1694411086 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawner") instance=ExtResource("35_jpwbr")]
+position = Vector2(56553, 34235)
+scale = Vector2(3, 3)
+DesiredTag = "property"
+OwnedBlockers = []
+OwnedSpawner = NodePath("../RelaxingSpawner")
+
+[node name="RelaxingSpawner" parent="." unique_id=939182472 instance=ExtResource("38_dss6r")]
+position = Vector2(56287, 33081)
+tags = PackedStringArray("relaxing")
+
+[node name="PropertySpawner" parent="." unique_id=860088481 instance=ExtResource("38_dss6r")]
+position = Vector2(51323, 34864)
+tags = PackedStringArray("property")
+spawnOnReady = true
