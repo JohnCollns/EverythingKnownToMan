@@ -1,0 +1,10 @@
+{
+  "Title": "Albert Einstein",
+  "Description": "German-born theoretical physicist (1879\u20131955)",
+  "Paragraph": "Albert Einstein was a German-born theoretical physicist best known for developing the known theory of relativity. Einstein also made important contributions to quantum theory. His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \u0022the world\u0027s most famous equation\u0022. He received the 1921 Nobel Prize in Physics for \u0022his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\u0022.",
+  "Tags": [
+	"person",
+    "maths"
+  ],
+  "image": "images\\Albert Einstein.jpg"
+}

@@ -3,8 +3,8 @@
   "Description": "Class of mathematical expression",
   "Paragraph": "In mathematics, division by zero, division where the divisor (denominator) is zero, is a problematic special case. Using fraction notation, the general example can be written as \u2060\u2060, where \u2060\u2060 is the dividend (numerator).",
   "Tags": [
-    "destructive",
-    " maths",
-    ""
-  ]
+	"destructive",
+    "maths"
+  ],
+  "image": "images\\Division by zero.png"
 }

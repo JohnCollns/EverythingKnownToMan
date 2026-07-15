@@ -1,0 +1,9 @@
+{
+  "Title": "Beer",
+  "Description": "Alcoholic drink made from fermented cereal grains",
+  "Paragraph": "Beer is an alcoholic beverage produced by the brewing and fermentation of starches from cereal grain\u2014most commonly malted barley, although wheat, maize, rice, and oats are also used. The grain is mashed to convert starch in the grain to sugars, which dissolve in water to form wort. Fermentation of the wort by yeast produces ethanol and carbonation in the beer. Beer is one of the oldest and most widely consumed alcoholic drinks in the world, and one of the most popular of all drinks. Most modern beer is brewed with hops, which add bitterness and other flavours and act as a natural preservative and stabilizer. Other flavouring agents, such as gruit, herbs, or fruits, may be included or used instead of hops. In commercial brewing, natural carbonation is often replaced with forced carbonation.",
+  "Tags": [
+    "relaxing"
+  ],
+  "image": "images\\Beer.jpg"
+}

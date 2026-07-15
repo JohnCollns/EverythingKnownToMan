@@ -1,9 +1,8 @@
 {
   "Title": "Triceratops",
   "Description": "Genus of Late Cretaceous dinosaur",
-  "Paragraph": "Triceratops is a genus of chasmosaurine ceratopsian dinosaur that lived during the late Maastrichtian age of the Late Cretaceous period, about 69 to 66 million years ago on the island continent of Laramidia, now forming western North America. It was one of the last-known non-avian dinosaurs and lived until the Cretaceous\u2013Paleogene extinction event 66 million years ago. The name Triceratops, which means \u0027three-horned face\u0027, is derived from Ancient Greek \u03C4\u03C1\u03AF-, meaning \u0022three\u0022, \u03BA\u03AD\u03C1\u03B1\u03C2, meaning \u0022horn\u0022, and \u1F64\u03C8, meaning \u0022face\u0022.",
+  "Paragraph": "Triceratops is a genus of chasmosaurine ceratopsian dinosaur that lived during the late Maastrichtian age of the Late Cretaceous period, about 68 to 66 million years ago on the island continent of Laramidia, now forming western North America. It was one of the last-known non-avian dinosaurs and lived until the Cretaceous\u2013Paleogene extinction event 66 million years ago. The name Triceratops, which means \u0027three-horned face\u0027, is derived from Ancient Greek \u03C4\u03C1\u03AF-, meaning \u0022three\u0022, \u03BA\u03AD\u03C1\u03B1\u03C2, meaning \u0022horn\u0022, and \u1F64\u03C8, meaning \u0022face\u0022.",
   "Tags": [
     "animal"
-  ],
-  "image": "images\\Triceratops.jpg"
+  ]
 }

@@ -1,0 +1,10 @@
+{
+  "Title": "Factory",
+  "Description": "Facility where goods are industrially made, or processed",
+  "Paragraph": "A factory, manufacturing plant or production plant is an industrial facility, often a complex consisting of several buildings filled with machinery, where workers manufacture items or operate machines which process each item into another. They are a critical part of modern economic production, with the majority of the world\u0027s goods being created or processed within factories.",
+  "Tags": [
+	"property",
+    "tool"
+  ],
+  "image": "images\\Factory.jpg"
+}

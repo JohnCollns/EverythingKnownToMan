@@ -1,0 +1,10 @@
+{
+  "Title": "Dragon",
+  "Description": "Legendary creature",
+  "Paragraph": "A dragon is a mythical creature found in the folklore of cultures throughout the world. It is roughly serpentine in form, and often possesses features drawn from different animals, such as wings and claws. In nearly all cultures, it is conceived of as a powerful and awe-inspiring creature.",
+  "Tags": [
+	"animal",
+    "spiritual"
+  ],
+  "image": "images\\Dragon.png"
+}

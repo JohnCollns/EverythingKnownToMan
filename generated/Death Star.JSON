@@ -3,8 +3,8 @@
   "Description": "Fictional space station and superweapon",
   "Paragraph": "The Death Star is a fictional massive space station and superweapon featured in the Star Wars space-opera franchise. Constructed by the autocratic Galactic Empire, the Death Star is capable of obliterating entire planets, and serves to enforce the Empire\u0027s reign of terror. It appears as a hundreds of kilometers wide mobile space station that has the shape of a spherical moon or planetoid.",
   "Tags": [
-    "destructive",
-    " property",
-    ""
-  ]
+	"destructive",
+    "property"
+  ],
+  "image": "images\\Death Star.png"
 }

@@ -1,0 +1,10 @@
+{
+  "Title": "Dictionary",
+  "Description": "Collection of words and their meanings",
+  "Paragraph": "A dictionary is a listing of words or lexemes\u2014typically base forms\u2014from the lexicon of one or more specific languages, often arranged alphabetically, which may include information on definitions, usage, etymologies, pronunciations, translation, etc. It is a lexicographical reference that shows inter-relationships among the data.",
+  "Tags": [
+    "meaning",
+    "language"
+  ],
+  "image": "images\\Dictionary.jpg"
+}

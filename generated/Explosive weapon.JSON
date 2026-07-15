@@ -1,0 +1,10 @@
+{
+  "Title": "Explosive weapon",
+  "Description": "Type of weapon",
+  "Paragraph": "An explosive weapon is a weapon that uses an explosive to project blast and/or fragmentation from a point of detonation.",
+  "Tags": [
+	"destructive",
+    "tool"
+  ],
+  "image": "images\\Explosive weapon.jpg"
+}

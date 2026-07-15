@@ -3,7 +3,8 @@
   "Description": "Symbol of communism",
   "Paragraph": "The hammer and sickle is a communist symbol that represents unity between workers and peasants. It was designed in 1918 by Yevgeny Kamzolkin and adopted during the Russian Revolution at the end of World War I. After the Russian Civil War, the hammer and sickle became more widely used as a symbol for labor within the Soviet Union (USSR) and for international proletarian unity. It was taken up by many communist movements around the world, some with local variations. The hammer and sickle, or variations of it, remain commonplace in communist states, such as China, Cuba, Laos, North Korea, and Vietnam, but also some former Soviet republics following the dissolution of the Soviet Union, such as Belarus and Russia. Some countries have imposed bans on communist symbols, where the display of the hammer and sickle is prohibited.",
   "Tags": [
-    "tool",
-    " political"
-  ]
+	"tool",
+    "political"
+  ],
+  "image": "images\\Hammer and sickle.png"
 }

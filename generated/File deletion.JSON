@@ -3,8 +3,7 @@
   "Description": "Removal of a file from a computer\u0027s file system",
   "Paragraph": "File deletion is the removal of a file from a computer\u0027s file system.",
   "Tags": [
-    "destructive",
-    ""
+    "destructive"
   ],
   "image": "images\\File deletion.png"
 }

@@ -3,7 +3,7 @@
   "Description": "Key modified to unlock a variety of locks",
   "Paragraph": "A skeleton key is a type of master key in which the serrated edge has been removed in such a way that it can open numerous locks, most commonly the warded lock. The term derives from the fact that the key has been reduced to its essential parts.",
   "Tags": [
-    "unlocking",
-    ""
-  ]
+    "unlocking"
+  ],
+  "image": "images\\Skeleton key.png"
 }

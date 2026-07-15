@@ -3,7 +3,7 @@
   "Description": "Accessory for the Game Boy line",
   "Paragraph": "The Game Link Cable, also known as Video Link in early versions, is an accessory for the Game Boy line of handheld consoles. Introduced in 1989 alongside the original Game Boy, it was revised over four generations with varying degrees of backward compatibility. The cable enables data transfer and multiplayer gaming between up to four devices, supporting head-to-head competition, cooperative play, item exchanges, and unlockable features, depending on the game. The cable could also connect the console to external peripherals, most notably the Game Boy Printer. The port on Game Boy consoles is labeled \u0022EXT\u0022 for Extension connector.",
   "Tags": [
-    "connection",
-    ""
-  ]
+    "connection"
+  ],
+  "image": "images\\Game Link Cable.jpg"
 }
