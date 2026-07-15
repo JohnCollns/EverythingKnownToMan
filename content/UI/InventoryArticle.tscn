@@ -12,8 +12,9 @@ anchor_bottom = 0.19800001
 offset_bottom = -0.3040161
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 script = ExtResource("1_smrkg")
-ArticleTexture = NodePath("PanelContainer/MarginContainer/HBoxContainer/TextureRect")
+ArticleTexture = NodePath("PanelContainer/MarginContainer/HBoxContainer/TextureMarginContainer/TextureRect")
 TitleLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/MarginContainer/TitleLabel")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=315682077]
@@ -28,16 +29,25 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=23620761]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1231503329]
+[node name="TextureMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1683037245]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureMarginContainer" unique_id=1231503329]
+custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("3_jb6f0")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=313785055]
 layout_mode = 2
-theme_override_constants/margin_left = 3
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3

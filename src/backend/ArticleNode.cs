@@ -19,6 +19,7 @@ public partial class ArticleNode : Control
 	[Export] private Button ClickableBackground;
 	[Export] private bool bLoadFromDisk = false;
 	[Export] private string DiskFileName;
+	private float TextureMinSize = 150f; 
 
 	public override void _Ready()
 	{
@@ -32,6 +33,8 @@ public partial class ArticleNode : Control
 		{
 			LoadFromDisk(DiskFileName);
 		}
+
+		TextureMinSize = ArticleTexture.CustomMinimumSize.X;
 	}
 
 	private void OnClickableBackgroundOnPressed()
@@ -54,11 +57,15 @@ public partial class ArticleNode : Control
 		{
 			var texture = ImageTexture.CreateFromImage(ImageFromWikiImage(wikiArticle.Image));
 			if (texture != null)
+			{
 				ArticleTexture.Texture = texture;
+				ArticleTexture.CustomMinimumSize = Vector2.One * TextureMinSize;
+			}
 		}
 		else
 		{
 			ArticleTexture.Texture = null;
+			ArticleTexture.CustomMinimumSize = Vector2.Zero;
 		}
 		
 		if (TitleLabel != null) 
