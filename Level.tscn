@@ -2570,11 +2570,6 @@ position = Vector2(1534, 53289)
 scale = Vector2(1.0902172, 1.2531358)
 texture = ExtResource("13_b4adj")
 
-[node name="PointyMPhase3" type="Sprite2D" parent="." unique_id=705510232]
-position = Vector2(30742.125, 48545.375)
-scale = Vector2(11.034549, 5.864566)
-texture = ExtResource("10_105nu")
-
 [node name="GreyMountain2" type="Sprite2D" parent="." unique_id=1504860641]
 position = Vector2(8265, 53036)
 scale = Vector2(1.4384112, 1.3664109)
@@ -2587,36 +2582,36 @@ texture = ExtResource("14_fmksp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1565461489]
 position = Vector2(128.40625, 54911.6)
-polygon = PackedVector2Array(-5080, -12, -4068, -3907, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 30809, -2554, 31135, -9661, 37359, 2370, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859)
+polygon = PackedVector2Array(-7551, -3958, -5759, -4505, -4365, -1966, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 22533, -4836, 25675, -5995, 27844, -7678, 30986, -7940, 37318.594, 2047.3984, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859, -7381, 1884)
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=540483431]
 position = Vector2(110, 54903)
 color = Color(8.04686e-08, 0.08818867, 0, 1)
-polygon = PackedVector2Array(-7551, -3958, -5759, -4505, -4365, -1966, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 23041.182, -2761.8496, 28728.59, -2609.667, 30809, -2554, 31135, -9661, 37359, 2370, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859, -7381, 1884)
+polygon = PackedVector2Array(-7551, -3958, -5759, -4505, -4365, -1966, -4110, -4, 556, -3, 3729, -276, 7089, -261, 11904, -1950, 18663, -2879, 22533, -4836, 25675, -5995, 27844, -7678, 30986, -7940, 37414, 2036, 32064, 2184, 22562, 2009, 8256, 1759, -5484, 1859, -7381, 1884)
 uv = PackedVector2Array(-426, 59)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=786506712]
 position = Vector2(9090, 42060)
-polygon = PackedVector2Array(9150, 5071, 8245, 2673, 14808, 2130, 15441, 274, 22140, -1084, 31191, -3709, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22140, 3442, 19831, 3442, 18202, 8375, 16844, 8059, 16935, 3940, 9693, 7968)
+polygon = PackedVector2Array(23641, 2729, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123)
 
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=2008040248]
 position = Vector2(9026, 42102)
 color = Color(8.04686e-08, 0.08818867, 0, 1)
-polygon = PackedVector2Array(9150, 5071, 8245, 2673, 14808, 2130, 15441, 274, 22140, -1084, 31191, -3709, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22140, 3442, 19831, 3442, 18202, 8375, 16844, 8059, 16935, 3940, 9693, 7968)
+polygon = PackedVector2Array(23641, 2729, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 66696, -4202, 73913, -4202, 83971, -7482, 90240, -7555, 101696, -12027, 121664, -12155, 136640, -16891, 147392, -23419, 156352, -23291, 169024, -30203, 173100.95, -30546.84, 179648, -31099, 201280, -47611, 213952, -47483, 265543, 12036, 217119, 12574, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123)
 uv = PackedVector2Array(-426, 59)
 
 [node name="PointyRockL2" type="Sprite2D" parent="." unique_id=1062939976]
-position = Vector2(26472, 51364)
+position = Vector2(18709.002, 51162)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL4" type="Sprite2D" parent="." unique_id=420840287]
-position = Vector2(26383, 50451)
+position = Vector2(18692, 50303)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL3" type="Sprite2D" parent="." unique_id=276853042]
-position = Vector2(26469, 52159)
+position = Vector2(18710, 51912)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("13_sypgb")
@@ -2647,15 +2642,15 @@ position = Vector2(12106, -1985)
 texture = ExtResource("3_5qkpu")
 
 [node name="ColourRockL3" type="Sprite2D" parent="Foreground" unique_id=850857964]
-position = Vector2(22777, -10303)
+position = Vector2(23106, -4460)
 texture = ExtResource("3_5qkpu")
 
 [node name="ColourRockL4" type="Sprite2D" parent="Foreground" unique_id=317405629]
-position = Vector2(28584, -12913)
+position = Vector2(29283, -8140)
 texture = ExtResource("3_5qkpu")
 
 [node name="ColourRockL5" type="Sprite2D" parent="Foreground" unique_id=1549012877]
-position = Vector2(33472, -14303)
+position = Vector2(33855, -10420)
 texture = ExtResource("3_5qkpu")
 
 [node name="ColourRockL6" type="Sprite2D" parent="Foreground" unique_id=612217297]
@@ -2727,7 +2722,7 @@ position = Vector2(2971.5938, 107.39844)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL18" type="Sprite2D" parent="Foreground" unique_id=1307671277]
-position = Vector2(35916, -15004)
+position = Vector2(35877, -11687)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL19" type="Sprite2D" parent="Foreground" unique_id=1005397731]
@@ -2751,11 +2746,11 @@ position = Vector2(-3841, 270)
 texture = ExtResource("12_sypgb")
 
 [node name="RoundRockM6" type="Sprite2D" parent="Foreground" unique_id=1937839049]
-position = Vector2(19275, -10091)
+position = Vector2(22571, -4726)
 texture = ExtResource("12_sypgb")
 
 [node name="RoundRockM7" type="Sprite2D" parent="Foreground" unique_id=782666770]
-position = Vector2(34411, -14480)
+position = Vector2(34896, -10822)
 texture = ExtResource("12_sypgb")
 
 [node name="RoundRockM8" type="Sprite2D" parent="Foreground" unique_id=1517772228]
@@ -2846,11 +2841,11 @@ scale = Vector2(2.9511287, 2.768415)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL6" type="Sprite2D" parent="Foreground" unique_id=1826262706]
-position = Vector2(18241, -9909)
+position = Vector2(24449, -4978)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL7" type="Sprite2D" parent="Foreground" unique_id=296097643]
-position = Vector2(41793, -16829)
+position = Vector2(40163, -12431)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL8" type="Sprite2D" parent="Foreground" unique_id=969672431]
@@ -2878,7 +2873,7 @@ position = Vector2(206689, -56869)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL5" type="Sprite2D" parent="Foreground" unique_id=79614735]
-position = Vector2(20747, -10233)
+position = Vector2(26853, -6094)
 texture = ExtResource("5_q4iis")
 
 [node name="PointyRockS2" type="Sprite2D" parent="Foreground" unique_id=2069891822]
@@ -2886,19 +2881,19 @@ position = Vector2(17254, -2382)
 texture = ExtResource("15_esphl")
 
 [node name="RoundRockM4" type="Sprite2D" parent="Foreground" unique_id=2140203087]
-position = Vector2(20024, -2545)
+position = Vector2(19862, -3567)
 texture = ExtResource("12_sypgb")
 
 [node name="PointyRockL2" type="Sprite2D" parent="Foreground" unique_id=236867963]
-position = Vector2(23000, -2446)
+position = Vector2(23488, -5047)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL3" type="Sprite2D" parent="Foreground" unique_id=1419174140]
-position = Vector2(26111, -12646)
+position = Vector2(28461, -6719)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL4" type="Sprite2D" parent="Foreground" unique_id=1829844605]
-position = Vector2(40807, -16113)
+position = Vector2(39307, -12075)
 texture = ExtResource("13_sypgb")
 
 [node name="PointyRockL5" type="Sprite2D" parent="Foreground" unique_id=1512586522]
@@ -2962,7 +2957,7 @@ position = Vector2(16024, -2358)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockL21" type="Sprite2D" parent="Foreground" unique_id=255327984]
-position = Vector2(31859, -13657)
+position = Vector2(31201, -9296)
 texture = ExtResource("5_q4iis")
 
 [node name="RoundRockM16" type="Sprite2D" parent="Foreground" unique_id=1143672557]
@@ -3014,7 +3009,7 @@ position = Vector2(202302, -54050)
 texture = ExtResource("10_d6u53")
 
 [node name="RoundRockM5" type="Sprite2D" parent="Foreground" unique_id=1193193886]
-position = Vector2(21466, -2225)
+position = Vector2(21745, -4501)
 texture = ExtResource("12_sypgb")
 
 [node name="ColourRockM" type="Sprite2D" parent="Foreground" unique_id=507886685]
@@ -3026,11 +3021,11 @@ position = Vector2(3584, -188)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM3" type="Sprite2D" parent="Foreground" unique_id=299005087]
-position = Vector2(19892, -9796)
+position = Vector2(21348, -3767)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM4" type="Sprite2D" parent="Foreground" unique_id=1351578446]
-position = Vector2(32804, -14043)
+position = Vector2(33111, -10006)
 texture = ExtResource("24_3ppgv")
 
 [node name="ColourRockM5" type="Sprite2D" parent="Foreground" unique_id=624975263]
@@ -3110,35 +3105,35 @@ position = Vector2(17771, -2710)
 texture = ExtResource("3_dcckh")
 
 [node name="ColourRockS4" type="Sprite2D" parent="Foreground" unique_id=1096819807]
-position = Vector2(25387, -12226)
+position = Vector2(29117, -7423)
 texture = ExtResource("3_dcckh")
 
 [node name="ColourRockS5" type="Sprite2D" parent="Foreground" unique_id=1255903248]
-position = Vector2(36920, -15249)
+position = Vector2(36710, -11644)
 texture = ExtResource("3_dcckh")
 
 [node name="ColourRockS6" type="Sprite2D" parent="Foreground" unique_id=1333038968]
-position = Vector2(42935, -16659)
+position = Vector2(41853, -12636)
 texture = ExtResource("3_dcckh")
 
 [node name="RoundRockM18" type="Sprite2D" parent="Foreground" unique_id=25875377]
-position = Vector2(30513, -2362)
+position = Vector2(28098, -7681)
 texture = ExtResource("12_sypgb")
 
 [node name="RoundRockM19" type="Sprite2D" parent="Foreground" unique_id=1003650089]
-position = Vector2(27498, -2326)
+position = Vector2(24920, -5647)
 texture = ExtResource("12_sypgb")
 
 [node name="PointyRockM3" type="Sprite2D" parent="Foreground" unique_id=1765003672]
-position = Vector2(29528, -2247)
+position = Vector2(26718, -6846)
 texture = ExtResource("19_pd0bf")
 
 [node name="PointyRockS3" type="Sprite2D" parent="Foreground" unique_id=1495989053]
-position = Vector2(28048, -2305)
+position = Vector2(26027, -6509)
 texture = ExtResource("15_esphl")
 
 [node name="PointyRockS4" type="Sprite2D" parent="Foreground" unique_id=865644892]
-position = Vector2(30110, -2269)
+position = Vector2(27300, -7216)
 texture = ExtResource("15_esphl")
 
 [node name="ColourRockS7" type="Sprite2D" parent="Foreground" unique_id=1005723384]
@@ -3161,10 +3156,7 @@ position = Vector2(-3793, 53554)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("25_wesx8")
 
-[node name="ArticleSimple2d" parent="." unique_id=1223787358 instance=ExtResource("28_fmksp")]
-z_index = 9
-position = Vector2(-1458, 52805)
-LoadFromDisk = true
-FileToLoad = "Flying Spaghetti Monster"
-
 [node name="InventoryScene" parent="." unique_id=653372133 instance=ExtResource("29_fmksp")]
+
+[node name="ArticleSimple2d" parent="." unique_id=1223787358 instance=ExtResource("28_fmksp")]
+position = Vector2(-461, 53348)
