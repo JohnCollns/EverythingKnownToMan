@@ -2664,6 +2664,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle1/Control" unique_id=1751789174]
+z_index = 20
 layout_mode = 0
 offset_left = -676.0
 offset_top = -2822.0
@@ -2720,6 +2721,7 @@ offset_right = -485.0
 offset_bottom = 33.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle2/Control" unique_id=172067186]
+z_index = 20
 layout_mode = 0
 offset_left = -570.0
 offset_top = -3099.0
@@ -2784,6 +2786,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle3/Control" unique_id=917508525]
+z_index = 20
 layout_mode = 0
 offset_left = -265.0
 offset_top = -1858.0
@@ -2888,6 +2891,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle4/Control2" unique_id=1435541169]
+z_index = 20
 layout_mode = 0
 offset_left = -1838.0
 offset_top = -2137.0
@@ -2913,7 +2917,7 @@ theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/italics_font_size = 100
 theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
-text = "[color=black]A [b]carpenter[/b] is a type of construction worker who builds things. It is commonly known[color=blue][b][i][1][/i][/b][/color] that to that they often misplace their tools. One carpeneter was quoted as saying [i]\"I can finish this path up the mountain if you get me a [color=blue][u]tool[/u][/color] to secure these rocks!\"[/i][color=blue][b][i][2][/i][/b][/color]"
+text = "[color=black]A [b]carpenter[/b] is a type of construction worker who builds things. It is commonly known[color=blue][b][i][1][/i][/b][/color] that to that they often misplace their tools. One carpenter was quoted as saying [i]\"I can finish this path up the mountain if you get me a [color=blue][u]tool[/u][/color] to secure these rocks!\"[/i][color=blue][b][i][2][/i][/b][/color]"
 
 [node name="Obstacle5" type="Node2D" parent="Obstacles" unique_id=698006111]
 position = Vector2(65715, 33171)
@@ -2952,6 +2956,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle5/Control2" unique_id=258505887]
+z_index = 20
 layout_mode = 0
 offset_left = -1863.0
 offset_top = -5996.0
@@ -2992,6 +2997,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle6/Control" unique_id=1543272813]
+z_index = 20
 layout_mode = 0
 offset_left = -216.0
 offset_top = -4728.0
@@ -3061,6 +3067,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle7/Control" unique_id=486122931]
+z_index = 20
 layout_mode = 0
 offset_left = 252.0
 offset_top = -2270.0
@@ -3086,7 +3093,7 @@ theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/italics_font_size = 100
 theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
-text = "[color=black]A [b]village[/b] is a human settlement or a residential community, larger than a hamlet but smaller than a town[color=blue][b][i][1][2][3][4][/i][/b][/color].
+text = "[color=black]A [b]village[/b] is a human settlement larger than a hamlet but smaller than a town[color=blue][b][i][1][2][3][4][/i][/b][/color].
 But a [b]village[/b] is nothing without a [color=blue][u]community[/u][/color]."
 
 [node name="NpcDemo" parent="Obstacles/Obstacle7" unique_id=1105535868 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("35_jpwbr")]
@@ -3126,11 +3133,12 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle8/Control" unique_id=1601982524]
+z_index = 20
 layout_mode = 0
-offset_left = 252.0
-offset_top = -2270.0
-offset_right = 2328.0
-offset_bottom = -1391.0
+offset_left = 40.0
+offset_top = -3066.0
+offset_right = 2116.0
+offset_bottom = -2187.0
 
 [node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle8/Control/PanelContainer" unique_id=60404005]
 layout_mode = 2
@@ -3190,6 +3198,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle9/Control" unique_id=1503072116]
+z_index = 20
 layout_mode = 0
 offset_left = -2149.0
 offset_top = -5893.0
@@ -3254,11 +3263,12 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle12/Control" unique_id=1145831676]
+z_index = 20
 layout_mode = 0
-offset_left = 272.0
-offset_top = -2723.0
-offset_right = 2348.0
-offset_bottom = -1722.0
+offset_left = -408.0
+offset_top = -2194.0
+offset_right = 1668.0
+offset_bottom = -1193.0
 
 [node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle12/Control/PanelContainer" unique_id=32344392]
 layout_mode = 2
@@ -3289,7 +3299,7 @@ DesiredTag = "meaning"
 OwnedBlockers = [NodePath("."), NodePath("../Area2D")]
 
 [node name="Sprite2D" parent="Obstacles/Obstacle12/NpcDemo" index="0" unique_id=852338744]
-position = Vector2(-221.00067, -430.00153)
+position = Vector2(136.99933, 254.99841)
 scale = Vector2(1.8614497, 1.6747544)
 texture = ExtResource("38_bc3ha")
 
@@ -3358,6 +3368,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle10/Control2" unique_id=545266891]
+z_index = 20
 layout_mode = 0
 offset_left = -3481.0
 offset_top = -5063.0
@@ -3438,6 +3449,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle11/Control2" unique_id=1608806484]
+z_index = 20
 layout_mode = 0
 offset_left = -3466.0
 offset_top = -5037.0
@@ -3471,9 +3483,9 @@ position = Vector2(7755, 39323)
 curve = SubResource("Curve2D_b4adj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=582454881]
-position = Vector2(-9847.576, 15650.493)
-rotation = -0.030621532
-progress = 1878.3064
+position = Vector2(-6859.643, 15558.969)
+rotation = -0.030621529
+progress = 4867.642
 script = ExtResource("29_q2vmi")
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D" unique_id=994560285]
@@ -3527,6 +3539,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Shops/PropertyNpc/Shop1/Control" unique_id=1220467133]
+z_index = 20
 layout_mode = 0
 offset_left = -269.0
 offset_top = -6572.0
@@ -3583,6 +3596,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Shops/AnimalNpc/Shop2/Control" unique_id=152545244]
+z_index = 20
 layout_mode = 0
 offset_left = -125.0
 offset_top = -6569.0
@@ -3649,6 +3663,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Shops/SpiritualNpc/Shop2/Control" unique_id=2084933605]
+z_index = 20
 layout_mode = 0
 offset_left = -103.00781
 offset_top = -6764.0
@@ -3705,6 +3720,7 @@ offset_right = -485.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Shops/PoliticalNpc/Shop2/Control" unique_id=987238940]
+z_index = 20
 layout_mode = 0
 offset_left = -162.00781
 offset_top = -6739.0
@@ -3791,6 +3807,14 @@ minRadius = 1000.0
 [node name="CommunitySpawner" parent="Spawners" unique_id=341387952 instance=ExtResource("38_dss6r")]
 position = Vector2(89124, 30134)
 tags = PackedStringArray("community")
+spawnOnReady = true
+maxRadius = 2500.0
+minRadius = 1000.0
+
+[node name="MeaningSpawner" parent="Spawners" unique_id=1394372583 instance=ExtResource("38_dss6r")]
+position = Vector2(85554, 32193)
+tags = PackedStringArray("meaning")
+numArticles = 3
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0

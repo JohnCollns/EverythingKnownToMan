@@ -9,4 +9,7 @@ func _physics_process(delta: float) -> void:
 		#move along the path if nothing is in the road
 	if (!(get_node("ResearcherPlaceholder/RayCast2D").is_colliding())):
 		progress_ratio += 0.015 * delta * Input.get_axis("ui_left", "ui_right")
+	else:
+		if (progress_ratio > 0.98):
+			get_tree().change_scene_to_file("res://ending_scene.tscn")
 	
