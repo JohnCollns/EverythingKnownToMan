@@ -61,6 +61,10 @@ public partial class ArticleNode : Control
 				ArticleTexture.Texture = texture;
 				ArticleTexture.CustomMinimumSize = Vector2.One * TextureMinSize;
 			}
+			else
+			{
+				GD.PushWarning($"Article: {WikiArticle.Title} failed to load image");
+			}
 		}
 		else
 		{
@@ -110,7 +114,7 @@ public partial class ArticleNode : Control
 				imageLoadError = outputImage.LoadWebpFromBuffer(wikiImage.ImageBytes);
 				break;
 			default:
-				GD.PushError("Invalid WikiImageFormat");
+				GD.PushError($"Invalid WikiImageFormat, format: {wikiImage.FileFormat}");
 				imageLoadError = Error.InvalidData;
 				break;
 		}

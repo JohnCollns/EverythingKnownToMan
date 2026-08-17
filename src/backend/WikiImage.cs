@@ -102,7 +102,7 @@ public class WikiImage
         // Target:
         // E:\Godot\GameAWeek26\EverythingKnownToMan\Godot\everything-known-to-man\generated\images\
         
-        string projectRoot = Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
+        string projectRoot = WikiArticle.GetProjectRoot();
         //GD.Print(" projectRoot: " + projectRoot);
         string path = Path.Combine(projectRoot, "generated", "images", (fileName + "." + FileFormat));
         return path;

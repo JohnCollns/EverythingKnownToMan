@@ -21,7 +21,7 @@ public partial class WikiNPC : Node
 
 	private void OnClickableAreaOnPressed()
 	{
-		GD.Print("ClickableAreaOnPressed");
+		GD.Print($"ClickableAreaOnPressed, desired tag: {DesiredTag}");
 		if (!bIsSatisfied && PlayerSingleton.Inventory.heldArticle.HasTag(DesiredTag.ToLower()))
 		{
 			GD.Print("NPC is satisfied");

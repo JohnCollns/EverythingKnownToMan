@@ -86,13 +86,12 @@ public class WikiArticle
 
     public string SaveToDisk()
     {
-        string exeDir = AppContext.BaseDirectory;
         // Returns:
         // E:\Godot\GameAWeek26\EverythingKnownToMan\Godot\everything-known-to-man\.godot\mono\temp\bin\Debug\
         // Target:
         // E:\Godot\GameAWeek26\EverythingKnownToMan\Godot\everything-known-to-man\generated\images\
         
-        string projectRoot = Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
+        string projectRoot = GetProjectRoot();
         string path = Path.Combine(projectRoot, "generated", (Title + ".JSON"));
         GD.Print(" WikiArticle saving to: " + path);
         File.WriteAllText(path, ToJSON());
@@ -131,9 +130,19 @@ public class WikiArticle
     public static string RelativePathToFullPath(string relativePath, bool bIncludeGenerated)
     {
         string exeDir = AppContext.BaseDirectory;
-        string projectRoot = Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
+        string projectRoot = GetProjectRoot();
         string path = bIncludeGenerated 
             ? Path.Combine(projectRoot, "generated", relativePath) : Path.Combine(projectRoot, relativePath);
         return path;
+    }
+
+    public static string GetProjectRoot()
+    {
+        string exeDir = AppContext.BaseDirectory;
+#if TOOLS
+        return Path.GetFullPath(Path.Combine(exeDir, "..", "..", "..", "..", ".."));
+#else
+        return Path.GetFullPath(Path.Combine(exeDir, ".."));
+#endif
     }
 }
