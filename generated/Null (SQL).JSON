@@ -1,0 +1,10 @@
+{
+  "Title": "Null (SQL)",
+  "Description": "Marker used in SQL databases to indicate a value does not exist",
+  "Paragraph": "In the SQL database query language, null or NULL is a special marker used to indicate that a data value does not exist in the database. Introduced by the creator of the relational database model, E.\u00A0F. Codd, SQL null serves to fulfill the requirement that all true relational database management systems (RDBMS) support a representation of \u0022missing information and inapplicable information\u0022. Codd also introduced the use of the lowercase Greek omega (\u03C9) symbol to represent null in database theory. In SQL, NULL is a reserved word used to identify this marker.",
+  "Tags": [
+    "maths",
+    "destructive"
+  ],
+  "image": "images\\Null (SQL).png"
+}

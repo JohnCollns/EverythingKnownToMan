@@ -1,0 +1,10 @@
+{
+  "Title": "Scientific calculator",
+  "Description": "Calculator designed to calculate problems in science, engineering, and mathematics",
+  "Paragraph": "A scientific calculator is an electronic calculator, either desktop or handheld, designed to perform calculations using basic and advanced mathematical operations and functions. They have completely replaced slide rules as well as books of mathematical tables and are used in both educational and professional settings.",
+  "Tags": [
+    "maths",
+    "tool"
+  ],
+  "image": "images\\Scientific calculator.jpg"
+}

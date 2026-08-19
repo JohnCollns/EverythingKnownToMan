@@ -1,0 +1,11 @@
+{
+  "Title": "Alan Turing",
+  "Description": "English computer scientist (1912\u20131954)",
+  "Paragraph": "Alan Mathison Turing was an English mathematician, computer scientist, logician, cryptanalyst, philosopher and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general-purpose computer. Turing is widely considered to be the father of theoretical computer science.",
+  "Tags": [
+    "person",
+    "maths",
+    "unlocking"
+  ],
+  "image": "images\\Alan Turing.jpg"
+}
