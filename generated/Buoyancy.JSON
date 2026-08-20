@@ -1,0 +1,10 @@
+{
+  "Title": "Buoyancy",
+  "Description": "Upward force that opposes the weight of an object immersed in fluid",
+  "Paragraph": "Buoyancy, or upthrust, is the force exerted by a fluid opposing the weight of a partially or fully immersed object. In a column of fluid, pressure increases with depth as a result of the weight of the overlying fluid. Thus, the pressure at the bottom of a column of fluid is greater than at the top of the column. Similarly, the pressure at the bottom of an object submerged in a fluid is greater than at the top of the object. The pressure difference results in a net upward force on the object. The magnitude of the force is proportional to the pressure difference, and is equivalent to the weight of the fluid that would otherwise occupy the submerged volume of the object, i.e. the displaced fluid.",
+  "Tags": [
+    "theory",
+    "swimming"
+  ],
+  "image": "images\\Buoyancy.png"
+}
