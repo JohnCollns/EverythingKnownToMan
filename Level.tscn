@@ -3366,8 +3366,8 @@ SatisfiedTexture = ExtResource("30_n4kpv")
 OwnedBlockers = [NodePath("../PointyRockL3"), NodePath("../PointyRockL4"), NodePath("../PointyRockL2"), NodePath("../Area2D")]
 
 [node name="Sprite2D" parent="Obstacles/Obstacle10/NpcDemo" index="0" unique_id=852338744]
-position = Vector2(-2198.0002, 2232.999)
-scale = Vector2(2.3949316, 2.57908)
+position = Vector2(-2209.0002, 1973.999)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("30_n4kpv")
 
 [node name="ClickableArea" parent="Obstacles/Obstacle10/NpcDemo" index="1" unique_id=1767153274]
@@ -3449,7 +3449,7 @@ OwnedBlockers = [NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodeP
 
 [node name="Sprite2D" parent="Obstacles/Obstacle11/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-2961.0002, 1995.999)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("31_608kq")
 
 [node name="ClickableArea" parent="Obstacles/Obstacle11/NpcDemo" index="1" unique_id=1767153274]
@@ -3469,10 +3469,10 @@ offset_bottom = 3258.0
 [node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle11/Control2" unique_id=1608806484]
 z_index = 20
 layout_mode = 0
-offset_left = -3466.0
-offset_top = -5469.0
-offset_right = -1424.0
-offset_bottom = -4440.0
+offset_left = -5614.0
+offset_top = -4891.0
+offset_right = -3572.0
+offset_bottom = -3862.0
 
 [node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle11/Control2/PanelContainer" unique_id=979018101]
 layout_mode = 2
@@ -3498,11 +3498,10 @@ Not everybody has the ability to spell - this person says [i]\"Eye cant spel. I 
 
 [node name="Shops" type="Node2D" parent="." unique_id=507259439]
 
-[node name="PropertyNpc" type="Node2D" parent="Shops" unique_id=1694411086 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+[node name="PropertyNpc" type="Node2D" parent="Shops" unique_id=1694411086 node_paths=PackedStringArray("ClickableArea", "OwnedBlockers", "OwnedSpawner")]
 position = Vector2(56485, 34263)
-scale = Vector2(3, 3)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("34_77ek3")
-Sprite = NodePath("")
 ClickableArea = NodePath("ClickableArea")
 DesiredTag = "property"
 SatisfiedTexture = ExtResource("34_53f8w")
