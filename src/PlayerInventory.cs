@@ -9,7 +9,7 @@ public partial class PlayerInventory : Node
     public override void _Ready()
     {
         base._Ready();
-        PlayerSingleton.Inventory = this;
+        PlayerCharacter.Inventory = this;
         
         articleNode.Hide();
     }
