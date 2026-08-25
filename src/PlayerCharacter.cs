@@ -18,7 +18,7 @@ public partial class PlayerCharacter : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        GD.Print(Velocity);
+        //GD.Print(Velocity);
         base._PhysicsProcess(delta);
         var velocity = Velocity;
         velocity.Y += (float)delta * GravityScale;

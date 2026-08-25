@@ -30,9 +30,15 @@
 [ext_resource type="Texture2D" uid="uid://dhr5s21gqt3jq" path="res://Assets/Characters/Depressed npc.PNG" id="27_4hbsb"]
 [ext_resource type="Texture2D" uid="uid://ch3gmvxef7ca1" path="res://Assets/Characters/Born in wrong time npc.PNG" id="28_oj5ks"]
 [ext_resource type="Texture2D" uid="uid://cgqevs6jr81il" path="res://Assets/Characters/Lone bin crisis npc.PNG" id="29_5bkqw"]
+[ext_resource type="Script" uid="uid://cmj7rxyc21rvr" path="res://src/WikiNPC.cs" id="31_fgql8"]
+[ext_resource type="Texture2D" uid="uid://b0ipxc1cdauqy" path="res://Assets/New Characters/Characters/Maths npc.PNG" id="31_vfahv"]
+[ext_resource type="Texture2D" uid="uid://2pj4qv6k2kjv" path="res://Assets/New Characters/Characters/Property npc.png" id="32_6pxd6"]
+[ext_resource type="Texture2D" uid="uid://ctnctnfaxoudt" path="res://Assets/New Characters/Characters/Language npc.png" id="32_w18xa"]
 [ext_resource type="PackedScene" uid="uid://ccfbd4244u4ve" path="res://content/scratch/SpawnerDemo.tscn" id="34_3n8nw"]
 [ext_resource type="Texture2D" uid="uid://bcg1v4rclsypg" path="res://Assets/Characters/Lost npc.PNG" id="35_5a13d"]
+[ext_resource type="Texture2D" uid="uid://c80bh7s2gukuu" path="res://Assets/New Characters/Characters/Pet npc.png" id="35_6pxd6"]
 [ext_resource type="Texture2D" uid="uid://ds6s1jba2qtod" path="res://Assets/Colour mountain/Colour rock L.png" id="36_dkrkb"]
+[ext_resource type="Texture2D" uid="uid://cnk3nax88h4yt" path="res://Assets/New Characters/Characters/Politician npc.png" id="36_nwxlm"]
 [ext_resource type="Texture2D" uid="uid://ccmlcvq326sdd" path="res://Assets/Colour mountain/Colour rock S.png" id="37_msd0y"]
 [ext_resource type="Texture2D" uid="uid://bwbupgaovq8bw" path="res://Assets/Round mountain/Round rock L.png" id="38_ipt14"]
 [ext_resource type="Texture2D" uid="uid://hweignnkcfes" path="res://Assets/Round mountain/Round rock S.png" id="39_2ettw"]
@@ -44,10 +50,16 @@
 [ext_resource type="Script" uid="uid://cccgi8ou2sr33" path="res://src/FollowerCamera.cs" id="46_nwxlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr3df"]
-size = Vector2(2369, 3192.375)
+size = Vector2(2431.544, 3517)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kr1e0"]
 load_path = "res://.godot/imported/Open gate front.PNG-9643d3d0340c92ebf13886799251679e.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w18xa"]
+size = Vector2(2369, 3192.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmal"]
+size = Vector2(2369, 3192.375)
 
 [node name="Level" type="Node2D" unique_id=267726624]
 position = Vector2(7680, 24192)
@@ -2616,43 +2628,50 @@ position = Vector2(-420, 54354)
 GravityScale = 19620.0
 MovementSpeed = 2500.0
 
+[node name="FollowerCamera2D" type="Camera2D" parent="." unique_id=124646853 node_paths=PackedStringArray("PlayerChar")]
+position = Vector2(544, 52860)
+zoom = Vector2(0.25, 0.25)
+script = ExtResource("46_nwxlm")
+CameraOffset = Vector2(120, -850)
+PlayerChar = NodePath("../PlayerV2")
+
 [node name="InventoryScene" parent="." unique_id=653372133 instance=ExtResource("14_gmppw")]
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=8109734]
 
-[node name="Obstacle1" type="Node2D" parent="Obstacles" unique_id=1807867331]
+[node name="1CerealGate" type="Node2D" parent="Obstacles" unique_id=1807867331]
 position = Vector2(9603, 53716)
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle1" unique_id=556056668]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/1CerealGate" unique_id=720832714]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle1/Area2D" unique_id=1387724110]
-position = Vector2(374.5, -566)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/1CerealGate/StaticBody2D" unique_id=1387724110]
+position = Vector2(432.34375, -566)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="OpenGateFront" type="Sprite2D" parent="Obstacles/Obstacle1" unique_id=1235512792]
+[node name="OpenGateFront" type="Sprite2D" parent="Obstacles/1CerealGate" unique_id=1235512792]
 position = Vector2(497.00058, -1113.9989)
 scale = Vector2(2.285226, 2.172484)
 texture = SubResource("CompressedTexture2D_kr1e0")
 
-[node name="NpcDemo" parent="Obstacles/Obstacle1" unique_id=808611719 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/1CerealGate" unique_id=808611719 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(2797, -1443)
 DesiredTag = "unlocking"
 SatisfiedTexture = ExtResource("16_acg8c")
-OwnedBlockers = [NodePath("../Area2D")]
+OwnedBlockers = [NodePath("../StaticBody2D")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle1/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/1CerealGate/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-2190.0002, 1773.0028)
 scale = Vector2(2.3949316, 2.57908)
 texture = ExtResource("17_ckv4c")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle1/NpcDemo" index="1" unique_id=1767153274]
-offset_left = -3598.0
+[node name="ClickableArea" parent="Obstacles/1CerealGate/NpcDemo" index="1" unique_id=1767153274]
+offset_left = -3780.0
 offset_top = -803.0
 offset_right = -818.0
 offset_bottom = 1620.0
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle1" unique_id=1460695895]
+[node name="Control" type="Control" parent="Obstacles/1CerealGate" unique_id=1460695895]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -2660,7 +2679,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle1/Control" unique_id=1751789174]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/1CerealGate/Control" unique_id=1751789174]
 z_index = 20
 layout_mode = 0
 offset_left = -676.0
@@ -2668,17 +2687,17 @@ offset_top = -2822.0
 offset_right = 1399.0
 offset_bottom = -2207.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle1/Control/PanelContainer" unique_id=163639017]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/1CerealGate/Control/PanelContainer" unique_id=163639017]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle1/Control/PanelContainer" unique_id=1745771641]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/1CerealGate/Control/PanelContainer" unique_id=1745771641]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle1/Control/PanelContainer/HBoxContainer" unique_id=1698793172]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/1CerealGate/Control/PanelContainer/HBoxContainer" unique_id=1698793172]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1382114119]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/1CerealGate/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1382114119]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -2690,26 +2709,26 @@ bbcode_enabled = true
 text = "[color=black] A [b]gate[/b] or [b]gateway[/b]  is a point of entry to or from a space[color=blue][b][i][1][/i][/b][/color].
 To increase security, some gates may require something to[/color] [color=blue][u]unlock[/u][/color][color=black][color=blue][b][i][2][/i][/b][/color] them."
 
-[node name="Obstacle2" type="Node2D" parent="Obstacles" unique_id=806105458]
+[node name="2RockWall" type="Node2D" parent="Obstacles" unique_id=806105458]
 position = Vector2(18729, 52142)
 
-[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/Obstacle2" unique_id=1062939976]
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/2RockWall" unique_id=1062939976]
 position = Vector2(-19.998047, -980)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/Obstacle2" unique_id=420840287]
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/2RockWall" unique_id=420840287]
 position = Vector2(-37, -1839)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/Obstacle2" unique_id=276853042]
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/2RockWall" unique_id=276853042]
 position = Vector2(-19, -230)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("18_spmjc")
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle2" unique_id=1649799611]
+[node name="Control" type="Control" parent="Obstacles/2RockWall" unique_id=1649799611]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -2717,7 +2736,7 @@ offset_top = -7.0
 offset_right = -485.0
 offset_bottom = 33.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle2/Control" unique_id=172067186]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/2RockWall/Control" unique_id=172067186]
 z_index = 20
 layout_mode = 0
 offset_left = -570.0
@@ -2725,17 +2744,17 @@ offset_top = -3099.0
 offset_right = 1505.0
 offset_bottom = -2484.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle2/Control/PanelContainer" unique_id=1310044018]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/2RockWall/Control/PanelContainer" unique_id=1310044018]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle2/Control/PanelContainer" unique_id=1833904483]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/2RockWall/Control/PanelContainer" unique_id=1833904483]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle2/Control/PanelContainer/HBoxContainer" unique_id=2099511641]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/2RockWall/Control/PanelContainer/HBoxContainer" unique_id=2099511641]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=953148472]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/2RockWall/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=953148472]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -2746,35 +2765,35 @@ theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "[color=black]A [b]wall[/b] is a structure[color=blue][b][i][1][/i][/b][/color] and a surface that  prevents video-game protagonists from progressing[color=blue][b][i][2][/i][/b][/color]. This wall[color=blue][b][i][3][/i][/b][/color] can be cleared with something[/color] [color=blue][u]destructive[/u][/color][color=black]."
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle2" unique_id=638642587]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/2RockWall" unique_id=101279489]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle2/Area2D" unique_id=172477359]
-position = Vector2(58, -840)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/2RockWall/StaticBody2D" unique_id=172477359]
+position = Vector2(621.1758, -840)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="NpcDemo" parent="Obstacles/Obstacle2" unique_id=958356287 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/2RockWall" unique_id=958356287 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(68, -1027)
 DesiredTag = "destructive"
 SatisfiedTexture = ExtResource("16_acg8c")
 OwnedBlockers = [NodePath("..")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle2/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/2RockWall/NpcDemo" index="0" unique_id=852338744]
 visible = false
 position = Vector2(-2190.0002, 1773.0028)
 scale = Vector2(2.3949316, 2.57908)
 texture = ExtResource("17_ckv4c")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle2/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/2RockWall/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -907.0
 offset_top = -1256.0
 offset_right = 631.0
 offset_bottom = 1167.0
 
-[node name="Obstacle3" type="Node2D" parent="Obstacles" unique_id=1332748862]
+[node name="3ArmBridge" type="Node2D" parent="Obstacles" unique_id=1332748862]
 position = Vector2(33092, 44592)
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle3" unique_id=1298388079]
+[node name="Control" type="Control" parent="Obstacles/3ArmBridge" unique_id=1298388079]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -2782,7 +2801,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle3/Control" unique_id=917508525]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/3ArmBridge/Control" unique_id=917508525]
 z_index = 20
 layout_mode = 0
 offset_left = -265.0
@@ -2790,17 +2809,17 @@ offset_top = -1858.0
 offset_right = 1810.0
 offset_bottom = -1118.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle3/Control/PanelContainer" unique_id=2067627936]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/3ArmBridge/Control/PanelContainer" unique_id=2067627936]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle3/Control/PanelContainer" unique_id=1786624968]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/3ArmBridge/Control/PanelContainer" unique_id=1786624968]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle3/Control/PanelContainer/HBoxContainer" unique_id=1760981005]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/3ArmBridge/Control/PanelContainer/HBoxContainer" unique_id=1760981005]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle3/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=18949656]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/3ArmBridge/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=18949656]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -2812,74 +2831,74 @@ bbcode_enabled = true
 text = "[color=black]A [b]bridge[/b] is a structure designed to span a gap, allowing pedestrians[color=blue][b][i][citation needed][/i][/b][/color] and vehicles[color=blue][b][i][1][/i][/b][/color] to pass across. If a [b]bridge[/b] breaks, it must be  [color=blue][u]connected[/u][/color][color=blue][b][i][2][/i][/b][/color] again before use.
 "
 
-[node name="NpcDemo" parent="Obstacles/Obstacle3" unique_id=717863931 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/3ArmBridge" unique_id=717863931 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(68, -1027)
 DesiredTag = "connection"
 SatisfiedTexture = ExtResource("19_whrns")
-OwnedBlockers = [NodePath("../Area2D")]
+OwnedBlockers = [NodePath("../StaticBody2D")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle3/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/3ArmBridge/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(247.04987, 2288.1226)
 scale = Vector2(2.7688112, 2.32662)
 texture = ExtResource("20_k0itm")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle3/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/3ArmBridge/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -1867.0
 offset_top = -21.0
 offset_right = 2392.0
 offset_bottom = 2292.0
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle3" unique_id=532230900]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/3ArmBridge" unique_id=705167072]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle3/Area2D" unique_id=277934085]
-position = Vector2(354.5, 70.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/3ArmBridge/StaticBody2D" unique_id=277934085]
+position = Vector2(-369.1953, 70.5)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="Obstacle4" type="Node2D" parent="Obstacles" unique_id=748845243]
+[node name="4Carpenter" type="Node2D" parent="Obstacles" unique_id=748845243]
 position = Vector2(44610, 41180)
 
-[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/Obstacle4" unique_id=906132473]
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/4Carpenter" unique_id=906132473]
 position = Vector2(-19.998047, -980)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/Obstacle4" unique_id=1633404276]
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/4Carpenter" unique_id=1633404276]
 position = Vector2(-37, -1839)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/Obstacle4" unique_id=666141118]
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/4Carpenter" unique_id=666141118]
 position = Vector2(-19, -230)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("18_spmjc")
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle4" unique_id=1128316284]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/4Carpenter" unique_id=1768259539]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle4/Area2D" unique_id=1733540560]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/4Carpenter/StaticBody2D" unique_id=1733540560]
 position = Vector2(31, -1366.75)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="NpcDemo" parent="Obstacles/Obstacle4" unique_id=523534802 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/4Carpenter" unique_id=523534802 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(32, -1152)
 DesiredTag = "tool"
 SatisfiedTexture = ExtResource("21_pjq62")
-OwnedBlockers = [NodePath("../PointyRockL3"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../Area2D")]
+OwnedBlockers = [NodePath("../PointyRockL3"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../StaticBody2D")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle4/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/4Carpenter/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-1438.0002, 2149.003)
 scale = Vector2(2.3949316, 2.57908)
 texture = ExtResource("22_bjdue")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle4/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/4Carpenter/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -1825.0
 offset_top = -346.0
 offset_right = -931.0
 offset_bottom = 2077.0
 
-[node name="Control2" type="Control" parent="Obstacles/Obstacle4" unique_id=63178106]
+[node name="Control2" type="Control" parent="Obstacles/4Carpenter" unique_id=63178106]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -2887,7 +2906,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle4/Control2" unique_id=1435541169]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/4Carpenter/Control2" unique_id=1435541169]
 z_index = 20
 layout_mode = 0
 offset_left = -1838.0
@@ -2895,17 +2914,17 @@ offset_top = -2137.0
 offset_right = 204.0
 offset_bottom = -1108.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle4/Control2/PanelContainer" unique_id=2020944018]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/4Carpenter/Control2/PanelContainer" unique_id=2020944018]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle4/Control2/PanelContainer" unique_id=536833631]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/4Carpenter/Control2/PanelContainer" unique_id=536833631]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle4/Control2/PanelContainer/HBoxContainer" unique_id=489928154]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/4Carpenter/Control2/PanelContainer/HBoxContainer" unique_id=489928154]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle4/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1089337120]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/4Carpenter/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1089337120]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -2916,35 +2935,35 @@ theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "[color=black]A [b]carpenter[/b] is a type of construction worker who builds things. It is commonly known[color=blue][b][i][1][/i][/b][/color] that to that they often misplace their tools. One carpenter was quoted as saying [i]\"I can finish this path up the mountain if you get me a [color=blue][u]tool[/u][/color] to secure these rocks!\"[/i][color=blue][b][i][2][/i][/b][/color]"
 
-[node name="Obstacle5" type="Node2D" parent="Obstacles" unique_id=698006111]
+[node name="5DropBear" type="Node2D" parent="Obstacles" unique_id=698006111]
 position = Vector2(65715, 33171)
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle5" unique_id=642374799]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/5DropBear" unique_id=1815579656]
 position = Vector2(-1351, -98)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle5/Area2D" unique_id=688573554]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/5DropBear/StaticBody2D" unique_id=688573554]
 position = Vector2(9, -315)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="NpcDemo" parent="Obstacles/Obstacle5" unique_id=848381096 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/5DropBear" unique_id=848381096 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(-1425, -86)
 DesiredTag = "relaxing"
 SatisfiedTexture = ExtResource("23_633el")
-OwnedBlockers = [NodePath("../Area2D")]
+OwnedBlockers = [NodePath("../StaticBody2D")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle5/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/5DropBear/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(26.998535, 540.9988)
 scale = Vector2(1.4024959, 1.3103229)
 texture = ExtResource("24_oh2yx")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle5/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/5DropBear/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -466.0
 offset_top = -1217.0
 offset_right = 428.0
 offset_bottom = 1206.0
 
-[node name="Control2" type="Control" parent="Obstacles/Obstacle5" unique_id=1780847791]
+[node name="Control2" type="Control" parent="Obstacles/5DropBear" unique_id=1780847791]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -2952,7 +2971,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle5/Control2" unique_id=258505887]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/5DropBear/Control2" unique_id=258505887]
 z_index = 20
 layout_mode = 0
 offset_left = -1863.0
@@ -2960,17 +2979,17 @@ offset_top = -5996.0
 offset_right = 179.0
 offset_bottom = -4812.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle5/Control2/PanelContainer" unique_id=2063563307]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/5DropBear/Control2/PanelContainer" unique_id=2063563307]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle5/Control2/PanelContainer" unique_id=1851170226]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/5DropBear/Control2/PanelContainer" unique_id=1851170226]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle5/Control2/PanelContainer/HBoxContainer" unique_id=1797454027]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/5DropBear/Control2/PanelContainer/HBoxContainer" unique_id=1797454027]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle5/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1817690031]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/5DropBear/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1817690031]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -2982,10 +3001,10 @@ bbcode_enabled = true
 text = "[color=black]The [b]drop bear[/b] (sometimes [b]dropbear[/b]) is a very real[color=blue][b][i][1][/i][/b][/color] [color=black]predatory, carnivorous version of the koala. They are alleged by some[color=blue][b][i][citation needed][/i][/b][/color] to especially feed on Australian tourists.
 Studies indicate[color=blue][b][i][2][/i][/b][/color] that drop bears are mostly just stressed, and will become peaceful if [color=blue][u]relaxed[/u][/color]."
 
-[node name="Obstacle6" type="Node2D" parent="Obstacles" unique_id=1237211074]
+[node name="6BodyOfWater" type="Node2D" parent="Obstacles" unique_id=1237211074]
 position = Vector2(76774, 35666)
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle6" unique_id=1492933499]
+[node name="Control" type="Control" parent="Obstacles/6BodyOfWater" unique_id=1492933499]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -2993,7 +3012,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle6/Control" unique_id=1543272813]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/6BodyOfWater/Control" unique_id=1543272813]
 z_index = 20
 layout_mode = 0
 offset_left = -216.0
@@ -3001,17 +3020,17 @@ offset_top = -4728.0
 offset_right = 1860.0
 offset_bottom = -3849.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle6/Control/PanelContainer" unique_id=943616839]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/6BodyOfWater/Control/PanelContainer" unique_id=943616839]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle6/Control/PanelContainer" unique_id=2067068278]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/6BodyOfWater/Control/PanelContainer" unique_id=2067068278]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle6/Control/PanelContainer/HBoxContainer" unique_id=506943154]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/6BodyOfWater/Control/PanelContainer/HBoxContainer" unique_id=506943154]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle6/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=2015595134]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/6BodyOfWater/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=2015595134]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3023,39 +3042,39 @@ bbcode_enabled = true
 text = "[color=black]A [b]body of water[/b] or [b]waterbody[/b][color=blue][b][i][1][/i][/b][/color] is any significant accumulation of water on the surface of the earth.
 There are many ways to cross a [b]body of water[/b], the most commonly cited[color=blue][b][i][2][/i][/b][/color] way is by [color=blue][u]swimming[/u][/color]."
 
-[node name="NpcDemo" parent="Obstacles/Obstacle6" unique_id=996340638 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/6BodyOfWater" unique_id=996340638 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "swimming"
-OwnedBlockers = [NodePath("."), NodePath("../Area2D")]
+OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle6/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/6BodyOfWater/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(260.00076, 916.00165)
 scale = Vector2(1.5175002, 1.4423504)
 texture = ExtResource("25_whmx2")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle6/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/6BodyOfWater/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -466.0
 offset_top = -1217.0
 offset_right = 428.0
 offset_bottom = 1206.0
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle6" unique_id=345685467]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/6BodyOfWater" unique_id=1593849184]
 position = Vector2(913, 9)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle6/Area2D" unique_id=1366851086]
-position = Vector2(235, 156)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/6BodyOfWater/StaticBody2D" unique_id=1366851086]
+position = Vector2(-143.41406, 156)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="Obstacle7" type="Node2D" parent="Obstacles" unique_id=2014272633]
+[node name="7Village" type="Node2D" parent="Obstacles" unique_id=2014272633]
 position = Vector2(99859, 28826)
 
-[node name="Village" type="Sprite2D" parent="Obstacles/Obstacle7" unique_id=470407893]
+[node name="Village" type="Sprite2D" parent="Obstacles/7Village" unique_id=470407893]
 position = Vector2(886, -463)
 scale = Vector2(2.7456918, 2.9314442)
 texture = ExtResource("26_3k4gv")
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle7" unique_id=1633908762]
+[node name="Control" type="Control" parent="Obstacles/7Village" unique_id=1633908762]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3063,7 +3082,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle7/Control" unique_id=486122931]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/7Village/Control" unique_id=486122931]
 z_index = 20
 layout_mode = 0
 offset_left = 252.0
@@ -3071,17 +3090,17 @@ offset_top = -2270.0
 offset_right = 2328.0
 offset_bottom = -1391.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle7/Control/PanelContainer" unique_id=2004801283]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/7Village/Control/PanelContainer" unique_id=2004801283]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle7/Control/PanelContainer" unique_id=872803798]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/7Village/Control/PanelContainer" unique_id=872803798]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle7/Control/PanelContainer/HBoxContainer" unique_id=892839807]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/7Village/Control/PanelContainer/HBoxContainer" unique_id=892839807]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle7/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1308608615]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/7Village/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1308608615]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3093,35 +3112,35 @@ bbcode_enabled = true
 text = "[color=black]A [b]village[/b] is a human settlement larger than a hamlet but smaller than a town[color=blue][b][i][1][2][3][4][/i][/b][/color].
 But a [b]village[/b] is nothing without a [color=blue][u]community[/u][/color]."
 
-[node name="NpcDemo" parent="Obstacles/Obstacle7" unique_id=1105535868 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/7Village" unique_id=1105535868 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "community"
-OwnedBlockers = [NodePath("../Village"), NodePath("../Area2D")]
+OwnedBlockers = [NodePath("../Village")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle7/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/7Village/NpcDemo" index="0" unique_id=852338744]
 visible = false
 position = Vector2(260.00076, 916.00165)
 scale = Vector2(1.5175002, 1.4423504)
 texture = ExtResource("25_whmx2")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle7/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/7Village/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -1314.0
 offset_top = -2125.0
 offset_right = 2373.0
 offset_bottom = 298.0
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle7" unique_id=362269819]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/7Village" unique_id=1273803910]
 position = Vector2(1169, -623)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle7/Area2D" unique_id=692661942]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/7Village/StaticBody2D" unique_id=692661942]
 position = Vector2(235, 156)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="Obstacle8" type="Node2D" parent="Obstacles" unique_id=1424945766]
+[node name="8DepressedCat" type="Node2D" parent="Obstacles" unique_id=1424945766]
 position = Vector2(114072, 28890)
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle8" unique_id=1813936584]
+[node name="Control" type="Control" parent="Obstacles/8DepressedCat" unique_id=1813936584]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3129,7 +3148,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle8/Control" unique_id=1601982524]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/8DepressedCat/Control" unique_id=1601982524]
 z_index = 20
 layout_mode = 0
 offset_left = 40.0
@@ -3137,17 +3156,17 @@ offset_top = -3066.0
 offset_right = 2116.0
 offset_bottom = -2187.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle8/Control/PanelContainer" unique_id=60404005]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/8DepressedCat/Control/PanelContainer" unique_id=60404005]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle8/Control/PanelContainer" unique_id=789325396]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/8DepressedCat/Control/PanelContainer" unique_id=789325396]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle8/Control/PanelContainer/HBoxContainer" unique_id=1841842784]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/8DepressedCat/Control/PanelContainer/HBoxContainer" unique_id=1841842784]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle8/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=687880157]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/8DepressedCat/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=687880157]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3159,34 +3178,34 @@ bbcode_enabled = true
 text = "[color=black][b]Depression[/b] is a mental state of low mood and aversion to activity.[color=blue][b][i][1][/i][/b][/color]
 One particularly depressed creature was quoted as saying [i]\"I'm not feeling great - I need something [color=blue] [u]therapeutic[/u][/color]...\"[/i][color=blue][b][i][2][/i][/b][/color]"
 
-[node name="NpcDemo" parent="Obstacles/Obstacle8" unique_id=291180640 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/8DepressedCat" unique_id=291180640 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "therapeutic"
-OwnedBlockers = [NodePath("."), NodePath("../Area2D")]
+OwnedBlockers = [NodePath("../StaticBody2D")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle8/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/8DepressedCat/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-231.99924, -590.99835)
 scale = Vector2(1.5175002, 1.4423504)
 texture = ExtResource("27_4hbsb")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle8/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/8DepressedCat/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -1314.0
 offset_top = -2125.0
 offset_right = 2373.0
 offset_bottom = 298.0
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle8" unique_id=13367960]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/8DepressedCat" unique_id=1603998300]
 position = Vector2(1169, -623)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle8/Area2D" unique_id=970808770]
-position = Vector2(-475.5, -526.8125)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/8DepressedCat/StaticBody2D" unique_id=970808770]
+position = Vector2(-275.95313, -526.8125)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="Obstacle9" type="Node2D" parent="Obstacles" unique_id=2099991466]
+[node name="9WackoTime" type="Node2D" parent="Obstacles" unique_id=2099991466]
 position = Vector2(126592, 25490)
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle9" unique_id=1915008484]
+[node name="Control" type="Control" parent="Obstacles/9WackoTime" unique_id=1915008484]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3194,7 +3213,7 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle9/Control" unique_id=1503072116]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/9WackoTime/Control" unique_id=1503072116]
 z_index = 20
 layout_mode = 0
 offset_left = -2149.0
@@ -3202,17 +3221,17 @@ offset_top = -5893.0
 offset_right = -73.0
 offset_bottom = -5014.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle9/Control/PanelContainer" unique_id=1073864941]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/9WackoTime/Control/PanelContainer" unique_id=1073864941]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle9/Control/PanelContainer" unique_id=897293822]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/9WackoTime/Control/PanelContainer" unique_id=897293822]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle9/Control/PanelContainer/HBoxContainer" unique_id=54593776]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/9WackoTime/Control/PanelContainer/HBoxContainer" unique_id=54593776]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle9/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1000389662]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/9WackoTime/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1000389662]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3224,139 +3243,75 @@ bbcode_enabled = true
 text = "[color=black]Nobody knows where [b]Wacko[/b] came from.[color=blue][b][i][citation needed][/i][/b][/color] They kinda just showed up.[color=blue][b][i][citation needed][/i][/b][/color]
 Wacko is known[color=blue][b][i][citation needed][/i][/b][/color] to say things like [i]\"I hate this generation!!! I wish I was born in a different [color=blue][u]time[/u][/color]!!!\"[/i]"
 
-[node name="NpcDemo" parent="Obstacles/Obstacle9" unique_id=776900033 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/9WackoTime" unique_id=776900033 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "time"
-OwnedBlockers = [NodePath("../Area2D"), NodePath(".")]
+OwnedBlockers = [NodePath(".")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle9/NpcDemo" index="0" unique_id=852338744]
+[node name="Sprite2D" parent="Obstacles/9WackoTime/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-221.00067, -430.00153)
 scale = Vector2(1.8614497, 1.6747544)
 texture = ExtResource("28_oj5ks")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle9/NpcDemo" index="1" unique_id=1767153274]
+[node name="ClickableArea" parent="Obstacles/9WackoTime/NpcDemo" index="1" unique_id=1767153274]
 offset_left = -1009.0
 offset_top = -2588.0
 offset_right = 750.0
 offset_bottom = 91.0
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle9" unique_id=1028770122]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/9WackoTime" unique_id=661131237]
 position = Vector2(1169, -623)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle9/Area2D" unique_id=12352494]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/9WackoTime/StaticBody2D" unique_id=12352494]
 position = Vector2(-475.5, -526.8125)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="Obstacle12" type="Node2D" parent="Obstacles" unique_id=1536535977]
-position = Vector2(171747, 10434)
+[node name="10CountingSheep" type="Node2D" parent="Obstacles" unique_id=275270672]
+z_index = 2
+position = Vector2(143094, 22326)
 
-[node name="Control" type="Control" parent="Obstacles/Obstacle12" unique_id=1317139607]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -525.0
-offset_top = 3218.0
-offset_right = -485.0
-offset_bottom = 3258.0
-
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle12/Control" unique_id=1145831676]
-z_index = 20
-layout_mode = 0
-offset_left = -408.0
-offset_top = -2194.0
-offset_right = 1668.0
-offset_bottom = -1193.0
-
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle12/Control/PanelContainer" unique_id=32344392]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle12/Control/PanelContainer" unique_id=772432346]
-layout_mode = 2
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle12/Control/PanelContainer/HBoxContainer" unique_id=840509989]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle12/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1854475471]
-custom_minimum_size = Vector2(2000, 100)
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 50
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 25
-bbcode_enabled = true
-text = "[color=black][b]Existential crises[/b] are inner conflicts characterized by the impression that life lacks meaning and by confusion about one's personal identity.
-Before cresting the peak of the mountain, you must provide [color=blue][u]meaning[/u][/color] to this crisis-having bin."
-
-[node name="NpcDemo" parent="Obstacles/Obstacle12" unique_id=1238558881 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
-z_index = 6
-position = Vector2(915, 152)
-DesiredTag = "meaning"
-OwnedBlockers = [NodePath("."), NodePath("../Area2D")]
-
-[node name="Sprite2D" parent="Obstacles/Obstacle12/NpcDemo" index="0" unique_id=852338744]
-position = Vector2(136.99933, 254.99841)
-scale = Vector2(1.8614497, 1.6747544)
-texture = ExtResource("29_5bkqw")
-
-[node name="ClickableArea" parent="Obstacles/Obstacle12/NpcDemo" index="1" unique_id=1767153274]
-offset_left = -1009.0
-offset_top = -2588.0
-offset_right = 750.0
-offset_bottom = 91.0
-
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle12" unique_id=809931995]
-position = Vector2(1169, -623)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle12/Area2D" unique_id=1110645397]
-position = Vector2(-475.5, -526.8125)
-shape = SubResource("RectangleShape2D_yr3df")
-
-[node name="Obstacle10" type="Node2D" parent="Obstacles" unique_id=2135473834]
-position = Vector2(141521, 22130)
-
-[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/Obstacle10" unique_id=1358826895]
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/10CountingSheep" unique_id=986057274]
 position = Vector2(-42.29492, -122.00006)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/Obstacle10" unique_id=194002797]
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/10CountingSheep" unique_id=446771958]
 position = Vector2(-59.296875, -981.00006)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/Obstacle10" unique_id=1988781228]
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/10CountingSheep" unique_id=1850895417]
 position = Vector2(-41.296875, 628)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("18_spmjc")
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle10" unique_id=1316753288]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/10CountingSheep" unique_id=58375714]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle10/Area2D" unique_id=50682036]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/10CountingSheep/StaticBody2D" unique_id=1481196618]
 position = Vector2(90, -693)
-shape = SubResource("RectangleShape2D_yr3df")
+shape = SubResource("RectangleShape2D_w18xa")
 
-[node name="NpcDemo" parent="Obstacles/Obstacle10" unique_id=762665607 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/10CountingSheep" unique_id=1686149780 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(32, -1152)
 DesiredTag = "maths"
-SatisfiedTexture = ExtResource("21_pjq62")
-OwnedBlockers = [NodePath("../PointyRockL3"), NodePath("../PointyRockL4"), NodePath("../PointyRockL2"), NodePath("../Area2D")]
+SatisfiedTexture = ExtResource("31_vfahv")
+OwnedBlockers = [NodePath("../StaticBody2D"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../PointyRockL3")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle10/NpcDemo" index="0" unique_id=852338744]
-position = Vector2(-1438.0002, 2149.003)
-scale = Vector2(2.3949316, 2.57908)
-texture = ExtResource("22_bjdue")
+[node name="Sprite2D" parent="Obstacles/10CountingSheep/NpcDemo" index="0" unique_id=852338744]
+position = Vector2(-2209.0002, 1973.999)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("31_vfahv")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle10/NpcDemo" index="1" unique_id=1767153274]
-offset_left = -1825.0
+[node name="ClickableArea" parent="Obstacles/10CountingSheep/NpcDemo" index="1" unique_id=1767153274]
+offset_left = -3556.0
 offset_top = -346.0
 offset_right = -931.0
 offset_bottom = 2077.0
 
-[node name="Control2" type="Control" parent="Obstacles/Obstacle10" unique_id=1700779627]
+[node name="Control2" type="Control" parent="Obstacles/10CountingSheep" unique_id=1647798324]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3364,25 +3319,25 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle10/Control2" unique_id=545266891]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/10CountingSheep/Control2" unique_id=1023079491]
 z_index = 20
 layout_mode = 0
-offset_left = -3481.0
-offset_top = -5063.0
-offset_right = -1439.0
-offset_bottom = -4034.0
+offset_left = -4720.0
+offset_top = -3663.0
+offset_right = -2678.0
+offset_bottom = -2634.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle10/Control2/PanelContainer" unique_id=1576475818]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/10CountingSheep/Control2/PanelContainer" unique_id=1692152660]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle10/Control2/PanelContainer" unique_id=1052996053]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/10CountingSheep/Control2/PanelContainer" unique_id=1661056746]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle10/Control2/PanelContainer/HBoxContainer" unique_id=783807828]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/10CountingSheep/Control2/PanelContainer/HBoxContainer" unique_id=1436725068]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle10/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1322955149]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/10CountingSheep/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1744982850]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3394,50 +3349,51 @@ bbcode_enabled = true
 text = "[color=black][b]Counting[/b] is the process of determining the number of elements of a finite set of objects; that is, determining the size of a set.[color=blue][b][i][5][/i][/b][/color]
 Not everybody has the ability to count - this person says [i]\"I can't count. I need some help with [color=blue][u]mathematics[/u][/color] .\"[/i][color=blue][b][i][33][/i][/b][/color]"
 
-[node name="Obstacle11" type="Node2D" parent="Obstacles" unique_id=1032107061]
-position = Vector2(157544, 19205)
+[node name="11SpellingDuck" type="Node2D" parent="Obstacles" unique_id=2013646779]
+z_index = 2
+position = Vector2(159410, 19296)
 
-[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/Obstacle11" unique_id=1773290052]
+[node name="PointyRockL2" type="Sprite2D" parent="Obstacles/11SpellingDuck" unique_id=1443904437]
 position = Vector2(-42.29492, -122.00006)
 scale = Vector2(2.1460178, 2.8738956)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/Obstacle11" unique_id=588831663]
+[node name="PointyRockL4" type="Sprite2D" parent="Obstacles/11SpellingDuck" unique_id=1033733874]
 position = Vector2(-59.296875, -981.00006)
 scale = Vector2(2.5813878, 2.337246)
 texture = ExtResource("18_spmjc")
 
-[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/Obstacle11" unique_id=1925116106]
+[node name="PointyRockL3" type="Sprite2D" parent="Obstacles/11SpellingDuck" unique_id=875635033]
 position = Vector2(-41.296875, 628)
 rotation = -0.27654868
 scale = Vector2(2.3365996, 1.7580662)
 texture = ExtResource("18_spmjc")
 
-[node name="Area2D" type="Area2D" parent="Obstacles/Obstacle11" unique_id=1566673721]
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/11SpellingDuck" unique_id=1140176030]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle11/Area2D" unique_id=1517329178]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/11SpellingDuck/StaticBody2D" unique_id=676066178]
 position = Vector2(90, -693)
-shape = SubResource("RectangleShape2D_yr3df")
+shape = SubResource("RectangleShape2D_qnmal")
 
-[node name="NpcDemo" parent="Obstacles/Obstacle11" unique_id=1271910639 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/11SpellingDuck" unique_id=990906634 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(32, -1152)
 DesiredTag = "language"
-SatisfiedTexture = ExtResource("21_pjq62")
-OwnedBlockers = [NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../PointyRockL3"), NodePath("../Area2D")]
+SatisfiedTexture = ExtResource("32_w18xa")
+OwnedBlockers = [NodePath("../StaticBody2D"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../PointyRockL3")]
 
-[node name="Sprite2D" parent="Obstacles/Obstacle11/NpcDemo" index="0" unique_id=852338744]
-position = Vector2(-1438.0002, 2149.003)
-scale = Vector2(2.3949316, 2.57908)
-texture = ExtResource("22_bjdue")
+[node name="Sprite2D" parent="Obstacles/11SpellingDuck/NpcDemo" index="0" unique_id=852338744]
+position = Vector2(-2961.0002, 1995.999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("32_w18xa")
 
-[node name="ClickableArea" parent="Obstacles/Obstacle11/NpcDemo" index="1" unique_id=1767153274]
-offset_left = -1825.0
+[node name="ClickableArea" parent="Obstacles/11SpellingDuck/NpcDemo" index="1" unique_id=1767153274]
+offset_left = -4002.0
 offset_top = -346.0
-offset_right = -931.0
+offset_right = -2002.0
 offset_bottom = 2077.0
 
-[node name="Control2" type="Control" parent="Obstacles/Obstacle11" unique_id=2088283893]
+[node name="Control2" type="Control" parent="Obstacles/11SpellingDuck" unique_id=186978950]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3445,25 +3401,25 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Obstacles/Obstacle11/Control2" unique_id=1608806484]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/11SpellingDuck/Control2" unique_id=597423054]
 z_index = 20
 layout_mode = 0
-offset_left = -3466.0
-offset_top = -5037.0
-offset_right = -1424.0
-offset_bottom = -4008.0
+offset_left = -5614.0
+offset_top = -4891.0
+offset_right = -3572.0
+offset_bottom = -3862.0
 
-[node name="ColorRect" type="ColorRect" parent="Obstacles/Obstacle11/Control2/PanelContainer" unique_id=979018101]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/11SpellingDuck/Control2/PanelContainer" unique_id=411175821]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/Obstacle11/Control2/PanelContainer" unique_id=1401361541]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/11SpellingDuck/Control2/PanelContainer" unique_id=1884040027]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Obstacles/Obstacle11/Control2/PanelContainer/HBoxContainer" unique_id=1105414307]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/11SpellingDuck/Control2/PanelContainer/HBoxContainer" unique_id=1916745728]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/Obstacle11/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1206029140]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/11SpellingDuck/Control2/PanelContainer/HBoxContainer/MarginContainer" unique_id=1262167485]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3475,20 +3431,10 @@ bbcode_enabled = true
 text = "[color=black][b]Spelling[/b] is a set of comvemtions four ritten language regardding how grafemes shood corespond to the sownds of spocken language.[color=blue][b][i][1][/i][/b][/color]
 Not everybody has the ability to spell - this person says [i]\"Eye cant spel. I need sum help with [color=blue][u]language[/u][/color] .\"[/i][color=blue][b][i][2][/i][/b][/color]"
 
-[node name="Shops" type="Node2D" parent="." unique_id=507259439]
+[node name="12ExistentialPlastic" type="Node2D" parent="Obstacles" unique_id=1536535977]
+position = Vector2(171747, 10434)
 
-[node name="PropertyNpc" parent="Shops" unique_id=1694411086 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawner") instance=ExtResource("15_l0rr1")]
-position = Vector2(56553, 34235)
-scale = Vector2(3, 3)
-DesiredTag = "property"
-OwnedBlockers = []
-OwnedSpawner = NodePath("RelaxingSpawner")
-
-[node name="Shop1" type="Node2D" parent="Shops/PropertyNpc" unique_id=655730883]
-position = Vector2(-22.666016, -62.66797)
-scale = Vector2(0.33333334, 0.33333334)
-
-[node name="Control" type="Control" parent="Shops/PropertyNpc/Shop1" unique_id=1677861905]
+[node name="Control" type="Control" parent="Obstacles/12ExistentialPlastic" unique_id=1317139607]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3496,25 +3442,115 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Shops/PropertyNpc/Shop1/Control" unique_id=1220467133]
+[node name="PanelContainer" type="PanelContainer" parent="Obstacles/12ExistentialPlastic/Control" unique_id=1145831676]
 z_index = 20
 layout_mode = 0
-offset_left = -269.0
-offset_top = -6572.0
-offset_right = 1773.0
-offset_bottom = -5950.0
+offset_left = -408.0
+offset_top = -2194.0
+offset_right = 1668.0
+offset_bottom = -1193.0
 
-[node name="ColorRect" type="ColorRect" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer" unique_id=964276468]
+[node name="ColorRect" type="ColorRect" parent="Obstacles/12ExistentialPlastic/Control/PanelContainer" unique_id=32344392]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer" unique_id=1021677325]
+[node name="HBoxContainer" type="HBoxContainer" parent="Obstacles/12ExistentialPlastic/Control/PanelContainer" unique_id=772432346]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer/HBoxContainer" unique_id=804021422]
+[node name="MarginContainer" type="MarginContainer" parent="Obstacles/12ExistentialPlastic/Control/PanelContainer/HBoxContainer" unique_id=840509989]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1330951762]
+[node name="RichTextLabel" type="RichTextLabel" parent="Obstacles/12ExistentialPlastic/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1854475471]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black][b]Existential crises[/b] are inner conflicts characterized by the impression that life lacks meaning and by confusion about one's personal identity.
+Before cresting the peak of the mountain, you must provide [color=blue][u]meaning[/u][/color] to this crisis-having bin."
+
+[node name="NpcDemo" parent="Obstacles/12ExistentialPlastic" unique_id=1238558881 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+z_index = 6
+position = Vector2(915, 152)
+DesiredTag = "meaning"
+OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D")]
+
+[node name="Sprite2D" parent="Obstacles/12ExistentialPlastic/NpcDemo" index="0" unique_id=852338744]
+position = Vector2(136.99933, 254.99841)
+scale = Vector2(1.8614497, 1.6747544)
+texture = ExtResource("29_5bkqw")
+
+[node name="ClickableArea" parent="Obstacles/12ExistentialPlastic/NpcDemo" index="1" unique_id=1767153274]
+offset_left = -1009.0
+offset_top = -2588.0
+offset_right = 750.0
+offset_bottom = 91.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Obstacles/12ExistentialPlastic" unique_id=1959228228]
+position = Vector2(1169, -623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/12ExistentialPlastic/StaticBody2D" unique_id=1110645397]
+position = Vector2(-26.469, -364.5)
+shape = SubResource("RectangleShape2D_yr3df")
+
+[node name="Shops" type="Node2D" parent="." unique_id=507259439]
+
+[node name="PropertyNpc" type="Node2D" parent="Shops" unique_id=1625444525 node_paths=PackedStringArray("ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+position = Vector2(56485, 34263)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("31_fgql8")
+ClickableArea = NodePath("ClickableArea")
+DesiredTag = "property"
+SatisfiedTexture = ExtResource("32_6pxd6")
+OwnedBlockers = []
+OwnedSpawner = NodePath("RelaxingSpawner")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shops/PropertyNpc" unique_id=1525935978]
+position = Vector2(0, -35.666626)
+texture = ExtResource("32_6pxd6")
+offset = Vector2(0, -500)
+
+[node name="ClickableArea" type="Button" parent="Shops/PropertyNpc" unique_id=1835316511]
+modulate = Color(1, 1, 1, 0)
+offset_left = -252.0
+offset_top = -1039.0
+offset_right = 208.0
+offset_bottom = 8.0
+
+[node name="Shop1" type="Node2D" parent="Shops/PropertyNpc" unique_id=625713066]
+position = Vector2(-22.666016, -62.66797)
+scale = Vector2(0.33333334, 0.33333334)
+
+[node name="Control" type="Control" parent="Shops/PropertyNpc/Shop1" unique_id=1443827823]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Shops/PropertyNpc/Shop1/Control" unique_id=1198351185]
+z_index = 20
+layout_mode = 0
+offset_left = 389.0
+offset_top = -6540.996
+offset_right = 2431.0
+offset_bottom = -5918.996
+
+[node name="ColorRect" type="ColorRect" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer" unique_id=408868030]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer" unique_id=1885407001]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer/HBoxContainer" unique_id=970704345]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shops/PropertyNpc/Shop1/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=2122306036]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3527,67 +3563,10 @@ text = "[color=black][b][u]SHOP[/u][/b]
 [i]\"I will trade with you!
 I want riches - bring me some [color=blue][u]property[/u][/color], and I will spawn [color=blue][u]relaxing[/u][/color] things!\""
 
-[node name="RelaxingSpawner" parent="Shops/PropertyNpc" unique_id=1929114997 instance=ExtResource("34_3n8nw")]
+[node name="RelaxingSpawner" parent="Shops/PropertyNpc" unique_id=939182472 instance=ExtResource("34_3n8nw")]
 position = Vector2(-25.33268, -432.33334)
 scale = Vector2(0.33333334, 0.33333334)
 tags = PackedStringArray("relaxing")
-maxRadius = 2500.0
-minRadius = 1000.0
-
-[node name="AnimalNpc" parent="Shops" unique_id=1971834421 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawner") instance=ExtResource("15_l0rr1")]
-position = Vector2(59907, 34207)
-scale = Vector2(3, 3)
-DesiredTag = "animal"
-OwnedBlockers = []
-OwnedSpawner = NodePath("PropertySpawner")
-
-[node name="Shop2" type="Node2D" parent="Shops/AnimalNpc" unique_id=433252466]
-position = Vector2(-93.666016, -53.333984)
-scale = Vector2(0.33333334, 0.33333334)
-
-[node name="Control" type="Control" parent="Shops/AnimalNpc/Shop2" unique_id=1196993358]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -525.0
-offset_top = 3218.0
-offset_right = -485.0
-offset_bottom = 3258.0
-
-[node name="PanelContainer" type="PanelContainer" parent="Shops/AnimalNpc/Shop2/Control" unique_id=152545244]
-z_index = 20
-layout_mode = 0
-offset_left = -125.0
-offset_top = -6569.0
-offset_right = 1917.0
-offset_bottom = -5947.0
-
-[node name="ColorRect" type="ColorRect" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer" unique_id=621794469]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer" unique_id=743372071]
-layout_mode = 2
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer/HBoxContainer" unique_id=739122395]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1121599518]
-custom_minimum_size = Vector2(2000, 100)
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 100
-theme_override_font_sizes/bold_italics_font_size = 50
-theme_override_font_sizes/italics_font_size = 100
-theme_override_font_sizes/mono_font_size = 25
-bbcode_enabled = true
-text = "[color=black][b][u]SHOP[/u][/b] 
-[i]\"I will trade with you!
-I want a pet - bring me an [color=blue][u]animal[/u][/color], and I will spawn some[color=blue] [u]property[/u][/color]!\""
-
-[node name="PropertySpawner" parent="Shops/AnimalNpc" unique_id=868080782 instance=ExtResource("34_3n8nw")]
-position = Vector2(8, -388.33398)
-scale = Vector2(0.33333334, 0.33333334)
-tags = PackedStringArray("property")
 maxRadius = 2500.0
 minRadius = 1000.0
 
@@ -3600,13 +3579,14 @@ OwnedBlockers = []
 OwnedSpawner = NodePath("TimeSpawner")
 
 [node name="Sprite2D" parent="Shops/SpiritualNpc" index="0" unique_id=852338744]
+position = Vector2(-43.669273, 349.16666)
 texture = ExtResource("35_5a13d")
 
 [node name="ClickableArea" parent="Shops/SpiritualNpc" index="1" unique_id=1767153274]
-offset_left = -425.3359
-offset_top = -876.6673
-offset_right = 414.00003
-offset_bottom = -190.6673
+offset_left = -470.00516
+offset_top = -527.5006
+offset_right = 369.33078
+offset_bottom = 158.49939
 
 [node name="Shop2" type="Node2D" parent="Shops/SpiritualNpc" unique_id=2104742077]
 position = Vector2(-93.666016, -53.333984)
@@ -3624,9 +3604,9 @@ offset_bottom = 3258.0
 z_index = 20
 layout_mode = 0
 offset_left = -103.00781
-offset_top = -6764.0
+offset_top = -5424.0
 offset_right = 1938.9922
-offset_bottom = -5990.0
+offset_bottom = -4650.0
 
 [node name="ColorRect" type="ColorRect" parent="Shops/SpiritualNpc/Shop2/Control/PanelContainer" unique_id=1130625574]
 layout_mode = 2
@@ -3651,25 +3631,42 @@ text = "[color=black][b][u]SHOP[/u][/b]
 [i]\"I will trade with you!
 We are LOST! We need guidance! Bring us something [color=blue][u]spiritual[/u][/color], and we will spawn some[color=blue] [u]time[/u][/color]!\""
 
-[node name="TimeSpawner" parent="Shops/SpiritualNpc" unique_id=939182472 instance=ExtResource("34_3n8nw")]
+[node name="TimeSpawner" parent="Shops/SpiritualNpc" unique_id=804866941 instance=ExtResource("34_3n8nw")]
 position = Vector2(8, -388.33398)
 scale = Vector2(0.33333334, 0.33333334)
 tags = PackedStringArray("time")
 maxRadius = 2500.0
 minRadius = 1000.0
 
-[node name="PoliticalNpc" parent="Shops" unique_id=635738183 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawner") instance=ExtResource("15_l0rr1")]
-position = Vector2(107540.01, 29334)
+[node name="AnimalNpc" type="Node2D" parent="Shops" unique_id=1432897022 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+position = Vector2(60615, 34559)
 scale = Vector2(3, 3)
-DesiredTag = "political"
+script = ExtResource("31_fgql8")
+Sprite = NodePath("Sprite2D")
+ClickableArea = NodePath("ClickableArea")
+DesiredTag = "animal"
+SatisfiedTexture = ExtResource("35_6pxd6")
 OwnedBlockers = []
-OwnedSpawner = NodePath("TherapeuticSpawner")
+OwnedSpawner = NodePath("PropertySpawner")
 
-[node name="Shop2" type="Node2D" parent="Shops/PoliticalNpc" unique_id=916163118]
-position = Vector2(-93.666016, -53.333984)
+[node name="Sprite2D" type="Sprite2D" parent="Shops/AnimalNpc" unique_id=649753093]
+position = Vector2(8.000002, -275.33334)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("35_6pxd6")
+offset = Vector2(0, -500)
+
+[node name="ClickableArea" type="Button" parent="Shops/AnimalNpc" unique_id=1033492782]
+modulate = Color(1, 1, 1, 0)
+offset_left = -210.66666
+offset_top = -1060.3334
+offset_right = 249.33334
+offset_bottom = -13.333374
+
+[node name="Shop2" type="Node2D" parent="Shops/AnimalNpc" unique_id=835148795]
+position = Vector2(-50.666016, -24.333984)
 scale = Vector2(0.33333334, 0.33333334)
 
-[node name="Control" type="Control" parent="Shops/PoliticalNpc/Shop2" unique_id=88158263]
+[node name="Control" type="Control" parent="Shops/AnimalNpc/Shop2" unique_id=830827680]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -525.0
@@ -3677,7 +3674,82 @@ offset_top = 3218.0
 offset_right = -485.0
 offset_bottom = 3258.0
 
-[node name="PanelContainer" type="PanelContainer" parent="Shops/PoliticalNpc/Shop2/Control" unique_id=987238940]
+[node name="PanelContainer" type="PanelContainer" parent="Shops/AnimalNpc/Shop2/Control" unique_id=693523587]
+z_index = 20
+layout_mode = 0
+offset_left = -272.0
+offset_top = -7031.0
+offset_right = 1770.0
+offset_bottom = -6409.0
+
+[node name="ColorRect" type="ColorRect" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer" unique_id=1157305484]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer" unique_id=1888264930]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer/HBoxContainer" unique_id=1108406423]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Shops/AnimalNpc/Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=142639701]
+custom_minimum_size = Vector2(2000, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 25
+bbcode_enabled = true
+text = "[color=black][b][u]SHOP[/u][/b] 
+[i]\"I will trade with you!
+I want a pet - bring me an [color=blue][u]animal[/u][/color], and I will spawn some[color=blue] [u]property[/u][/color]!\""
+
+[node name="PropertySpawner" parent="Shops/AnimalNpc" unique_id=550999022 instance=ExtResource("34_3n8nw")]
+position = Vector2(8, -388.33398)
+scale = Vector2(0.33333334, 0.33333334)
+tags = PackedStringArray("property")
+maxRadius = 2500.0
+minRadius = 1000.0
+
+[node name="PoliticalNpc" type="Node2D" parent="Shops" unique_id=1990940533 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+position = Vector2(108555.01, 29489)
+scale = Vector2(3, 3)
+script = ExtResource("31_fgql8")
+Sprite = NodePath("Sprite2D")
+ClickableArea = NodePath("ClickableArea")
+DesiredTag = "political"
+SatisfiedTexture = ExtResource("36_nwxlm")
+OwnedBlockers = []
+OwnedSpawner = NodePath("TherapeuticSpawner")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shops/PoliticalNpc" unique_id=1454258141]
+position = Vector2(-0.0026042461, -66.66667)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("36_nwxlm")
+offset = Vector2(0, -500)
+
+[node name="ClickableArea" type="Button" parent="Shops/PoliticalNpc" unique_id=1767518473]
+modulate = Color(1, 1, 1, 0)
+offset_left = -218.66928
+offset_top = -515.3333
+offset_right = 241.33072
+offset_bottom = 531.6667
+scale = Vector2(0.8984095, 0.56619835)
+
+[node name="Shop2" type="Node2D" parent="Shops/PoliticalNpc" unique_id=1935791600]
+position = Vector2(-113.33529, 401.99936)
+scale = Vector2(0.33333334, 0.33333334)
+
+[node name="Control" type="Control" parent="Shops/PoliticalNpc/Shop2" unique_id=719041082]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -525.0
+offset_top = 3218.0
+offset_right = -485.0
+offset_bottom = 3258.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Shops/PoliticalNpc/Shop2/Control" unique_id=228579160]
 z_index = 20
 layout_mode = 0
 offset_left = -162.00781
@@ -3685,17 +3757,17 @@ offset_top = -6739.0
 offset_right = 1879.9922
 offset_bottom = -6013.0
 
-[node name="ColorRect" type="ColorRect" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer" unique_id=1018243174]
+[node name="ColorRect" type="ColorRect" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer" unique_id=2027167075]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer" unique_id=968508587]
+[node name="HBoxContainer" type="HBoxContainer" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer" unique_id=1580635998]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer/HBoxContainer" unique_id=814518430]
+[node name="MarginContainer" type="MarginContainer" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer/HBoxContainer" unique_id=1572331544]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=107087732]
+[node name="RichTextLabel" type="RichTextLabel" parent="Shops/PoliticalNpc/Shop2/Control/PanelContainer/HBoxContainer/MarginContainer" unique_id=1730435183]
 custom_minimum_size = Vector2(2000, 100)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -3708,7 +3780,7 @@ text = "[color=black][b][u]SHOP[/u][/b]
 [i]\"I will trade with you!
 We need leadership - bring me something [color=blue][u]political[/u][/color], and I will spawn some[color=blue] [u]therapeutic[/u][/color] things!\""
 
-[node name="TherapeuticSpawner" parent="Shops/PoliticalNpc" unique_id=31912049 instance=ExtResource("34_3n8nw")]
+[node name="TherapeuticSpawner" parent="Shops/PoliticalNpc" unique_id=2116891162 instance=ExtResource("34_3n8nw")]
 position = Vector2(8, -388.33398)
 scale = Vector2(0.33333334, 0.33333334)
 tags = PackedStringArray("therapeutic")
@@ -4290,25 +4362,18 @@ position = Vector2(0, 54904)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainStaticBody2D_2" unique_id=1198762859]
 position = Vector2(9027, -12802)
-polygon = PackedVector2Array(22582, 3253, 23274, 4638, 25466, 4623, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
+polygon = PackedVector2Array(23265, 2996, 24248, 2475, 25698, 1800, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=124646853 node_paths=PackedStringArray("PlayerChar")]
-position = Vector2(544, 52860)
-zoom = Vector2(0.25, 0.25)
-script = ExtResource("46_nwxlm")
-CameraOffset = Vector2(120, -1500)
-PlayerChar = NodePath("../PlayerV2")
-
-[editable path="Obstacles/Obstacle1/NpcDemo"]
-[editable path="Obstacles/Obstacle2/NpcDemo"]
-[editable path="Obstacles/Obstacle3/NpcDemo"]
-[editable path="Obstacles/Obstacle4/NpcDemo"]
-[editable path="Obstacles/Obstacle5/NpcDemo"]
-[editable path="Obstacles/Obstacle6/NpcDemo"]
-[editable path="Obstacles/Obstacle7/NpcDemo"]
-[editable path="Obstacles/Obstacle8/NpcDemo"]
-[editable path="Obstacles/Obstacle9/NpcDemo"]
-[editable path="Obstacles/Obstacle12/NpcDemo"]
-[editable path="Obstacles/Obstacle10/NpcDemo"]
-[editable path="Obstacles/Obstacle11/NpcDemo"]
+[editable path="Obstacles/1CerealGate/NpcDemo"]
+[editable path="Obstacles/2RockWall/NpcDemo"]
+[editable path="Obstacles/3ArmBridge/NpcDemo"]
+[editable path="Obstacles/4Carpenter/NpcDemo"]
+[editable path="Obstacles/5DropBear/NpcDemo"]
+[editable path="Obstacles/6BodyOfWater/NpcDemo"]
+[editable path="Obstacles/7Village/NpcDemo"]
+[editable path="Obstacles/8DepressedCat/NpcDemo"]
+[editable path="Obstacles/9WackoTime/NpcDemo"]
+[editable path="Obstacles/10CountingSheep/NpcDemo"]
+[editable path="Obstacles/11SpellingDuck/NpcDemo"]
+[editable path="Obstacles/12ExistentialPlastic/NpcDemo"]
 [editable path="Shops/SpiritualNpc"]
