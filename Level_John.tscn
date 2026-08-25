@@ -68,7 +68,7 @@ position = Vector2(7680, 24192)
 position = Vector2(-2009, 51144)
 
 [node name="NightSky" type="Sprite2D" parent="Background" unique_id=646260766]
-position = Vector2(-196.00023, -4.99634)
+position = Vector2(-196.00023, -579.9963)
 scale = Vector2(1.3428702, 1.2254202)
 texture = ExtResource("1_f7eu1")
 centered = false
