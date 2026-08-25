@@ -2,7 +2,7 @@ using Godot;
 using System;
 using EverythingKnownToMan.backend;
 
-public partial class PlayerInventory : Node
+public partial class PlayerInventory : Control
 {
     public WikiArticle heldArticle;
     [Export] public ArticleNode articleNode;
@@ -37,6 +37,7 @@ public partial class PlayerInventory : Node
         heldArticle = givenArticle.WikiArticle;
         articleNode.LoadArticle(heldArticle);
         articleNode.Show();
+        PlayerCharacter.Instance.SetHolding(heldArticle != null);
         GD.Print($"Inv article has title: {articleNode.WikiArticle.Title}");
         
         givenArticle.LoadArticle(temp);
@@ -46,5 +47,6 @@ public partial class PlayerInventory : Node
     {
         heldArticle = null;
         articleNode.Hide();
+        PlayerCharacter.Instance.SetHolding(false);
     }
 }

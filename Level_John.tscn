@@ -2623,10 +2623,18 @@ color = Color(8.04686e-08, 0.08818867, 0, 1)
 polygon = PackedVector2Array(22582, 3253, 23274, 4638, 25466, 4623, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
 uv = PackedVector2Array(-426, 59)
 
-[node name="PlayerV2" parent="." unique_id=1746860596 groups=["Player"] instance=ExtResource("14_j286a")]
+[node name="PlayerV2" parent="." unique_id=1746860596 node_paths=PackedStringArray("InventoryArticle") groups=["Player"] instance=ExtResource("14_j286a")]
 position = Vector2(-420, 54354)
+InventoryArticle = NodePath("InventoryScene")
 GravityScale = 19620.0
 MovementSpeed = 2500.0
+
+[node name="InventoryScene" parent="PlayerV2" unique_id=653372133 instance=ExtResource("14_gmppw")]
+offset_left = 104.999985
+offset_top = -155.00002
+offset_right = 104.999985
+offset_bottom = -155.00002
+rotation = -0.45324978
 
 [node name="FollowerCamera2D" type="Camera2D" parent="." unique_id=124646853 node_paths=PackedStringArray("PlayerChar")]
 position = Vector2(544, 52860)
@@ -2634,8 +2642,6 @@ zoom = Vector2(0.25, 0.25)
 script = ExtResource("46_nwxlm")
 CameraOffset = Vector2(120, -850)
 PlayerChar = NodePath("../PlayerV2")
-
-[node name="InventoryScene" parent="." unique_id=653372133 instance=ExtResource("14_gmppw")]
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=8109734]
 
@@ -4327,15 +4333,17 @@ scroll_offset = Vector2(3648, 0)
 
 [node name="Trees" type="Sprite2D" parent="SuperForeground" unique_id=632145738]
 z_index = 10
-position = Vector2(5710, 53462)
+position = Vector2(4938, 53462)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("44_w7lw4")
+flip_h = true
 
 [node name="Trees2" type="Sprite2D" parent="SuperForeground" unique_id=1765351310]
 z_index = 10
-position = Vector2(-3793, 53554)
+position = Vector2(-4127, 53554)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("44_w7lw4")
+flip_h = true
 
 [node name="LeftSideWall" type="Area2D" parent="." unique_id=820633638]
 position = Vector2(-5523, 54691)
