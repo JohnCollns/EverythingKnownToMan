@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://rgtgyldak2gm" path="res://Assets/Colour mountain/Colour rock M.png" id="43_deudl"]
 [ext_resource type="Texture2D" uid="uid://cc0mcimduidai" path="res://Assets/forest assets/foreground.png" id="44_w7lw4"]
 [ext_resource type="Script" uid="uid://cccgi8ou2sr33" path="res://src/FollowerCamera.cs" id="46_nwxlm"]
+[ext_resource type="AudioStream" uid="uid://6xmdetai6j3q" path="res://Assets/EverythingSongs/EverythingIs_MediumFadeIn.mp3" id="51_ndm73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr3df"]
 size = Vector2(2431.544, 3517)
@@ -2623,7 +2624,7 @@ uv = PackedVector2Array(-426, 59)
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=2008040248]
 position = Vector2(9026, 42102)
 color = Color(8.04686e-08, 0.08818867, 0, 1)
-polygon = PackedVector2Array(22582, 3253, 23274, 4638, 25466, 4623, 25762, 1775, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
+polygon = PackedVector2Array(22582, 3253, 23274, 4638, 25466, 4623, 25762, 1775, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 170691, -38215, 173910, -40591, 182009, -40617, 200053, -15569, 206243, 14419, 190875, 13886, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
 uv = PackedVector2Array(-426, 59)
 
 [node name="PlayerV2" parent="." unique_id=1746860596 node_paths=PackedStringArray("InventoryArticle") groups=["Player"] instance=ExtResource("14_j286a")]
@@ -3503,7 +3504,7 @@ Before cresting the peak of the mountain, you must provide [color=blue][u]meanin
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "meaning"
-OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D")]
+OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D"), NodePath("../../../PlayerV2/AudioStreamPlayer2D")]
 
 [node name="Sprite2D" parent="Obstacles/12ExistentialPlastic/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(136.99933, 254.99841)
@@ -4363,11 +4364,16 @@ position = Vector2(374.5, -566)
 shape = SubResource("RectangleShape2D_yr3df")
 
 [node name="RightSideWall" type="Area2D" parent="." unique_id=23185921]
-position = Vector2(177224, 9791)
+position = Vector2(189630, 411)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightSideWall" unique_id=1816854373]
 position = Vector2(374.5, -566)
 shape = SubResource("RectangleShape2D_yr3df")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RightSideWall" unique_id=488021222]
+stream = ExtResource("51_ndm73")
+autoplay = true
+max_distance = 15075.0
 
 [node name="MountainStaticBody2D_1" type="StaticBody2D" parent="." unique_id=269043843]
 position = Vector2(0, 54904)
@@ -4380,7 +4386,7 @@ position = Vector2(0, 54904)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainStaticBody2D_2" unique_id=1198762859]
 position = Vector2(9027, -12802)
-polygon = PackedVector2Array(23265, 2996, 24248, 2475, 25698, 1800, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
+polygon = PackedVector2Array(23265, 2996, 24248, 2475, 25698, 1800, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 170900, -38276, 173821, -40498, 181968, -40580, 200045, -15535, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
 
 [editable path="Obstacles/1CerealGate/NpcDemo"]
 [editable path="Obstacles/2RockWall/NpcDemo"]
