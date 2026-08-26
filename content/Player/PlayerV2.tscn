@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bjeicirakhi3h"]
+
+[ext_resource type="Script" uid="uid://dhiu76bjngog2" path="res://src/PlayerCharacter.cs" id="1_aelv0"]
+[ext_resource type="Texture2D" uid="uid://clrie33tgy6o6" path="res://Assets/New Characters/Characters/Researcher.png" id="2_q7cv7"]
+[ext_resource type="Texture2D" uid="uid://bartx8t1s0pav" path="res://Assets/New Characters/Characters/Researcher hold base.PNG" id="3_6gq1t"]
+[ext_resource type="Texture2D" uid="uid://ckkratv6v7h5p" path="res://Assets/New Characters/Characters/Researcher hold hand.PNG" id="4_fnxq8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8yljs"]
+radius = 291.0
+height = 1072.0
+
+[node name="PlayerV2" type="CharacterBody2D" unique_id=1746860596 node_paths=PackedStringArray("StandardSprite", "HoldSprite")]
+script = ExtResource("1_aelv0")
+StandardSprite = NodePath("SpriteStandard")
+HoldSprite = NodePath("HoldingBack")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849496297]
+shape = SubResource("CapsuleShape2D_8yljs")
+
+[node name="SpriteStandard" type="Sprite2D" parent="." unique_id=403187361]
+z_index = 3
+position = Vector2(-41, 0)
+texture = ExtResource("2_q7cv7")
+
+[node name="HoldingBack" type="Sprite2D" parent="." unique_id=839929546]
+visible = false
+z_index = 3
+texture = ExtResource("3_6gq1t")
+
+[node name="HoldingFront" type="Sprite2D" parent="HoldingBack" unique_id=215371000]
+z_index = 5
+position = Vector2(-2, -189)
+texture = ExtResource("4_fnxq8")

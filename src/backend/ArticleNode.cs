@@ -40,7 +40,7 @@ public partial class ArticleNode : Control
 	private void OnClickableBackgroundOnPressed()
 	{
 		GD.Print("OnClickableBackgroundOnPressed: " + (WikiArticle != null ? WikiArticle.Title : "Empty"));
-		PlayerSingleton.Inventory.SwapArticle(this);
+		PlayerCharacter.Inventory.SwapArticle(this);
 	}
 
 	public void LoadArticle(WikiArticle wikiArticle)
