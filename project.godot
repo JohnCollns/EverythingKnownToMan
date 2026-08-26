@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EverythingKnownToMan"
-run/main_scene="uid://bqj2grsfuyinq"
+run/main_scene="uid://cik0r5vrlvu6j"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
