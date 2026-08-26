@@ -3662,6 +3662,7 @@ We are LOST! We need guidance! Bring us something [color=blue][u]spiritual[/u][/
 [node name="TimeSpawner" parent="Shops/SpiritualNpc" unique_id=804866941 instance=ExtResource("34_3n8nw")]
 position = Vector2(8, -388.33398)
 tags = PackedStringArray("time")
+numArticles = 10
 maxRadius = 2500.0
 minRadius = 1000.0
 
@@ -3733,6 +3734,7 @@ I want a pet - bring me an [color=blue][u]animal[/u][/color], and I will spawn s
 [node name="PropertySpawner" parent="Shops/AnimalNpc" unique_id=550999022 instance=ExtResource("34_3n8nw")]
 position = Vector2(0, -1411.998)
 tags = PackedStringArray("property")
+numArticles = 10
 maxRadius = 2500.0
 minRadius = 1000.0
 
@@ -3805,6 +3807,7 @@ We need leadership - bring me something [color=blue][u]political[/u][/color], an
 [node name="TherapeuticSpawner" parent="Shops/PoliticalNpc" unique_id=2116891162 instance=ExtResource("34_3n8nw")]
 position = Vector2(8, -388.33398)
 tags = PackedStringArray("therapeutic")
+numArticles = 10
 maxRadius = 2500.0
 minRadius = 1000.0
 
@@ -3813,6 +3816,7 @@ minRadius = 1000.0
 [node name="UnlockSpawner" parent="Spawners" unique_id=777746209 instance=ExtResource("34_3n8nw")]
 position = Vector2(1135, 53460)
 tags = PackedStringArray("unlocking")
+numArticles = 10
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
@@ -3820,6 +3824,7 @@ minRadius = 1000.0
 [node name="DestructiveSpawner" parent="Spawners" unique_id=160580027 instance=ExtResource("34_3n8nw")]
 position = Vector2(14482, 51432)
 tags = PackedStringArray("destructive")
+numArticles = 10
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
@@ -3843,6 +3848,7 @@ minRadius = 1000.0
 [node name="AnimalSpawner" parent="Spawners" unique_id=860088481 instance=ExtResource("34_3n8nw")]
 position = Vector2(50719, 34098)
 tags = PackedStringArray("animal")
+numArticles = 10
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
@@ -3850,7 +3856,7 @@ minRadius = 1000.0
 [node name="SwimmingSpawner" parent="Spawners" unique_id=583201102 instance=ExtResource("34_3n8nw")]
 position = Vector2(52342, 32981)
 tags = PackedStringArray("swimming")
-numArticles = 2
+numArticles = 3
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
@@ -3858,6 +3864,7 @@ minRadius = 1000.0
 [node name="CommunitySpawner" parent="Spawners" unique_id=341387952 instance=ExtResource("34_3n8nw")]
 position = Vector2(89124, 30134)
 tags = PackedStringArray("community")
+numArticles = 10
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
@@ -3873,6 +3880,7 @@ minRadius = 1000.0
 [node name="PersonSpawner" parent="Spawners" unique_id=412761963 instance=ExtResource("34_3n8nw")]
 position = Vector2(111594, 26687)
 tags = PackedStringArray("person")
+numArticles = 10
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
@@ -3880,6 +3888,7 @@ minRadius = 1000.0
 [node name="TheorySpawner" parent="Spawners" unique_id=700279090 instance=ExtResource("34_3n8nw")]
 position = Vector2(119542, 24271)
 tags = PackedStringArray("theory")
+numArticles = 10
 spawnOnReady = true
 maxRadius = 2500.0
 minRadius = 1000.0
