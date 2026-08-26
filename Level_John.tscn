@@ -2625,16 +2625,22 @@ uv = PackedVector2Array(-426, 59)
 
 [node name="PlayerV2" parent="." unique_id=1746860596 node_paths=PackedStringArray("InventoryArticle") groups=["Player"] instance=ExtResource("14_j286a")]
 position = Vector2(-420, 54354)
-InventoryArticle = NodePath("InventoryScene")
+InventoryArticle = NodePath("InventorySceneRight")
 GravityScale = 19620.0
 MovementSpeed = 2500.0
 
-[node name="InventoryScene" parent="PlayerV2" unique_id=653372133 instance=ExtResource("14_gmppw")]
-offset_left = 104.999985
-offset_top = -155.00002
-offset_right = 104.999985
-offset_bottom = -155.00002
+[node name="InventorySceneRight" parent="PlayerV2" unique_id=653372133 instance=ExtResource("14_gmppw")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 450.00006
+offset_top = -112.000015
+offset_right = 450.00006
+offset_bottom = -112.000015
+grow_horizontal = 1
+grow_vertical = 1
 rotation = -0.45324978
+metadata/_edit_use_anchors_ = true
 
 [node name="FollowerCamera2D" type="Camera2D" parent="." unique_id=124646853 node_paths=PackedStringArray("PlayerChar")]
 position = Vector2(544, 52860)
@@ -2667,6 +2673,7 @@ SatisfiedTexture = ExtResource("16_acg8c")
 OwnedBlockers = [NodePath("../StaticBody2D")]
 
 [node name="Sprite2D" parent="Obstacles/1CerealGate/NpcDemo" index="0" unique_id=852338744]
+z_index = 4
 position = Vector2(-2190.0002, 1773.0028)
 scale = Vector2(2.3949316, 2.57908)
 texture = ExtResource("17_ckv4c")
@@ -3576,12 +3583,11 @@ tags = PackedStringArray("relaxing")
 maxRadius = 2500.0
 minRadius = 1000.0
 
-[node name="SpiritualNpc" parent="Shops" unique_id=464562382 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawner") instance=ExtResource("15_l0rr1")]
+[node name="SpiritualNpc" parent="Shops" unique_id=464562382 node_paths=PackedStringArray("OwnedSpawner") instance=ExtResource("15_l0rr1")]
 position = Vector2(104637.01, 29318)
 scale = Vector2(3, 3)
 DesiredTag = "spiritual"
 SatisfiedTexture = ExtResource("35_5a13d")
-OwnedBlockers = []
 OwnedSpawner = NodePath("TimeSpawner")
 
 [node name="Sprite2D" parent="Shops/SpiritualNpc" index="0" unique_id=852338744]

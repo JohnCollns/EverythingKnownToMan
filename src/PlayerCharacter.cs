@@ -69,10 +69,9 @@ public partial class PlayerCharacter : CharacterBody2D
         StandardSprite.FlipH = bFacingLeft;
         HoldSprite.FlipH = bFacingLeft;
         ForegroundArmSprite.FlipH = bFacingLeft;
-        //InventoryArticle.Position = InventoryArticle.Position * -Vector2.Right;
-        //InventoryArticle.Rotation = InventoryArticle.Rotation * -1f;
+        
         InventoryArticle.Position = InitialInvArticlePosition * (Vector2.Right * (bFacingLeft ? -1f : 1f));
-        //InventoryArticle.Rotation = InitialInvArticleRotation + (bFacingLeft ? 180f : 0f);
-        GD.Print($"InvArticle pos: {InventoryArticle.Position}");
+        InventoryArticle.Rotation = InitialInvArticleRotation * (bFacingLeft ? -1f : 1f);
+        //GD.Print($"InvArticle pos: {InventoryArticle.Position}");
     }
 }

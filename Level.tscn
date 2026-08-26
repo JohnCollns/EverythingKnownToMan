@@ -3601,9 +3601,9 @@ scale = Vector2(0.33333334, 0.33333334)
 [node name="Control" type="Control" parent="Shops/AnimalNpc/Shop2" unique_id=1196993358]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -525.0
+offset_left = -515.0
 offset_top = 3218.0
-offset_right = -485.0
+offset_right = -475.0
 offset_bottom = 3258.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Shops/AnimalNpc/Shop2/Control" unique_id=152545244]

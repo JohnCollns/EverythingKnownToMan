@@ -7,10 +7,15 @@
 
 [node name="InventoryArticle" type="Control" unique_id=2134462742 node_paths=PackedStringArray("ArticleTexture", "TitleLabel")]
 z_index = 4
+z_as_relative = false
 layout_mode = 3
-anchor_right = 0.25
-anchor_bottom = 0.19800001
-offset_bottom = -0.3040161
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_right = -810.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -20,21 +25,34 @@ TitleLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/MarginContai
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=315682077]
 z_index = 4
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -106.768
+offset_right = 73.0
+offset_bottom = 49.232002
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_5bkgi")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2070619017]
 z_index = 4
+z_as_relative = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=23620761]
 z_index = 4
+z_as_relative = false
 layout_mode = 2
 
 [node name="TextureMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1683037245]
 z_index = 4
+z_as_relative = false
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
@@ -43,6 +61,7 @@ theme_override_constants/margin_bottom = 3
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/TextureMarginContainer" unique_id=1231503329]
 z_index = 4
+z_as_relative = false
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(200, 200)
 layout_mode = 2
@@ -53,6 +72,7 @@ stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=313785055]
 z_index = 4
+z_as_relative = false
 layout_mode = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 3
@@ -61,6 +81,7 @@ theme_override_constants/margin_bottom = 3
 
 [node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1281893506]
 z_index = 4
+z_as_relative = false
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Title of a very long and interesting article"
