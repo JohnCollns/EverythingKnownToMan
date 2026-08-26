@@ -1,4 +1,4 @@
-extends Camera2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	get_node("/root/Level/Background").global_position = global_position
+	get_node("/root/Level2/Background").global_position = global_position

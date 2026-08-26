@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cik0r5vrlvu6j"]
 
 [ext_resource type="Texture2D" uid="uid://dl1i4xnp1anvo" path="res://Assets/Backgrounds/Night sky.JPG" id="1_f7eu1"]
+[ext_resource type="Script" uid="uid://ctbit0mmqtwhc" path="res://Oscar's Scripts (bad)/background_follow_camera.gd" id="1_n4kpv"]
 [ext_resource type="Texture2D" uid="uid://bilhav312hqco" path="res://Assets/Backgrounds/Bg mountains.png" id="2_j286a"]
 [ext_resource type="Texture2D" uid="uid://dn3apf74v28t4" path="res://Assets/Pointy mountain/Pointy_m_phase3.png" id="3_fi16w"]
 [ext_resource type="Texture2D" uid="uid://b7wph4mcw76kt" path="res://Assets/Pointy mountain/Pointy_m_phase2.png" id="4_vho2s"]
@@ -68,19 +69,20 @@ position = Vector2(7680, 24192)
 position = Vector2(-2009, 51144)
 
 [node name="NightSky" type="Sprite2D" parent="Background" unique_id=646260766]
-position = Vector2(-196.00023, -579.9963)
-scale = Vector2(1.3428702, 1.2254202)
+position = Vector2(-1513.0001, -463.99628)
+scale = Vector2(1.5054024, 1.4135342)
 texture = ExtResource("1_f7eu1")
 centered = false
 
 [node name="BgMountains" type="Sprite2D" parent="Background" unique_id=589915088]
-position = Vector2(-158, 99)
-scale = Vector2(1.3431745, 1.3189442)
+position = Vector2(-1513, -464)
+scale = Vector2(1.5054024, 1.4910736)
 texture = ExtResource("2_j286a")
 centered = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Background" unique_id=1756987315]
-position = Vector2(1986, 4094)
+position = Vector2(2070.802, 3689.5813)
+scale = Vector2(1.0956473, 1.1339812)
 color = Color(0.04, 0.04, 0.04, 1)
 polygon = PackedVector2Array(1343, -1206, 5880, -1206, 5951, 1272, -3239, 1263, -3225, -1190)
 
@@ -2620,11 +2622,12 @@ uv = PackedVector2Array(-426, 59)
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=2008040248]
 position = Vector2(9026, 42102)
 color = Color(8.04686e-08, 0.08818867, 0, 1)
-polygon = PackedVector2Array(22582, 3253, 23274, 4638, 25466, 4623, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
+polygon = PackedVector2Array(22582, 3253, 23274, 4638, 25466, 4623, 25762, 1775, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 169785, -32319, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
 uv = PackedVector2Array(-426, 59)
 
 [node name="PlayerV2" parent="." unique_id=1746860596 node_paths=PackedStringArray("InventoryArticle") groups=["Player"] instance=ExtResource("14_j286a")]
 position = Vector2(-420, 54354)
+safe_margin = 0.8
 InventoryArticle = NodePath("InventorySceneRight")
 GravityScale = 45000.0
 MovementSpeed = 2500.0
@@ -2648,6 +2651,10 @@ zoom = Vector2(0.25, 0.25)
 script = ExtResource("46_nwxlm")
 CameraOffset = Vector2(120, -850)
 PlayerChar = NodePath("../PlayerV2")
+
+[node name="BackgroundController" type="Node2D" parent="FollowerCamera2D" unique_id=55280132]
+position = Vector2(-4066, -2180)
+script = ExtResource("1_n4kpv")
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=8109734]
 
@@ -3513,7 +3520,6 @@ shape = SubResource("RectangleShape2D_yr3df")
 
 [node name="PropertyNpc" type="Node2D" parent="Shops" unique_id=1625444525 node_paths=PackedStringArray("ClickableArea", "OwnedBlockers", "OwnedSpawner")]
 position = Vector2(56485, 34263)
-scale = Vector2(1.5, 1.5)
 script = ExtResource("31_fgql8")
 ClickableArea = NodePath("ClickableArea")
 DesiredTag = "property"
@@ -3523,19 +3529,19 @@ OwnedSpawner = NodePath("RelaxingSpawner")
 
 [node name="Sprite2D" type="Sprite2D" parent="Shops/PropertyNpc" unique_id=1525935978]
 position = Vector2(0, -35.666626)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("32_6pxd6")
 offset = Vector2(0, -500)
 
 [node name="ClickableArea" type="Button" parent="Shops/PropertyNpc" unique_id=1835316511]
 modulate = Color(1, 1, 1, 0)
-offset_left = -252.0
-offset_top = -1039.0
-offset_right = 208.0
-offset_bottom = 8.0
+offset_left = -1051.0
+offset_top = -1884.0
+offset_right = 962.0
+offset_bottom = 223.0
 
 [node name="Shop1" type="Node2D" parent="Shops/PropertyNpc" unique_id=625713066]
-position = Vector2(-22.666016, -62.66797)
-scale = Vector2(0.33333334, 0.33333334)
+position = Vector2(-0.001953125, 1151)
 
 [node name="Control" type="Control" parent="Shops/PropertyNpc/Shop1" unique_id=1443827823]
 layout_mode = 3
@@ -3578,31 +3584,29 @@ I want riches - bring me some [color=blue][u]property[/u][/color], and I will sp
 
 [node name="RelaxingSpawner" parent="Shops/PropertyNpc" unique_id=939182472 instance=ExtResource("34_3n8nw")]
 position = Vector2(-25.33268, -432.33334)
-scale = Vector2(0.33333334, 0.33333334)
 tags = PackedStringArray("relaxing")
 maxRadius = 2500.0
 minRadius = 1000.0
 
 [node name="SpiritualNpc" parent="Shops" unique_id=464562382 node_paths=PackedStringArray("OwnedSpawner") instance=ExtResource("15_l0rr1")]
 position = Vector2(104637.01, 29318)
-scale = Vector2(3, 3)
 DesiredTag = "spiritual"
 SatisfiedTexture = ExtResource("35_5a13d")
 OwnedSpawner = NodePath("TimeSpawner")
 
 [node name="Sprite2D" parent="Shops/SpiritualNpc" index="0" unique_id=852338744]
-position = Vector2(-43.669273, 349.16666)
+position = Vector2(7.994789, 733.99866)
+scale = Vector2(3, 3)
 texture = ExtResource("35_5a13d")
 
 [node name="ClickableArea" parent="Shops/SpiritualNpc" index="1" unique_id=1767153274]
-offset_left = -470.00516
-offset_top = -527.5006
-offset_right = 369.33078
+offset_left = -1342.0051
+offset_top = -1816.0006
+offset_right = 1249.9949
 offset_bottom = 158.49939
 
 [node name="Shop2" type="Node2D" parent="Shops/SpiritualNpc" unique_id=2104742077]
-position = Vector2(-93.666016, -53.333984)
-scale = Vector2(0.33333334, 0.33333334)
+position = Vector2(-411.00977, -451.99805)
 
 [node name="Control" type="Control" parent="Shops/SpiritualNpc/Shop2" unique_id=176532570]
 layout_mode = 3
@@ -3645,14 +3649,12 @@ We are LOST! We need guidance! Bring us something [color=blue][u]spiritual[/u][/
 
 [node name="TimeSpawner" parent="Shops/SpiritualNpc" unique_id=804866941 instance=ExtResource("34_3n8nw")]
 position = Vector2(8, -388.33398)
-scale = Vector2(0.33333334, 0.33333334)
 tags = PackedStringArray("time")
 maxRadius = 2500.0
 minRadius = 1000.0
 
 [node name="AnimalNpc" type="Node2D" parent="Shops" unique_id=1432897022 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
 position = Vector2(60615, 34559)
-scale = Vector2(3, 3)
 script = ExtResource("31_fgql8")
 Sprite = NodePath("Sprite2D")
 ClickableArea = NodePath("ClickableArea")
@@ -3662,21 +3664,20 @@ OwnedBlockers = []
 OwnedSpawner = NodePath("PropertySpawner")
 
 [node name="Sprite2D" type="Sprite2D" parent="Shops/AnimalNpc" unique_id=649753093]
-position = Vector2(8.000002, -275.33334)
-scale = Vector2(0.6, 0.6)
+position = Vector2(8.000002, -848.00134)
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("35_6pxd6")
 offset = Vector2(0, -500)
 
 [node name="ClickableArea" type="Button" parent="Shops/AnimalNpc" unique_id=1033492782]
 modulate = Color(1, 1, 1, 0)
-offset_left = -210.66666
-offset_top = -1060.3334
-offset_right = 249.33334
-offset_bottom = -13.333374
+offset_left = -835.00256
+offset_top = -3341.0015
+offset_right = 989.99744
+offset_bottom = -13.333496
 
 [node name="Shop2" type="Node2D" parent="Shops/AnimalNpc" unique_id=835148795]
-position = Vector2(-50.666016, -24.333984)
-scale = Vector2(0.33333334, 0.33333334)
+position = Vector2(-152.00195, -186.99805)
 
 [node name="Control" type="Control" parent="Shops/AnimalNpc/Shop2" unique_id=830827680]
 layout_mode = 3
@@ -3718,15 +3719,13 @@ text = "[color=black][b][u]SHOP[/u][/b]
 I want a pet - bring me an [color=blue][u]animal[/u][/color], and I will spawn some[color=blue] [u]property[/u][/color]!\""
 
 [node name="PropertySpawner" parent="Shops/AnimalNpc" unique_id=550999022 instance=ExtResource("34_3n8nw")]
-position = Vector2(8, -388.33398)
-scale = Vector2(0.33333334, 0.33333334)
+position = Vector2(0, -1411.998)
 tags = PackedStringArray("property")
 maxRadius = 2500.0
 minRadius = 1000.0
 
 [node name="PoliticalNpc" type="Node2D" parent="Shops" unique_id=1990940533 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
 position = Vector2(108555.01, 29489)
-scale = Vector2(3, 3)
 script = ExtResource("31_fgql8")
 Sprite = NodePath("Sprite2D")
 ClickableArea = NodePath("ClickableArea")
@@ -3737,21 +3736,20 @@ OwnedSpawner = NodePath("TherapeuticSpawner")
 
 [node name="Sprite2D" type="Sprite2D" parent="Shops/PoliticalNpc" unique_id=1454258141]
 position = Vector2(-0.0026042461, -66.66667)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("36_nwxlm")
 offset = Vector2(0, -500)
 
 [node name="ClickableArea" type="Button" parent="Shops/PoliticalNpc" unique_id=1767518473]
 modulate = Color(1, 1, 1, 0)
 offset_left = -218.66928
-offset_top = -515.3333
-offset_right = 241.33072
-offset_bottom = 531.6667
+offset_top = -1222.002
+offset_right = 249.5651
+offset_bottom = 1073.0918
 scale = Vector2(0.8984095, 0.56619835)
 
 [node name="Shop2" type="Node2D" parent="Shops/PoliticalNpc" unique_id=1935791600]
-position = Vector2(-113.33529, 401.99936)
-scale = Vector2(0.33333334, 0.33333334)
+position = Vector2(-219.00717, 1262.9994)
 
 [node name="Control" type="Control" parent="Shops/PoliticalNpc/Shop2" unique_id=719041082]
 layout_mode = 3
@@ -3794,7 +3792,6 @@ We need leadership - bring me something [color=blue][u]political[/u][/color], an
 
 [node name="TherapeuticSpawner" parent="Shops/PoliticalNpc" unique_id=2116891162 instance=ExtResource("34_3n8nw")]
 position = Vector2(8, -388.33398)
-scale = Vector2(0.33333334, 0.33333334)
 tags = PackedStringArray("therapeutic")
 maxRadius = 2500.0
 minRadius = 1000.0
