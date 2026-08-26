@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://doxsq2cq3p6sk" path="res://content/Player/inventory_scene.tscn" id="14_gmppw"]
 [ext_resource type="PackedScene" uid="uid://bjeicirakhi3h" path="res://content/Player/PlayerV2.tscn" id="14_j286a"]
 [ext_resource type="PackedScene" uid="uid://pmlho6imkkx5" path="res://content/scratch/NPCDemo.tscn" id="15_l0rr1"]
+[ext_resource type="AudioStream" uid="uid://3n70i5okl388" path="res://Assets/EverythingSongs/Inquistor_Cooler.mp3" id="16_608kq"]
 [ext_resource type="Texture2D" uid="uid://kr2dh43dhgiu" path="res://Assets/Obstacles/Open gate front.PNG" id="16_acg8c"]
 [ext_resource type="Texture2D" uid="uid://q2q366fda7bp" path="res://Assets/Obstacles/Closed gate.PNG" id="17_ckv4c"]
 [ext_resource type="Texture2D" uid="uid://dqcyjvym4p4n3" path="res://Assets/Pointy mountain/Pointy rock L.png" id="18_spmjc"]
@@ -2645,6 +2646,12 @@ grow_vertical = 1
 rotation = -0.45324978
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerV2" unique_id=843633671]
+stream = ExtResource("16_608kq")
+autoplay = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="PlayerV2" unique_id=597486238]
+
 [node name="FollowerCamera2D" type="Camera2D" parent="." unique_id=124646853 node_paths=PackedStringArray("PlayerChar")]
 position = Vector2(544, 52860)
 zoom = Vector2(0.25, 0.25)
@@ -3136,7 +3143,7 @@ But a [b]village[/b] is nothing without a [color=blue][u]community[/u][/color]."
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "community"
-OwnedBlockers = [NodePath("../Village")]
+OwnedBlockers = [NodePath("../Village"), NodePath("../StaticBody2D")]
 
 [node name="Sprite2D" parent="Obstacles/7Village/NpcDemo" index="0" unique_id=852338744]
 visible = false
@@ -3202,7 +3209,7 @@ One particularly depressed creature was quoted as saying [i]\"I'm not feeling gr
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "therapeutic"
-OwnedBlockers = [NodePath("../StaticBody2D")]
+OwnedBlockers = [NodePath("../StaticBody2D"), NodePath("..")]
 
 [node name="Sprite2D" parent="Obstacles/8DepressedCat/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-231.99924, -590.99835)
@@ -3267,7 +3274,7 @@ Wacko is known[color=blue][b][i][citation needed][/i][/b][/color] to say things 
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "time"
-OwnedBlockers = [NodePath(".")]
+OwnedBlockers = [NodePath("."), NodePath("..")]
 
 [node name="Sprite2D" parent="Obstacles/9WackoTime/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-221.00067, -430.00153)

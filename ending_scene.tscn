@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bqfhgrpghu88f"]
 
+[ext_resource type="AudioStream" uid="uid://b6f2pbe7yej5c" path="res://Assets/EverythingSongs/EverythingIs_ShortFade.mp3" id="1_wo5jl"]
+
 [node name="EndingScene" type="Node2D" unique_id=1405502439]
 
 [node name="Control" type="Control" parent="." unique_id=262502731]
@@ -42,3 +44,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 95
 text = "By John, Kathren, and Oscar"
 horizontal_alignment = 1
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=2037613361]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=104391287]
+stream = ExtResource("1_wo5jl")
+autoplay = true
