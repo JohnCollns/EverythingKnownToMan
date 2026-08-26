@@ -9,10 +9,9 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private Sprite2D StandardSprite;
     [Export] private Sprite2D HoldSprite;
     private Sprite2D ForegroundArmSprite;
-    //[Export] private Node InventoryArticleScene;
     [Export] private Control InventoryArticle;
-    //private Control InventoryArticle;
-    private Vector2 InitialInvArticlePosition;
+    private Vector2 InvArticlePositionLeft;
+    private Vector2 InvArticlePositionRight;
     private float InitialInvArticleRotation;
 
     [Export] private float GravityScale = 200f;
@@ -22,9 +21,9 @@ public partial class PlayerCharacter : CharacterBody2D
     {
         Instance = this;
         ForegroundArmSprite = HoldSprite.GetChild<Sprite2D>(0);
-        //InventoryArticle = InventoryArticleScene.GetChild<Control>(0);
-        InitialInvArticlePosition = InventoryArticle.Position;
         InitialInvArticleRotation = InventoryArticle.Rotation;
+        InvArticlePositionRight = new Vector2(InventoryArticle.Position.X, InventoryArticle.Position.Y);
+        InvArticlePositionLeft = new Vector2(-InventoryArticle.Position.X, InventoryArticle.Position.Y);
         SetHolding(false);
     }
 
@@ -70,8 +69,7 @@ public partial class PlayerCharacter : CharacterBody2D
         HoldSprite.FlipH = bFacingLeft;
         ForegroundArmSprite.FlipH = bFacingLeft;
         
-        InventoryArticle.Position = InitialInvArticlePosition * (Vector2.Right * (bFacingLeft ? -1f : 1f));
+        InventoryArticle.Position = (bFacingLeft ? InvArticlePositionLeft : InvArticlePositionRight);
         InventoryArticle.Rotation = InitialInvArticleRotation * (bFacingLeft ? -1f : 1f);
-        //GD.Print($"InvArticle pos: {InventoryArticle.Position}");
     }
 }
