@@ -2626,7 +2626,7 @@ uv = PackedVector2Array(-426, 59)
 [node name="PlayerV2" parent="." unique_id=1746860596 node_paths=PackedStringArray("InventoryArticle") groups=["Player"] instance=ExtResource("14_j286a")]
 position = Vector2(-420, 54354)
 InventoryArticle = NodePath("InventorySceneRight")
-GravityScale = 19620.0
+GravityScale = 45000.0
 MovementSpeed = 2500.0
 
 [node name="InventorySceneRight" parent="PlayerV2" unique_id=653372133 instance=ExtResource("14_gmppw")]
@@ -4339,14 +4339,14 @@ scroll_offset = Vector2(3648, 0)
 
 [node name="Trees" type="Sprite2D" parent="SuperForeground" unique_id=632145738]
 z_index = 10
-position = Vector2(4938, 53462)
+position = Vector2(6254, 53462.5)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("44_w7lw4")
 flip_h = true
 
 [node name="Trees2" type="Sprite2D" parent="SuperForeground" unique_id=1765351310]
 z_index = 10
-position = Vector2(-4127, 53554)
+position = Vector2(-2811, 53554.5)
 scale = Vector2(1.1411515, 1.4381413)
 texture = ExtResource("44_w7lw4")
 flip_h = true
