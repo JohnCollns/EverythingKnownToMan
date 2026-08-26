@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://3n70i5okl388" path="res://Assets/EverythingSongs/Inquistor_Cooler.mp3" id="16_608kq"]
 [ext_resource type="Texture2D" uid="uid://kr2dh43dhgiu" path="res://Assets/Obstacles/Open gate front.PNG" id="16_acg8c"]
 [ext_resource type="Texture2D" uid="uid://q2q366fda7bp" path="res://Assets/Obstacles/Closed gate.PNG" id="17_ckv4c"]
+[ext_resource type="Script" uid="uid://kgg7b8l6yhbt" path="res://Oscar's Scripts (bad)/StopAudio.gd" id="17_g4vxw"]
 [ext_resource type="Texture2D" uid="uid://dqcyjvym4p4n3" path="res://Assets/Pointy mountain/Pointy rock L.png" id="18_spmjc"]
 [ext_resource type="Texture2D" uid="uid://cjiockder06xo" path="res://Assets/Obstacles/Connected bridge.PNG" id="19_whrns"]
 [ext_resource type="Texture2D" uid="uid://t78qpagpltbr" path="res://Assets/Obstacles/Broken bridge.PNG" id="20_k0itm"]
@@ -63,6 +64,8 @@ size = Vector2(2369, 3192.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnmal"]
 size = Vector2(2369, 3192.375)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qnpof"]
 
 [node name="Level2" type="Node2D" unique_id=267726624]
 position = Vector2(7680, 24192)
@@ -2650,6 +2653,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerV2" unique_id=843633671]
 stream = ExtResource("16_608kq")
 autoplay = true
+script = ExtResource("17_g4vxw")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerV2" unique_id=597486238]
 
@@ -3504,7 +3508,7 @@ Before cresting the peak of the mountain, you must provide [color=blue][u]meanin
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "meaning"
-OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D"), NodePath("../../../PlayerV2/AudioStreamPlayer2D")]
+OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D")]
 
 [node name="Sprite2D" parent="Obstacles/12ExistentialPlastic/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(136.99933, 254.99841)
@@ -4386,7 +4390,62 @@ position = Vector2(0, 54904)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainStaticBody2D_2" unique_id=1198762859]
 position = Vector2(9027, -12802)
-polygon = PackedVector2Array(23265, 2996, 24248, 2475, 25698, 1800, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 170900, -38276, 173821, -40498, 181968, -40580, 200045, -15535, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
+polygon = PackedVector2Array(23265, 2996, 24248, 2475, 25698, 1800, 26288, 1552, 28129, 859, 34264, -39, 38750, -3980, 45696, -7871, 55690, -7920, 65502, -6557, 70534, -6421, 79681, -8598, 90325, -12882, 105111, -12700, 113068, -16011, 123833, -16251, 127922, -18884, 135388, -19134, 143346, -21956, 152150, -21877, 159586, -29253, 164550, -32313, 170900, -38276, 173821, -40498, 179819, -40742, 179781, -44235, 182161, -43890, 181968, -40580, 200045, -15535, 183664, 5914, 178591, 13342, 95888, 15141, 42008, 15141, 28457, 14980, 22058, 5159, 19152, 5123, 22299, 3147)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2081598695]
+position = Vector2(174337, 7818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1521836503]
+position = Vector2(678, 110)
+scale = Vector2(23.79, 23.79)
+shape = SubResource("CircleShape2D_qnpof")
+
+[node name="Control" type="Control" parent="." unique_id=2101009975]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 184887.0
+offset_top = -1382.0001
+offset_right = 186823.0
+offset_bottom = -275.00012
+scale = Vector2(1.785, 1.785)
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1335138295]
+layout_mode = 0
+offset_right = 1977.0
+offset_bottom = 1127.0
+color = Color(0, 0, 0, 1)
+
+[node name="Container" type="Container" parent="Control" unique_id=1174049121]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 51.0
+offset_right = 1925.0
+offset_bottom = 1075.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Container" unique_id=2042912035]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Container/VBoxContainer" unique_id=442101205]
+layout_mode = 2
+theme_override_font_sizes/font_size = 366
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Container/VBoxContainer" unique_id=630587006]
+layout_mode = 2
+theme_override_font_sizes/font_size = 129
+text = "EVERYTHING KNOWN TO MAN"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Container/VBoxContainer" unique_id=1387499454]
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "By John, Kathren, and Oscar"
+horizontal_alignment = 1
+
+[connection signal="area_entered" from="Area2D" to="PlayerV2/AudioStreamPlayer2D" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="PlayerV2/AudioStreamPlayer2D" method="_on_area_2d_body_entered"]
 
 [editable path="Obstacles/1CerealGate/NpcDemo"]
 [editable path="Obstacles/2RockWall/NpcDemo"]
