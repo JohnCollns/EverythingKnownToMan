@@ -2692,12 +2692,13 @@ position = Vector2(497.00058, -1113.9989)
 scale = Vector2(2.285226, 2.172484)
 texture = SubResource("CompressedTexture2D_kr1e0")
 
-[node name="NpcDemo" parent="Obstacles/1CerealGate" unique_id=808611719 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/1CerealGate" unique_id=808611719 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(2797, -1443)
 DesiredTag = "unlocking"
 SatisfiedTexture = ExtResource("16_acg8c")
 OwnedBlockers = [NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/1CerealGate/NpcDemo" index="0" unique_id=852338744]
 z_index = 4
@@ -2811,12 +2812,13 @@ text = "[color=black]A [b]wall[/b] is a structure[color=blue][b][i][1][/i][/b][/
 position = Vector2(621.1758, -840)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="NpcDemo" parent="Obstacles/2RockWall" unique_id=958356287 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/2RockWall" unique_id=958356287 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(68, -1027)
 DesiredTag = "destructive"
 SatisfiedTexture = ExtResource("16_acg8c")
 OwnedBlockers = [NodePath("..")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/2RockWall/NpcDemo" index="0" unique_id=852338744]
 visible = false
@@ -2871,12 +2873,13 @@ bbcode_enabled = true
 text = "[color=black]A [b]bridge[/b] is a structure designed to span a gap, allowing pedestrians[color=blue][b][i][citation needed][/i][/b][/color] and vehicles[color=blue][b][i][1][/i][/b][/color] to pass across. If a [b]bridge[/b] breaks, it must be  [color=blue][u]connected[/u][/color][color=blue][b][i][2][/i][/b][/color] again before use.
 "
 
-[node name="NpcDemo" parent="Obstacles/3ArmBridge" unique_id=717863931 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/3ArmBridge" unique_id=717863931 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(68, -1027)
 DesiredTag = "connection"
 SatisfiedTexture = ExtResource("19_whrns")
 OwnedBlockers = [NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/3ArmBridge/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(247.04987, 2288.1226)
@@ -2920,12 +2923,13 @@ texture = ExtResource("18_spmjc")
 position = Vector2(31, -1366.75)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="NpcDemo" parent="Obstacles/4Carpenter" unique_id=523534802 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/4Carpenter" unique_id=523534802 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(32, -1152)
 DesiredTag = "tool"
 SatisfiedTexture = ExtResource("21_pjq62")
 OwnedBlockers = [NodePath("../PointyRockL3"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/4Carpenter/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-1438.0002, 2149.003)
@@ -2985,12 +2989,13 @@ position = Vector2(-1351, -98)
 position = Vector2(9, -315)
 shape = SubResource("RectangleShape2D_yr3df")
 
-[node name="NpcDemo" parent="Obstacles/5DropBear" unique_id=848381096 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/5DropBear" unique_id=848381096 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(-1425, -86)
 DesiredTag = "relaxing"
 SatisfiedTexture = ExtResource("23_633el")
 OwnedBlockers = [NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/5DropBear/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(26.998535, 540.9988)
@@ -3082,11 +3087,12 @@ bbcode_enabled = true
 text = "[color=black]A [b]body of water[/b] or [b]waterbody[/b][color=blue][b][i][1][/i][/b][/color] is any significant accumulation of water on the surface of the earth.
 There are many ways to cross a [b]body of water[/b], the most commonly cited[color=blue][b][i][2][/i][/b][/color] way is by [color=blue][u]swimming[/u][/color]."
 
-[node name="NpcDemo" parent="Obstacles/6BodyOfWater" unique_id=996340638 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/6BodyOfWater" unique_id=996340638 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "swimming"
 OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/6BodyOfWater/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(260.00076, 916.00165)
@@ -3152,11 +3158,12 @@ bbcode_enabled = true
 text = "[color=black]A [b]village[/b] is a human settlement larger than a hamlet but smaller than a town[color=blue][b][i][1][2][3][4][/i][/b][/color].
 But a [b]village[/b] is nothing without a [color=blue][u]community[/u][/color]."
 
-[node name="NpcDemo" parent="Obstacles/7Village" unique_id=1105535868 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/7Village" unique_id=1105535868 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "community"
 OwnedBlockers = [NodePath("../Village"), NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/7Village/NpcDemo" index="0" unique_id=852338744]
 visible = false
@@ -3218,11 +3225,12 @@ bbcode_enabled = true
 text = "[color=black][b]Depression[/b] is a mental state of low mood and aversion to activity.[color=blue][b][i][1][/i][/b][/color]
 One particularly depressed creature was quoted as saying [i]\"I'm not feeling great - I need something [color=blue] [u]therapeutic[/u][/color]...\"[/i][color=blue][b][i][2][/i][/b][/color]"
 
-[node name="NpcDemo" parent="Obstacles/8DepressedCat" unique_id=291180640 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/8DepressedCat" unique_id=291180640 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "therapeutic"
 OwnedBlockers = [NodePath("../StaticBody2D"), NodePath("..")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/8DepressedCat/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-231.99924, -590.99835)
@@ -3283,11 +3291,12 @@ bbcode_enabled = true
 text = "[color=black]Nobody knows where [b]Wacko[/b] came from.[color=blue][b][i][citation needed][/i][/b][/color] They kinda just showed up.[color=blue][b][i][citation needed][/i][/b][/color]
 Wacko is known[color=blue][b][i][citation needed][/i][/b][/color] to say things like [i]\"I hate this generation!!! I wish I was born in a different [color=blue][u]time[/u][/color]!!!\"[/i]"
 
-[node name="NpcDemo" parent="Obstacles/9WackoTime" unique_id=776900033 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/9WackoTime" unique_id=776900033 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "time"
 OwnedBlockers = [NodePath("."), NodePath("..")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/9WackoTime/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-221.00067, -430.00153)
@@ -3333,12 +3342,13 @@ texture = ExtResource("18_spmjc")
 position = Vector2(90, -693)
 shape = SubResource("RectangleShape2D_w18xa")
 
-[node name="NpcDemo" parent="Obstacles/10CountingSheep" unique_id=1686149780 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/10CountingSheep" unique_id=1686149780 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(32, -1152)
 DesiredTag = "maths"
 SatisfiedTexture = ExtResource("31_vfahv")
 OwnedBlockers = [NodePath("../StaticBody2D"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../PointyRockL3")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/10CountingSheep/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-2209.0002, 1973.999)
@@ -3415,12 +3425,13 @@ texture = ExtResource("18_spmjc")
 position = Vector2(90, -693)
 shape = SubResource("RectangleShape2D_qnmal")
 
-[node name="NpcDemo" parent="Obstacles/11SpellingDuck" unique_id=990906634 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/11SpellingDuck" unique_id=990906634 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(32, -1152)
 DesiredTag = "language"
 SatisfiedTexture = ExtResource("32_w18xa")
 OwnedBlockers = [NodePath("../StaticBody2D"), NodePath("../PointyRockL2"), NodePath("../PointyRockL4"), NodePath("../PointyRockL3")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/11SpellingDuck/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(-2961.0002, 1995.999)
@@ -3512,11 +3523,12 @@ bbcode_enabled = true
 text = "[color=black][b]Existential crises[/b] are inner conflicts characterized by the impression that life lacks meaning and by confusion about one's personal identity.
 Before cresting the peak of the mountain, you must provide [color=blue][u]meaning[/u][/color] to this crisis-having bin."
 
-[node name="NpcDemo" parent="Obstacles/12ExistentialPlastic" unique_id=1238558881 node_paths=PackedStringArray("OwnedBlockers") instance=ExtResource("15_l0rr1")]
+[node name="NpcDemo" parent="Obstacles/12ExistentialPlastic" unique_id=1238558881 node_paths=PackedStringArray("OwnedBlockers", "OwnedSpawners") instance=ExtResource("15_l0rr1")]
 z_index = 6
 position = Vector2(915, 152)
 DesiredTag = "meaning"
 OwnedBlockers = [NodePath("."), NodePath("../StaticBody2D")]
+OwnedSpawners = []
 
 [node name="Sprite2D" parent="Obstacles/12ExistentialPlastic/NpcDemo" index="0" unique_id=852338744]
 position = Vector2(136.99933, 254.99841)
@@ -3538,14 +3550,14 @@ shape = SubResource("RectangleShape2D_yr3df")
 
 [node name="Shops" type="Node2D" parent="." unique_id=507259439]
 
-[node name="PropertyNpc" type="Node2D" parent="Shops" unique_id=1625444525 node_paths=PackedStringArray("ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+[node name="PropertyNpc" type="Node2D" parent="Shops" unique_id=1625444525 node_paths=PackedStringArray("ClickableArea", "OwnedBlockers", "OwnedSpawners")]
 position = Vector2(56485, 34263)
 script = ExtResource("31_fgql8")
 ClickableArea = NodePath("ClickableArea")
 DesiredTag = "property"
 SatisfiedTexture = ExtResource("32_6pxd6")
 OwnedBlockers = []
-OwnedSpawner = NodePath("RelaxingSpawner")
+OwnedSpawners = [NodePath("RelaxingSpawner"), NodePath("RelaxingSpawner2"), NodePath("RelaxingSpawner3"), NodePath("RelaxingSpawner4"), NodePath("RelaxingSpawner5"), NodePath("RelaxingSpawner6")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Shops/PropertyNpc" unique_id=1525935978]
 position = Vector2(0, -35.666626)
@@ -3603,16 +3615,52 @@ text = "[color=black][b][u]SHOP[/u][/b]
 I want riches - bring me some [color=blue][u]property[/u][/color], and I will spawn [color=blue][u]relaxing[/u][/color] things!\""
 
 [node name="RelaxingSpawner" parent="Shops/PropertyNpc" unique_id=939182472 instance=ExtResource("34_3n8nw")]
-position = Vector2(-25.33268, -432.33334)
+position = Vector2(-1453.0006, -3082.0012)
 tags = PackedStringArray("relaxing")
-maxRadius = 2500.0
-minRadius = 1000.0
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="SpiritualNpc" parent="Shops" unique_id=464562382 node_paths=PackedStringArray("OwnedSpawner") instance=ExtResource("15_l0rr1")]
-position = Vector2(104637.01, 29318)
+[node name="RelaxingSpawner2" parent="Shops/PropertyNpc" unique_id=769231610 instance=ExtResource("34_3n8nw")]
+position = Vector2(1291.9994, -3772.0012)
+tags = PackedStringArray("relaxing")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="RelaxingSpawner3" parent="Shops/PropertyNpc" unique_id=139435773 instance=ExtResource("34_3n8nw")]
+position = Vector2(1727.9994, -419.00122)
+tags = PackedStringArray("relaxing")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="RelaxingSpawner4" parent="Shops/PropertyNpc" unique_id=257401752 instance=ExtResource("34_3n8nw")]
+position = Vector2(-1204.0006, 295.99878)
+tags = PackedStringArray("relaxing")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="RelaxingSpawner5" parent="Shops/PropertyNpc" unique_id=615068900 instance=ExtResource("34_3n8nw")]
+position = Vector2(961.9994, 819.9988)
+tags = PackedStringArray("relaxing")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="RelaxingSpawner6" parent="Shops/PropertyNpc" unique_id=677423933 instance=ExtResource("34_3n8nw")]
+position = Vector2(88.99939, -2238.0012)
+tags = PackedStringArray("relaxing")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="SpiritualNpc" parent="Shops" unique_id=464562382 node_paths=PackedStringArray("OwnedSpawners") instance=ExtResource("15_l0rr1")]
+position = Vector2(104645, 29809)
 DesiredTag = "spiritual"
 SatisfiedTexture = ExtResource("35_5a13d")
-OwnedSpawner = NodePath("TimeSpawner")
+OwnedSpawners = [NodePath("TimeSpawner"), NodePath("TimeSpawner2"), NodePath("TimeSpawner3"), NodePath("TimeSpawner4"), NodePath("TimeSpawner5"), NodePath("TimeSpawner6")]
 
 [node name="Sprite2D" parent="Shops/SpiritualNpc" index="0" unique_id=852338744]
 position = Vector2(7.994789, 733.99866)
@@ -3668,13 +3716,48 @@ text = "[color=black][b][u]SHOP[/u][/b]
 We are LOST! We need guidance! Bring us something [color=blue][u]spiritual[/u][/color], and we will spawn some[color=blue] [u]time[/u][/color]!\""
 
 [node name="TimeSpawner" parent="Shops/SpiritualNpc" unique_id=804866941 instance=ExtResource("34_3n8nw")]
-position = Vector2(8, -388.33398)
+position = Vector2(1612, 0.001953125)
 tags = PackedStringArray("time")
-numArticles = 10
-maxRadius = 2500.0
-minRadius = 1000.0
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="AnimalNpc" type="Node2D" parent="Shops" unique_id=1432897022 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+[node name="TimeSpawner2" parent="Shops/SpiritualNpc" unique_id=49859150 instance=ExtResource("34_3n8nw")]
+position = Vector2(-1018, 165.00195)
+tags = PackedStringArray("time")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TimeSpawner3" parent="Shops/SpiritualNpc" unique_id=1596123035 instance=ExtResource("34_3n8nw")]
+position = Vector2(-1661, -2891.998)
+tags = PackedStringArray("time")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TimeSpawner4" parent="Shops/SpiritualNpc" unique_id=1536511933 instance=ExtResource("34_3n8nw")]
+position = Vector2(-5443, -2784.998)
+tags = PackedStringArray("time")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TimeSpawner5" parent="Shops/SpiritualNpc" unique_id=214524519 instance=ExtResource("34_3n8nw")]
+position = Vector2(-2819, -918.99805)
+tags = PackedStringArray("time")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TimeSpawner6" parent="Shops/SpiritualNpc" unique_id=1056383415 instance=ExtResource("34_3n8nw")]
+position = Vector2(-3871, -2657.998)
+tags = PackedStringArray("time")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalNpc" type="Node2D" parent="Shops" unique_id=1432897022 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawners")]
 position = Vector2(60615, 34559)
 script = ExtResource("31_fgql8")
 Sprite = NodePath("Sprite2D")
@@ -3682,7 +3765,7 @@ ClickableArea = NodePath("ClickableArea")
 DesiredTag = "animal"
 SatisfiedTexture = ExtResource("35_6pxd6")
 OwnedBlockers = []
-OwnedSpawner = NodePath("PropertySpawner")
+OwnedSpawners = [NodePath("PropertySpawner"), NodePath("PropertySpawner2"), NodePath("PropertySpawner3"), NodePath("PropertySpawner4"), NodePath("PropertySpawner5"), NodePath("PropertySpawner6")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Shops/AnimalNpc" unique_id=649753093]
 position = Vector2(8.000002, -848.00134)
@@ -3740,13 +3823,48 @@ text = "[color=black][b][u]SHOP[/u][/b]
 I want a pet - bring me an [color=blue][u]animal[/u][/color], and I will spawn some[color=blue] [u]property[/u][/color]!\""
 
 [node name="PropertySpawner" parent="Shops/AnimalNpc" unique_id=550999022 instance=ExtResource("34_3n8nw")]
-position = Vector2(0, -1411.998)
+position = Vector2(1206, -740.99805)
 tags = PackedStringArray("property")
-numArticles = 10
-maxRadius = 2500.0
-minRadius = 1000.0
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="PoliticalNpc" type="Node2D" parent="Shops" unique_id=1990940533 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawner")]
+[node name="PropertySpawner2" parent="Shops/AnimalNpc" unique_id=608533011 instance=ExtResource("34_3n8nw")]
+position = Vector2(1824, -1943.998)
+tags = PackedStringArray("property")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PropertySpawner3" parent="Shops/AnimalNpc" unique_id=1141395817 instance=ExtResource("34_3n8nw")]
+position = Vector2(-1269, 340.00195)
+tags = PackedStringArray("property")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PropertySpawner4" parent="Shops/AnimalNpc" unique_id=605714029 instance=ExtResource("34_3n8nw")]
+position = Vector2(-1674, -2745.998)
+tags = PackedStringArray("property")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PropertySpawner5" parent="Shops/AnimalNpc" unique_id=2094545239 instance=ExtResource("34_3n8nw")]
+position = Vector2(1233, -3506.998)
+tags = PackedStringArray("property")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PropertySpawner6" parent="Shops/AnimalNpc" unique_id=1369008701 instance=ExtResource("34_3n8nw")]
+position = Vector2(2237, 211.00195)
+tags = PackedStringArray("property")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PoliticalNpc" type="Node2D" parent="Shops" unique_id=1990940533 node_paths=PackedStringArray("Sprite", "ClickableArea", "OwnedBlockers", "OwnedSpawners")]
 position = Vector2(108555.01, 29489)
 script = ExtResource("31_fgql8")
 Sprite = NodePath("Sprite2D")
@@ -3754,7 +3872,7 @@ ClickableArea = NodePath("ClickableArea")
 DesiredTag = "political"
 SatisfiedTexture = ExtResource("36_nwxlm")
 OwnedBlockers = []
-OwnedSpawner = NodePath("TherapeuticSpawner")
+OwnedSpawners = [NodePath("TherapeuticSpawner"), NodePath("TherapeuticSpawner2"), NodePath("TherapeuticSpawner3"), NodePath("TherapeuticSpawner4"), NodePath("TherapeuticSpawner5")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Shops/PoliticalNpc" unique_id=1454258141]
 position = Vector2(-0.0026042461, -66.66667)
@@ -3813,96 +3931,780 @@ text = "[color=black][b][u]SHOP[/u][/b]
 We need leadership - bring me something [color=blue][u]political[/u][/color], and I will spawn some[color=blue] [u]therapeutic[/u][/color] things!\""
 
 [node name="TherapeuticSpawner" parent="Shops/PoliticalNpc" unique_id=2116891162 instance=ExtResource("34_3n8nw")]
-position = Vector2(8, -388.33398)
+position = Vector2(1029.9922, -1285.998)
 tags = PackedStringArray("therapeutic")
-numArticles = 10
-maxRadius = 2500.0
-minRadius = 1000.0
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TherapeuticSpawner2" parent="Shops/PoliticalNpc" unique_id=18588072 instance=ExtResource("34_3n8nw")]
+position = Vector2(1029.9922, -1285.998)
+tags = PackedStringArray("therapeutic")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TherapeuticSpawner3" parent="Shops/PoliticalNpc" unique_id=32912838 instance=ExtResource("34_3n8nw")]
+position = Vector2(-1586.0078, -740.99805)
+tags = PackedStringArray("therapeutic")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TherapeuticSpawner4" parent="Shops/PoliticalNpc" unique_id=591433718 instance=ExtResource("34_3n8nw")]
+position = Vector2(-987.0078, -3217.998)
+tags = PackedStringArray("therapeutic")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TherapeuticSpawner5" parent="Shops/PoliticalNpc" unique_id=310032358 instance=ExtResource("34_3n8nw")]
+position = Vector2(1302.9922, 731.00195)
+tags = PackedStringArray("therapeutic")
+numArticles = 1
+maxRadius = 1.0
+minRadius = 0.0
 
 [node name="Spawners" type="Node2D" parent="." unique_id=1239294752]
 
-[node name="UnlockSpawner" parent="Spawners" unique_id=777746209 instance=ExtResource("34_3n8nw")]
-position = Vector2(1135, 53460)
+[node name="UnlockSpawners" type="Node2D" parent="Spawners" unique_id=460889165]
+
+[node name="UnlockSpawner" parent="Spawners/UnlockSpawners" unique_id=777746209 instance=ExtResource("34_3n8nw")]
+position = Vector2(-420, 52860)
 tags = PackedStringArray("unlocking")
-numArticles = 10
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="DestructiveSpawner" parent="Spawners" unique_id=160580027 instance=ExtResource("34_3n8nw")]
-position = Vector2(14482, 51432)
+[node name="UnlockSpawner2" parent="Spawners/UnlockSpawners" unique_id=1595105274 instance=ExtResource("34_3n8nw")]
+position = Vector2(897, 51470)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner3" parent="Spawners/UnlockSpawners" unique_id=1205588647 instance=ExtResource("34_3n8nw")]
+position = Vector2(2378, 55046)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner4" parent="Spawners/UnlockSpawners" unique_id=1793251126 instance=ExtResource("34_3n8nw")]
+position = Vector2(4740, 54513)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner5" parent="Spawners/UnlockSpawners" unique_id=1049903730 instance=ExtResource("34_3n8nw")]
+position = Vector2(3031, 51915)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner6" parent="Spawners/UnlockSpawners" unique_id=2016209951 instance=ExtResource("34_3n8nw")]
+position = Vector2(2571, 53042)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner7" parent="Spawners/UnlockSpawners" unique_id=357830420 instance=ExtResource("34_3n8nw")]
+position = Vector2(6871, 54354)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner8" parent="Spawners/UnlockSpawners" unique_id=1324001712 instance=ExtResource("34_3n8nw")]
+position = Vector2(6705, 53068)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner9" parent="Spawners/UnlockSpawners" unique_id=1494262224 instance=ExtResource("34_3n8nw")]
+position = Vector2(772, 54318)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="UnlockSpawner10" parent="Spawners/UnlockSpawners" unique_id=439903055 instance=ExtResource("34_3n8nw")]
+position = Vector2(-2009, 53675)
+tags = PackedStringArray("unlocking")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="DestructiveSpawners" type="Node2D" parent="Spawners" unique_id=1605181639]
+
+[node name="DestructiveSpawner" parent="Spawners/DestructiveSpawners" unique_id=160580027 instance=ExtResource("34_3n8nw")]
+position = Vector2(11753, 49419)
 tags = PackedStringArray("destructive")
-numArticles = 10
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 0.0
+minRadius = 1.0
 
-[node name="ToolSpawner" parent="Spawners" unique_id=1371836899 instance=ExtResource("34_3n8nw")]
-position = Vector2(22991, 48526)
+[node name="DestructiveSpawner2" parent="Spawners/DestructiveSpawners" unique_id=1366488772 instance=ExtResource("34_3n8nw")]
+position = Vector2(13326, 52860)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="DestructiveSpawner3" parent="Spawners/DestructiveSpawners" unique_id=1607740003 instance=ExtResource("34_3n8nw")]
+position = Vector2(15277, 49193)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="DestructiveSpawner4" parent="Spawners/DestructiveSpawners" unique_id=533385540 instance=ExtResource("34_3n8nw")]
+position = Vector2(16185, 50680)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="DestructiveSpawner5" parent="Spawners/DestructiveSpawners" unique_id=881548160 instance=ExtResource("34_3n8nw")]
+position = Vector2(13456, 49419)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="DestructiveSpawner6" parent="Spawners/DestructiveSpawners" unique_id=1551855184 instance=ExtResource("34_3n8nw")]
+position = Vector2(14781, 51811)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="DestructiveSpawner7" parent="Spawners/DestructiveSpawners" unique_id=851206332 instance=ExtResource("34_3n8nw")]
+position = Vector2(13826, 50521)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="DestructiveSpawner8" parent="Spawners/DestructiveSpawners" unique_id=282396420 instance=ExtResource("34_3n8nw")]
+position = Vector2(11126, 50680)
+tags = PackedStringArray("destructive")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 0.0
+minRadius = 1.0
+
+[node name="ToolSpawners" type="Node2D" parent="Spawners" unique_id=2128396341]
+
+[node name="ToolSpawner" parent="Spawners/ToolSpawners" unique_id=1371836899 instance=ExtResource("34_3n8nw")]
+position = Vector2(22792, 46025)
 tags = PackedStringArray("tool")
-numArticles = 10
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="ConnectingSpawner" parent="Spawners" unique_id=856778447 instance=ExtResource("34_3n8nw")]
-position = Vector2(27316, 46410)
+[node name="ToolSpawner2" parent="Spawners/ToolSpawners" unique_id=200832710 instance=ExtResource("34_3n8nw")]
+position = Vector2(19967, 48287)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner3" parent="Spawners/ToolSpawners" unique_id=1761156405 instance=ExtResource("34_3n8nw")]
+position = Vector2(20660, 49761)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner4" parent="Spawners/ToolSpawners" unique_id=1906067994 instance=ExtResource("34_3n8nw")]
+position = Vector2(20769, 46963)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner5" parent="Spawners/ToolSpawners" unique_id=1853390999 instance=ExtResource("34_3n8nw")]
+position = Vector2(25003, 49419)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner6" parent="Spawners/ToolSpawners" unique_id=1229708068 instance=ExtResource("34_3n8nw")]
+position = Vector2(23304, 47850)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner7" parent="Spawners/ToolSpawners" unique_id=755800466 instance=ExtResource("34_3n8nw")]
+position = Vector2(21717, 50300)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner8" parent="Spawners/ToolSpawners" unique_id=518003808 instance=ExtResource("34_3n8nw")]
+position = Vector2(25830, 47686)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ToolSpawner9" parent="Spawners/ToolSpawners" unique_id=1768154113 instance=ExtResource("34_3n8nw")]
+position = Vector2(25003, 46410)
+tags = PackedStringArray("tool")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawners" type="Node2D" parent="Spawners" unique_id=1267742762]
+
+[node name="ConnectingSpawner" parent="Spawners/ConnectingSpawners" unique_id=856778447 instance=ExtResource("34_3n8nw")]
+position = Vector2(26392, 43927)
 tags = PackedStringArray("connection")
-numArticles = 10
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="AnimalSpawner" parent="Spawners" unique_id=860088481 instance=ExtResource("34_3n8nw")]
-position = Vector2(50719, 34098)
-tags = PackedStringArray("animal")
-numArticles = 10
+[node name="ConnectingSpawner2" parent="Spawners/ConnectingSpawners" unique_id=146216094 instance=ExtResource("34_3n8nw")]
+position = Vector2(24765, 45186)
+tags = PackedStringArray("connection")
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner3" parent="Spawners/ConnectingSpawners" unique_id=1489858655 instance=ExtResource("34_3n8nw")]
+position = Vector2(28533, 43052)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner4" parent="Spawners/ConnectingSpawners" unique_id=734877435 instance=ExtResource("34_3n8nw")]
+position = Vector2(29621, 45769)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner5" parent="Spawners/ConnectingSpawners" unique_id=1622212188 instance=ExtResource("34_3n8nw")]
+position = Vector2(27880, 46963)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner6" parent="Spawners/ConnectingSpawners" unique_id=182703302 instance=ExtResource("34_3n8nw")]
+position = Vector2(22275, 48892)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner7" parent="Spawners/ConnectingSpawners" unique_id=1235038885 instance=ExtResource("34_3n8nw")]
+position = Vector2(29762, 44018)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner8" parent="Spawners/ConnectingSpawners" unique_id=592809073 instance=ExtResource("34_3n8nw")]
+position = Vector2(27169, 45443)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="ConnectingSpawner9" parent="Spawners/ConnectingSpawners" unique_id=421964070 instance=ExtResource("34_3n8nw")]
+position = Vector2(26910, 48526)
+tags = PackedStringArray("connection")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawners" type="Node2D" parent="Spawners" unique_id=759097546]
+
+[node name="AnimalSpawner" parent="Spawners/AnimalSpawners" unique_id=860088481 instance=ExtResource("34_3n8nw")]
+position = Vector2(49931, 33073)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner2" parent="Spawners/AnimalSpawners" unique_id=187573414 instance=ExtResource("34_3n8nw")]
+position = Vector2(53344, 32325)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner3" parent="Spawners/AnimalSpawners" unique_id=359573089 instance=ExtResource("34_3n8nw")]
+position = Vector2(46183, 36736)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner4" parent="Spawners/AnimalSpawners" unique_id=1326784803 instance=ExtResource("34_3n8nw")]
+position = Vector2(48406, 35182)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner5" parent="Spawners/AnimalSpawners" unique_id=1313919743 instance=ExtResource("34_3n8nw")]
+position = Vector2(48760, 38168)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner6" parent="Spawners/AnimalSpawners" unique_id=261024063 instance=ExtResource("34_3n8nw")]
+position = Vector2(40479, 39081)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner7" parent="Spawners/AnimalSpawners" unique_id=1069172804 instance=ExtResource("34_3n8nw")]
+position = Vector2(40600, 41329)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner8" parent="Spawners/AnimalSpawners" unique_id=49726882 instance=ExtResource("34_3n8nw")]
+position = Vector2(35814, 42473)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner9" parent="Spawners/AnimalSpawners" unique_id=1639907973 instance=ExtResource("34_3n8nw")]
+position = Vector2(37438, 40028)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="AnimalSpawner10" parent="Spawners/AnimalSpawners" unique_id=481649086 instance=ExtResource("34_3n8nw")]
+position = Vector2(38710, 43052)
+tags = PackedStringArray("animal")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
 
 [node name="SwimmingSpawner" parent="Spawners" unique_id=583201102 instance=ExtResource("34_3n8nw")]
-position = Vector2(52342, 32981)
+position = Vector2(51782, 34601)
 tags = PackedStringArray("swimming")
-numArticles = 3
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="CommunitySpawner" parent="Spawners" unique_id=341387952 instance=ExtResource("34_3n8nw")]
-position = Vector2(89124, 30134)
-tags = PackedStringArray("community")
-numArticles = 10
+[node name="SwimmingSpawner2" parent="Spawners" unique_id=255551161 instance=ExtResource("34_3n8nw")]
+position = Vector2(34056, 39940)
+tags = PackedStringArray("swimming")
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="SpiritualSpawner" parent="Spawners" unique_id=1145473591 instance=ExtResource("34_3n8nw")]
+position = Vector2(70447, 33403)
+tags = PackedStringArray("spiritual")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="SpiritualSpawner2" parent="Spawners" unique_id=1537800149 instance=ExtResource("34_3n8nw")]
+position = Vector2(118650, 26065)
+tags = PackedStringArray("spiritual")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PoliticalSpawner" parent="Spawners" unique_id=1700367034 instance=ExtResource("34_3n8nw")]
+position = Vector2(73535, 34156)
+tags = PackedStringArray("political")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawners" type="Node2D" parent="Spawners" unique_id=1862685360]
+
+[node name="CommunitySpawner" parent="Spawners/CommunitySpawners" unique_id=341387952 instance=ExtResource("34_3n8nw")]
+position = Vector2(83820, 29917)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner2" parent="Spawners/CommunitySpawners" unique_id=166687768 instance=ExtResource("34_3n8nw")]
+position = Vector2(93636, 27925)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner3" parent="Spawners/CommunitySpawners" unique_id=371689663 instance=ExtResource("34_3n8nw")]
+position = Vector2(87734, 34336)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner4" parent="Spawners/CommunitySpawners" unique_id=37919193 instance=ExtResource("34_3n8nw")]
+position = Vector2(79682, 30874)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner5" parent="Spawners/CommunitySpawners" unique_id=2124837954 instance=ExtResource("34_3n8nw")]
+position = Vector2(80054, 34291)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner6" parent="Spawners/CommunitySpawners" unique_id=46773945 instance=ExtResource("34_3n8nw")]
+position = Vector2(83105, 35128)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner7" parent="Spawners/CommunitySpawners" unique_id=731126462 instance=ExtResource("34_3n8nw")]
+position = Vector2(96644, 27788)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner8" parent="Spawners/CommunitySpawners" unique_id=1721926801 instance=ExtResource("34_3n8nw")]
+position = Vector2(87734, 29243)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner9" parent="Spawners/CommunitySpawners" unique_id=1864337345 instance=ExtResource("34_3n8nw")]
+position = Vector2(93669, 32635)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="CommunitySpawner10" parent="Spawners/CommunitySpawners" unique_id=998670841 instance=ExtResource("34_3n8nw")]
+position = Vector2(90116, 30698)
+tags = PackedStringArray("community")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
 
 [node name="MeaningSpawner" parent="Spawners" unique_id=1394372583 instance=ExtResource("34_3n8nw")]
 position = Vector2(85554, 32193)
 tags = PackedStringArray("meaning")
-numArticles = 3
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="PersonSpawner" parent="Spawners" unique_id=412761963 instance=ExtResource("34_3n8nw")]
-position = Vector2(111594, 26687)
+[node name="MathsSpawner" parent="Spawners" unique_id=1682806642 instance=ExtResource("34_3n8nw")]
+position = Vector2(68029, 33588)
+tags = PackedStringArray("maths")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="LanguageSpawner" parent="Spawners" unique_id=596897623 instance=ExtResource("34_3n8nw")]
+position = Vector2(72271, 31769)
+tags = PackedStringArray("language")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawners" type="Node2D" parent="Spawners" unique_id=1865457061]
+
+[node name="PersonSpawner" parent="Spawners/PersonSpawners" unique_id=412761963 instance=ExtResource("34_3n8nw")]
+position = Vector2(112434, 24986)
 tags = PackedStringArray("person")
-numArticles = 10
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
 
-[node name="TheorySpawner" parent="Spawners" unique_id=700279090 instance=ExtResource("34_3n8nw")]
-position = Vector2(119542, 24271)
-tags = PackedStringArray("theory")
-numArticles = 10
+[node name="PersonSpawner2" parent="Spawners/PersonSpawners" unique_id=1116542748 instance=ExtResource("34_3n8nw")]
+position = Vector2(103129, 24853)
+tags = PackedStringArray("person")
+numArticles = 1
 spawnOnReady = true
-maxRadius = 2500.0
-minRadius = 1000.0
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner3" parent="Spawners/PersonSpawners" unique_id=1854905035 instance=ExtResource("34_3n8nw")]
+position = Vector2(112128, 28014)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner4" parent="Spawners/PersonSpawners" unique_id=121732119 instance=ExtResource("34_3n8nw")]
+position = Vector2(108336, 25177)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner5" parent="Spawners/PersonSpawners" unique_id=1570606985 instance=ExtResource("34_3n8nw")]
+position = Vector2(100199, 24986)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner6" parent="Spawners/PersonSpawners" unique_id=224559223 instance=ExtResource("34_3n8nw")]
+position = Vector2(106386, 27696)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner7" parent="Spawners/PersonSpawners" unique_id=557720881 instance=ExtResource("34_3n8nw")]
+position = Vector2(110815, 29553)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner8" parent="Spawners/PersonSpawners" unique_id=1405673211 instance=ExtResource("34_3n8nw")]
+position = Vector2(110468, 26105)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner9" parent="Spawners/PersonSpawners" unique_id=2046360917 instance=ExtResource("34_3n8nw")]
+position = Vector2(105895, 24728)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="PersonSpawner10" parent="Spawners/PersonSpawners" unique_id=527109796 instance=ExtResource("34_3n8nw")]
+position = Vector2(104645, 26060)
+tags = PackedStringArray("person")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawners" type="Node2D" parent="Spawners" unique_id=1169239086]
+
+[node name="TheorySpawner" parent="Spawners/TheorySpawners" unique_id=700279090 instance=ExtResource("34_3n8nw")]
+position = Vector2(119554, 21881)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner2" parent="Spawners/TheorySpawners" unique_id=1741858723 instance=ExtResource("34_3n8nw")]
+position = Vector2(123368, 22069)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner3" parent="Spawners/TheorySpawners" unique_id=2110290895 instance=ExtResource("34_3n8nw")]
+position = Vector2(122362, 26355)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner4" parent="Spawners/TheorySpawners" unique_id=1321021651 instance=ExtResource("34_3n8nw")]
+position = Vector2(120342, 23869)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner5" parent="Spawners/TheorySpawners" unique_id=518489206 instance=ExtResource("34_3n8nw")]
+position = Vector2(123918, 24728)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner6" parent="Spawners/TheorySpawners" unique_id=510506573 instance=ExtResource("34_3n8nw")]
+position = Vector2(117509, 28203)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner7" parent="Spawners/TheorySpawners" unique_id=1062742877 instance=ExtResource("34_3n8nw")]
+position = Vector2(116953, 23793)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner8" parent="Spawners/TheorySpawners" unique_id=371365222 instance=ExtResource("34_3n8nw")]
+position = Vector2(129540, 24987)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner9" parent="Spawners/TheorySpawners" unique_id=745541505 instance=ExtResource("34_3n8nw")]
+position = Vector2(131507, 21941)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner10" parent="Spawners/TheorySpawners" unique_id=1835924337 instance=ExtResource("34_3n8nw")]
+position = Vector2(133733, 24728)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner11" parent="Spawners/TheorySpawners" unique_id=944154383 instance=ExtResource("34_3n8nw")]
+position = Vector2(134824, 20756)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner12" parent="Spawners/TheorySpawners" unique_id=351448629 instance=ExtResource("34_3n8nw")]
+position = Vector2(139355, 18652)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner13" parent="Spawners/TheorySpawners" unique_id=1865043090 instance=ExtResource("34_3n8nw")]
+position = Vector2(145314, 18797)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner14" parent="Spawners/TheorySpawners" unique_id=971200374 instance=ExtResource("34_3n8nw")]
+position = Vector2(147824, 21729)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner15" parent="Spawners/TheorySpawners" unique_id=1723282732 instance=ExtResource("34_3n8nw")]
+position = Vector2(149025, 19296)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
+
+[node name="TheorySpawner16" parent="Spawners/TheorySpawners" unique_id=1755896933 instance=ExtResource("34_3n8nw")]
+position = Vector2(151116, 16704)
+tags = PackedStringArray("theory")
+numArticles = 1
+spawnOnReady = true
+maxRadius = 1.0
+minRadius = 0.0
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1898084124]
-scroll_offset = Vector2(671, 55010)
+scroll_offset = Vector2(317, 55526)
 
 [node name="ColourRockL2" type="Sprite2D" parent="Foreground" unique_id=1620149068]
 position = Vector2(12106, -1985)
@@ -4392,6 +5194,7 @@ position = Vector2(374.5, -566)
 shape = SubResource("RectangleShape2D_yr3df")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RightSideWall" unique_id=488021222]
+position = Vector2(-3036, -128)
 stream = ExtResource("51_ndm73")
 autoplay = true
 max_distance = 15075.0
