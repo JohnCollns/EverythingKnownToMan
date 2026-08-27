@@ -9,7 +9,7 @@ public partial class WikiNPC : Node
 	[Export] public string DesiredTag;
 	[Export] private Texture2D SatisfiedTexture;
 	[Export] private Node[] OwnedBlockers;
-	[Export] private Spawner OwnedSpawner;
+	[Export] private Spawner[] OwnedSpawners;
 	[Signal] public delegate void SatisfiedEventHandler();
 	public bool bIsSatisfied { get; private set; } = false;
 
@@ -38,10 +38,10 @@ public partial class WikiNPC : Node
 		{
 			ClearBlocker_Recursive(blocker);
 		}
-		if (OwnedSpawner != null)
+
+		foreach (Spawner ownedSpawner in OwnedSpawners)
 		{
-			GD.Print("OnSatisfied enabling spawner: "  + OwnedSpawner);
-			OwnedSpawner.SpawnArticles();
+			ownedSpawner.SpawnArticles();
 		}
 		if (SatisfiedTexture != null)
 		{
