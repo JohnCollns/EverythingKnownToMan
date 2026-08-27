@@ -21,7 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://kr2dh43dhgiu" path="res://Assets/Obstacles/Open gate front.PNG" id="16_acg8c"]
 [ext_resource type="Texture2D" uid="uid://q2q366fda7bp" path="res://Assets/Obstacles/Closed gate.PNG" id="17_ckv4c"]
 [ext_resource type="Script" uid="uid://kgg7b8l6yhbt" path="res://Oscar's Scripts (bad)/StopAudio.gd" id="17_g4vxw"]
+[ext_resource type="AudioStream" uid="uid://id6ggfa88yac" path="res://Assets/EverythingSongs/Success.mp3" id="18_1213o"]
 [ext_resource type="Texture2D" uid="uid://dqcyjvym4p4n3" path="res://Assets/Pointy mountain/Pointy rock L.png" id="18_spmjc"]
+[ext_resource type="Script" uid="uid://bd5csgkf2b1lr" path="res://Oscar's Scripts (bad)/PlayAudio.gd" id="19_073mt"]
 [ext_resource type="Texture2D" uid="uid://cjiockder06xo" path="res://Assets/Obstacles/Connected bridge.PNG" id="19_whrns"]
 [ext_resource type="Texture2D" uid="uid://t78qpagpltbr" path="res://Assets/Obstacles/Broken bridge.PNG" id="20_k0itm"]
 [ext_resource type="Texture2D" uid="uid://d13dxxj11b7fn" path="res://Assets/Characters/Boy npc speak.PNG" id="21_pjq62"]
@@ -2650,12 +2652,18 @@ grow_vertical = 1
 rotation = -0.45324978
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PlayerV2" unique_id=843633671]
+[node name="Music" type="AudioStreamPlayer2D" parent="PlayerV2" unique_id=843633671]
 stream = ExtResource("16_608kq")
 autoplay = true
 script = ExtResource("17_g4vxw")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerV2" unique_id=597486238]
+current = true
+
+[node name="SuccessAudio" type="AudioStreamPlayer2D" parent="PlayerV2" unique_id=1140162178]
+stream = ExtResource("18_1213o")
+volume_db = 7.0
+script = ExtResource("19_073mt")
 
 [node name="FollowerCamera2D" type="Camera2D" parent="." unique_id=124646853 node_paths=PackedStringArray("PlayerChar")]
 position = Vector2(544, 52860)
@@ -4453,8 +4461,24 @@ theme_override_font_sizes/font_size = 95
 text = "By John, Kathren, and Oscar"
 horizontal_alignment = 1
 
-[connection signal="area_entered" from="Area2D" to="PlayerV2/AudioStreamPlayer2D" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="PlayerV2/AudioStreamPlayer2D" method="_on_area_2d_body_entered"]
+[connection signal="Satisfied" from="Obstacles/1CerealGate/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/2RockWall/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/3ArmBridge/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/4Carpenter/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/5DropBear/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/6BodyOfWater/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/7Village/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/8DepressedCat/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/9WackoTime/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/10CountingSheep/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/11SpellingDuck/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Obstacles/12ExistentialPlastic/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Shops/PropertyNpc" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Shops/SpiritualNpc" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Shops/AnimalNpc" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="Satisfied" from="Shops/PoliticalNpc" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
+[connection signal="area_entered" from="Area2D" to="PlayerV2/Music" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="PlayerV2/Music" method="_on_area_2d_body_entered"]
 
 [editable path="Obstacles/1CerealGate/NpcDemo"]
 [editable path="Obstacles/2RockWall/NpcDemo"]
