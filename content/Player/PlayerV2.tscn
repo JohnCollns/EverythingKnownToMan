@@ -1,18 +1,24 @@
 [gd_scene format=3 uid="uid://bjeicirakhi3h"]
 
 [ext_resource type="Script" uid="uid://dhiu76bjngog2" path="res://src/PlayerCharacter.cs" id="1_aelv0"]
+[ext_resource type="AudioStream" uid="uid://v332ao1qryqr" path="res://Assets/EverythingSongs/Item_recipe_drop_shop.mp3" id="2_4kcja"]
 [ext_resource type="Texture2D" uid="uid://clrie33tgy6o6" path="res://Assets/New Characters/Characters/Researcher.png" id="2_q7cv7"]
+[ext_resource type="AudioStream" uid="uid://w4r60stew34y" path="res://Assets/EverythingSongs/Item_recipe_drop_world.mp3" id="3_4uwkp"]
 [ext_resource type="Texture2D" uid="uid://bartx8t1s0pav" path="res://Assets/New Characters/Characters/Researcher hold base.PNG" id="3_6gq1t"]
 [ext_resource type="Texture2D" uid="uid://ckkratv6v7h5p" path="res://Assets/New Characters/Characters/Researcher hold hand.PNG" id="4_fnxq8"]
+[ext_resource type="AudioStream" uid="uid://lam4k7rpu06u" path="res://Assets/EverythingSongs/Item_recipe_pickup_shop.mp3" id="4_l6skc"]
+[ext_resource type="AudioStream" uid="uid://dg1glenlc26cm" path="res://Assets/EverythingSongs/Item_recipe_pickup_world.mp3" id="5_8qso4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8yljs"]
 radius = 291.0
 height = 1072.0
 
-[node name="PlayerV2" type="CharacterBody2D" unique_id=1746860596 node_paths=PackedStringArray("StandardSprite", "HoldSprite")]
+[node name="PlayerV2" type="CharacterBody2D" unique_id=1746860596 node_paths=PackedStringArray("StandardSprite", "HoldSprite", "SwapAudio")]
 script = ExtResource("1_aelv0")
 StandardSprite = NodePath("SpriteStandard")
 HoldSprite = NodePath("HoldingBack")
+SwapAudio = NodePath("AudioStreamPlayer2D")
+SwapSounds = Array[AudioStream]([ExtResource("2_4kcja"), ExtResource("3_4uwkp"), ExtResource("4_l6skc"), ExtResource("5_8qso4")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849496297]
 shape = SubResource("CapsuleShape2D_8yljs")
@@ -31,3 +37,5 @@ texture = ExtResource("3_6gq1t")
 z_index = 5
 position = Vector2(-2, -189)
 texture = ExtResource("4_fnxq8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=967606342]

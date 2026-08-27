@@ -17,6 +17,9 @@ public partial class PlayerCharacter : CharacterBody2D
     [Export] private float GravityScale = 200f;
     [Export] private float MovementSpeed = 200f;
 
+    [Export] private AudioStreamPlayer2D SwapAudio;
+    [Export] private AudioStream[] SwapSounds;
+
     public override void _Ready()
     {
         Instance = this;
@@ -71,5 +74,11 @@ public partial class PlayerCharacter : CharacterBody2D
         
         InventoryArticle.Position = (bFacingLeft ? InvArticlePositionLeft : InvArticlePositionRight);
         InventoryArticle.Rotation = InitialInvArticleRotation * (bFacingLeft ? -1f : 1f);
+    }
+
+    public void PlaySwapAudio()
+    {
+        SwapAudio.Stream = SwapSounds[GD.RandRange(0, SwapSounds.Length - 1)];
+        SwapAudio.Play();
     }
 }

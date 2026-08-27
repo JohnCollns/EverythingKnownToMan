@@ -41,6 +41,8 @@ public partial class PlayerInventory : Control
         GD.Print($"Inv article has title: {articleNode.WikiArticle.Title}");
         
         givenArticle.LoadArticle(temp);
+        
+        PlayerCharacter.Instance.PlaySwapAudio();
     }
 
     public void ConsumeArticle()
