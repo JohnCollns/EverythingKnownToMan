@@ -22,11 +22,18 @@ public partial class WikiNPC : Node
 	private void OnClickableAreaOnPressed()
 	{
 		GD.Print($"ClickableAreaOnPressed, desired tag: {DesiredTag}");
-		if (!bIsSatisfied && PlayerCharacter.Inventory.heldArticle.HasTag(DesiredTag.ToLower()))
+		if (!bIsSatisfied)
 		{
-			GD.Print("NPC is satisfied");
-			PlayerCharacter.Inventory.ConsumeArticle();
-			OnSatisfied();
+			if (PlayerCharacter.Inventory.heldArticle.HasTag(DesiredTag.ToLower()))
+			{
+				GD.Print("NPC is satisfied");
+				PlayerCharacter.Inventory.ConsumeArticle();
+				OnSatisfied();
+			}
+			else
+			{
+				PlayerCharacter.Instance.PlayFailAudio();
+			}
 		}
 	}
 

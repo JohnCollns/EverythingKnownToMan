@@ -8,17 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://ckkratv6v7h5p" path="res://Assets/New Characters/Characters/Researcher hold hand.PNG" id="4_fnxq8"]
 [ext_resource type="AudioStream" uid="uid://lam4k7rpu06u" path="res://Assets/EverythingSongs/Item_recipe_pickup_shop.mp3" id="4_l6skc"]
 [ext_resource type="AudioStream" uid="uid://dg1glenlc26cm" path="res://Assets/EverythingSongs/Item_recipe_pickup_world.mp3" id="5_8qso4"]
+[ext_resource type="AudioStream" uid="uid://bko88rroqnxs" path="res://Assets/EverythingSongs/Wrong.mp3" id="9_4uwkp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8yljs"]
 radius = 291.0
 height = 1072.0
 
-[node name="PlayerV2" type="CharacterBody2D" unique_id=1746860596 node_paths=PackedStringArray("StandardSprite", "HoldSprite", "SwapAudio")]
+[node name="PlayerV2" type="CharacterBody2D" unique_id=1746860596 node_paths=PackedStringArray("StandardSprite", "HoldSprite", "SwapAudio", "FailAudio")]
 script = ExtResource("1_aelv0")
 StandardSprite = NodePath("SpriteStandard")
 HoldSprite = NodePath("HoldingBack")
-SwapAudio = NodePath("AudioStreamPlayer2D")
+SwapAudio = NodePath("SwapAudioStreamPlayer2D")
 SwapSounds = Array[AudioStream]([ExtResource("2_4kcja"), ExtResource("3_4uwkp"), ExtResource("4_l6skc"), ExtResource("5_8qso4")])
+FailAudio = NodePath("FailAudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849496297]
 shape = SubResource("CapsuleShape2D_8yljs")
@@ -38,4 +40,7 @@ z_index = 5
 position = Vector2(-2, -189)
 texture = ExtResource("4_fnxq8")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=967606342]
+[node name="SwapAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=967606342]
+
+[node name="FailAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=304840796]
+stream = ExtResource("9_4uwkp")

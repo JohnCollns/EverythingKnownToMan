@@ -19,6 +19,7 @@ public partial class PlayerCharacter : CharacterBody2D
 
     [Export] private AudioStreamPlayer2D SwapAudio;
     [Export] private AudioStream[] SwapSounds;
+    [Export] private AudioStreamPlayer2D FailAudio;
 
     public override void _Ready()
     {
@@ -80,5 +81,10 @@ public partial class PlayerCharacter : CharacterBody2D
     {
         SwapAudio.Stream = SwapSounds[GD.RandRange(0, SwapSounds.Length - 1)];
         SwapAudio.Play();
+    }
+
+    public void PlayFailAudio()
+    {
+        FailAudio.Play();
     }
 }
