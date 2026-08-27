@@ -33,7 +33,7 @@ public partial class WikiNPC : Node
 	private void OnSatisfied()
 	{
 		bIsSatisfied = true;
-		//EmitSignal(SatisfiedEventHandler);
+		EmitSignal(SignalName.Satisfied);
 		foreach (Node blocker in OwnedBlockers)
 		{
 			ClearBlocker_Recursive(blocker);
