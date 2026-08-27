@@ -5,8 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://gh2awnpjl33r" path="res://content/UI/wiki_foreground.tres" id="3_xoex4"]
 [ext_resource type="LabelSettings" uid="uid://b6i2fblfh2ieq" path="res://content/UI/wiki_label_settings.tres" id="4_jp5uc"]
 [ext_resource type="Texture2D" uid="uid://dugyoapmxfspv" path="res://icon.svg" id="5_7b22i"]
-[ext_resource type="Texture2D" uid="uid://bpr5qsjuq107x" path="res://Assets/UI_Art/Tear1.png" id="6_xoex4"]
-[ext_resource type="Texture2D" uid="uid://ji3gjmd7lrde" path="res://Assets/UI_Art/Tear2.png" id="7_jp5uc"]
+[ext_resource type="Texture2D" uid="uid://cu5fhiew6cbny" path="res://Assets/UI_Art/Rip box 1.PNG" id="6_mg7xd"]
 
 [node name="ArticleSimple2d" type="Node2D" unique_id=1223787358 node_paths=PackedStringArray("ArticleNode")]
 script = ExtResource("1_sxy1i")
@@ -15,7 +14,7 @@ BobPeriod = 3.5
 BobAmplitude = 120.0
 PeriodRandomRange = Vector2(0.5, 1.5)
 
-[node name="ArticleSimple" type="Control" parent="." unique_id=607494538 node_paths=PackedStringArray("ArticleTexture", "TitleLabel", "DescLabel", "ParagraphLabel", "TagsLabel", "ClickableBackground")]
+[node name="ArticleSimple" type="Control" parent="." unique_id=607494538 node_paths=PackedStringArray("ArticleTexture", "TitleLabel", "DescLabel", "ParagraphLabel", "ClickableBackground")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,90 +23,24 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 script = ExtResource("2_mg7xd")
-ArticleTexture = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureRect")
-TitleLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TitleLabel")
-DescLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DescLabel")
-ParagraphLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/ParagraphLabel")
-TagsLabel = NodePath("PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/TagsLabel")
-ClickableBackground = NodePath("PanelContainer/MarginContainer/ClickableBackground")
-
-[node name="PanelContainer" type="PanelContainer" parent="ArticleSimple" unique_id=1351517730]
-layout_mode = 0
-offset_right = 148.0
-offset_bottom = 202.0
-theme_override_styles/panel = ExtResource("3_xoex4")
-
-[node name="MarginContainer" type="MarginContainer" parent="ArticleSimple/PanelContainer" unique_id=687213036]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ClickableBackground" type="Button" parent="ArticleSimple/PanelContainer/MarginContainer" unique_id=345332334]
-layout_mode = 2
-theme_override_styles/normal = ExtResource("3_xoex4")
-theme_override_styles/pressed = ExtResource("3_xoex4")
-theme_override_styles/hover = ExtResource("3_xoex4")
-action_mode = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ArticleSimple/PanelContainer/MarginContainer" unique_id=1410424970]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ArticleSimple/PanelContainer/MarginContainer/HBoxContainer" unique_id=667417317]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="TitleLabel" type="Label" parent="ArticleSimple/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1836852652]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Title"
-label_settings = ExtResource("4_jp5uc")
-horizontal_alignment = 1
-uppercase = true
-
-[node name="ParagraphLabel" type="Label" parent="ArticleSimple/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=320086370]
-visible = false
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-text = "Paragraph text very long many words word words words."
-label_settings = ExtResource("4_jp5uc")
-autowrap_mode = 2
-
-[node name="TagsLabel" type="Label" parent="ArticleSimple/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=472665125]
-visible = false
-layout_mode = 2
-text = "Tags: {a, b, c}"
-label_settings = ExtResource("4_jp5uc")
-
-[node name="TextureRect" type="TextureRect" parent="ArticleSimple/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=812169007]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("5_7b22i")
-stretch_mode = 2
-
-[node name="DescLabel" type="Label" parent="ArticleSimple/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1298394481]
-layout_mode = 2
-text = "Description"
-label_settings = ExtResource("4_jp5uc")
+ArticleTexture = NodePath("PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ArticleTextureRect")
+TitleLabel = NodePath("PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/TitleLabel")
+DescLabel = NodePath("PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/DescLabel")
+ParagraphLabel = NodePath("PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ParagraphLabel")
+ClickableBackground = NodePath("PanelContainer2/MarginContainer/ClickableBackground")
 
 [node name="PanelContainer2" type="PanelContainer" parent="ArticleSimple" unique_id=1355793659]
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 108.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ArticleSimple/PanelContainer2" unique_id=178349169]
+[node name="PaperTextureRect" type="TextureRect" parent="ArticleSimple/PanelContainer2" unique_id=1357613435]
+custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
-size_flags_vertical = 4
+texture = ExtResource("6_mg7xd")
+expand_mode = 1
 
-[node name="TextureRectTop" type="TextureRect" parent="ArticleSimple/PanelContainer2/VBoxContainer" unique_id=1402301937]
-custom_maximum_size = Vector2(500, 120)
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("6_xoex4")
-
-[node name="MarginContainer" type="MarginContainer" parent="ArticleSimple/PanelContainer2/VBoxContainer" unique_id=1457756186]
+[node name="MarginContainer" type="MarginContainer" parent="ArticleSimple/PanelContainer2" unique_id=1457756186]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/margin_left = 10
@@ -115,11 +48,34 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ArticleSimple/PanelContainer2/VBoxContainer/MarginContainer" unique_id=1923608629]
+[node name="ClickableBackground" type="Button" parent="ArticleSimple/PanelContainer2/MarginContainer" unique_id=872552857]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_xoex4")
+theme_override_styles/pressed = ExtResource("3_xoex4")
+theme_override_styles/hover = ExtResource("3_xoex4")
+action_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArticleSimple/PanelContainer2/MarginContainer" unique_id=935491416]
+layout_mode = 2
+
+[node name="SpacerTop" type="Panel" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer" unique_id=838961503]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20.49, 46.62)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1553907741]
+layout_mode = 2
+
+[node name="PanelLeft" type="Panel" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1239924137]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1923608629]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TitleLabel" type="Label" parent="ArticleSimple/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1519630811]
+[node name="TitleLabel" type="Label" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1519630811]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Title"
@@ -127,7 +83,7 @@ label_settings = ExtResource("4_jp5uc")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="ParagraphLabel" type="Label" parent="ArticleSimple/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1618206047]
+[node name="ParagraphLabel" type="Label" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1618206047]
 visible = false
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
@@ -135,26 +91,27 @@ text = "Paragraph text very long many words word words words."
 label_settings = ExtResource("4_jp5uc")
 autowrap_mode = 2
 
-[node name="TagsLabel" type="Label" parent="ArticleSimple/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1758732541]
+[node name="TagsLabel" type="Label" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1758732541]
 visible = false
 layout_mode = 2
 text = "Tags: {a, b, c}"
 label_settings = ExtResource("4_jp5uc")
 
-[node name="TextureRect" type="TextureRect" parent="ArticleSimple/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=225487774]
+[node name="ArticleTextureRect" type="TextureRect" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=225487774]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("5_7b22i")
 stretch_mode = 2
 
-[node name="DescLabel" type="Label" parent="ArticleSimple/PanelContainer2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=288028463]
+[node name="DescLabel" type="Label" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=288028463]
 layout_mode = 2
 text = "Description"
 label_settings = ExtResource("4_jp5uc")
 
-[node name="TextureRectBottom" type="TextureRect" parent="ArticleSimple/PanelContainer2/VBoxContainer" unique_id=1818122892]
-custom_maximum_size = Vector2(500, 120)
+[node name="PanelRight" type="Panel" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer" unique_id=368517006]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("7_jp5uc")
-flip_v = true
+
+[node name="SpacerBottom" type="Panel" parent="ArticleSimple/PanelContainer2/MarginContainer/VBoxContainer" unique_id=5973545]
+custom_minimum_size = Vector2(20.49, 65.565)
+layout_mode = 2
