@@ -9,6 +9,9 @@
 [node name="ArticleSimple2d" type="Node2D" unique_id=1223787358 node_paths=PackedStringArray("ArticleNode")]
 script = ExtResource("1_83n0k")
 ArticleNode = NodePath("ArticleSimple")
+BobPeriod = 3.5
+BobAmplitude = 120.0
+PeriodRandomRange = Vector2(0.5, 1.5)
 
 [node name="ArticleSimple" type="Control" parent="." unique_id=607494538 node_paths=PackedStringArray("ArticleTexture", "TitleLabel", "DescLabel", "ParagraphLabel", "TagsLabel", "ClickableBackground")]
 layout_mode = 3

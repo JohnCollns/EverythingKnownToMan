@@ -41,6 +41,7 @@ public partial class Spawner : Node
 		AddChild(articleNode2D);
 		articleNode2D.ArticleNode.LoadArticle(article);
 		articleNode2D.Position = GetRandomOffset();
+		articleNode2D.InitPosition = articleNode2D.Position;
 	}
 
 	public Vector2 GetRandomOffset()
