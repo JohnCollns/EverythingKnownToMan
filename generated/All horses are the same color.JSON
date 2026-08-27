@@ -3,8 +3,8 @@
   "Description": "Paradox arising from an incorrect proof",
   "Paragraph": "All horses are the same color is a paradox that arises from a flawed use of mathematical induction to prove the statement All horses are the same color. There is no actual contradiction, as these arguments have a crucial flaw that makes them incorrect. This example was originally raised by George P\u00F3lya in a 1954 book in different terms: \u0022Are any n numbers equal?\u0022 or \u0022Any n girls have eyes of the same color\u0022, as an exercise in mathematical induction. It has also been restated as \u0022All cows have the same color\u0022.",
   "Tags": [
-    "maths",
-    "theory",
+	"maths",
+	"theory",
     "animal"
   ]
 }

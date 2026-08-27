@@ -3,7 +3,7 @@
   "Description": "Arithmetic operation",
   "Paragraph": "Addition, usually denoted with the plus sign \u002B, is one of the four basic operations of arithmetic, the other three being subtraction, multiplication, and division. The addition of two whole numbers results in the total or sum of those values combined. For example, the adjacent image shows two columns of apples, one with three apples and the other with two apples, totaling to five apples. This observation is expressed as \u00223 \u002B 2 = 5\u0022, which is read as \u0022three plus two equals five\u0022.",
   "Tags": [
-    "maths",
+	"maths",
     "connection"
   ],
   "image": "images\\Addition.png"

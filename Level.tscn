@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://cc0mcimduidai" path="res://Assets/forest assets/foreground.png" id="44_w7lw4"]
 [ext_resource type="Script" uid="uid://cccgi8ou2sr33" path="res://src/FollowerCamera.cs" id="46_nwxlm"]
 [ext_resource type="AudioStream" uid="uid://6xmdetai6j3q" path="res://Assets/EverythingSongs/EverythingIs_MediumFadeIn.mp3" id="51_ndm73"]
+[ext_resource type="Texture2D" uid="uid://0c20w7eob5l1" path="res://Assets/THE END.PNG" id="55_26x21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yr3df"]
 size = Vector2(2431.544, 3517)
@@ -5249,7 +5250,6 @@ alignment = 1
 [node name="Label" type="Label" parent="Control/Container/VBoxContainer" unique_id=442101205]
 layout_mode = 2
 theme_override_font_sizes/font_size = 366
-text = "THE END"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Control/Container/VBoxContainer" unique_id=630587006]
@@ -5261,8 +5261,14 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="Control/Container/VBoxContainer" unique_id=1387499454]
 layout_mode = 2
 theme_override_font_sizes/font_size = 95
-text = "By John, Kathren, and Oscar"
+text = "By John Collins, Kathren Hu, 
+and Oscar Newsome"
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Container/VBoxContainer" unique_id=242450051]
+position = Vector2(887.36395, 212.86519)
+scale = Vector2(3.2426124, 4.5528164)
+texture = ExtResource("55_26x21")
 
 [connection signal="Satisfied" from="Obstacles/1CerealGate/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
 [connection signal="Satisfied" from="Obstacles/2RockWall/NpcDemo" to="PlayerV2/SuccessAudio" method="_on_satisfied"]
