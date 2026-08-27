@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://doxsq2cq3p6sk" path="res://content/Player/inventory_scene.tscn" id="14_gmppw"]
 [ext_resource type="PackedScene" uid="uid://bjeicirakhi3h" path="res://content/Player/PlayerV2.tscn" id="14_j286a"]
 [ext_resource type="PackedScene" uid="uid://pmlho6imkkx5" path="res://content/scratch/NPCDemo.tscn" id="15_l0rr1"]
+[ext_resource type="AudioStream" uid="uid://co5kxi34a2ywc" path="res://Assets/EverythingSongs/Wikipedia game theme.mp3" id="16_26x21"]
 [ext_resource type="AudioStream" uid="uid://mdi7uuxlp0hp" path="res://Assets/EverythingSongs/Win.mp3" id="16_073mt"]
-[ext_resource type="AudioStream" uid="uid://3n70i5okl388" path="res://Assets/EverythingSongs/Inquistor_Cooler.mp3" id="16_608kq"]
 [ext_resource type="Texture2D" uid="uid://kr2dh43dhgiu" path="res://Assets/Obstacles/Open gate front.PNG" id="16_acg8c"]
 [ext_resource type="Texture2D" uid="uid://q2q366fda7bp" path="res://Assets/Obstacles/Closed gate.PNG" id="17_ckv4c"]
 [ext_resource type="Script" uid="uid://kgg7b8l6yhbt" path="res://Oscar's Scripts (bad)/StopAudio.gd" id="17_g4vxw"]
@@ -2653,7 +2653,7 @@ rotation = -0.45324978
 metadata/_edit_use_anchors_ = true
 
 [node name="Music" type="AudioStreamPlayer2D" parent="PlayerV2" unique_id=843633671]
-stream = ExtResource("16_608kq")
+stream = ExtResource("16_26x21")
 autoplay = true
 script = ExtResource("17_g4vxw")
 
