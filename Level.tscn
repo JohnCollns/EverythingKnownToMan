@@ -5232,8 +5232,9 @@ scale = Vector2(1.785, 1.785)
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=1335138295]
 layout_mode = 0
+offset_left = -39.773438
 offset_right = 1977.0
-offset_bottom = 1127.0
+offset_bottom = 1219.6074
 color = Color(0, 0, 0, 1)
 
 [node name="Container" type="Container" parent="Control" unique_id=1174049121]
@@ -5262,7 +5263,8 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 95
 text = "By John Collins, Kathren Hu, 
-and Oscar Newsome"
+and Oscar Newsome
+Music by Keven"
 horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/Container/VBoxContainer" unique_id=242450051]
